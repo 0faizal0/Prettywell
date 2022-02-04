@@ -42,6 +42,7 @@
             body {
               font-family: Arial;
               margin: 0;
+              background-color: #b485ff
             }
             
             /* Header/Logo Title */
@@ -54,36 +55,45 @@
             }
             
             /* Page Content */
-            .content {padding:20px;}
+            .content {padding:20px; background-color: #b485ff}
         
-            a:link, a:visited {
-          background-color: white;
-          color: black;
-          border: 2px solid maroon;
-          padding: 10px 25px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          margin-bottom: 5%;
+            #back:link, #back:visited {
+            background-color: rgb(3, 245, 3);
+            color: white;
+            padding: 9px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            margin: 20px;
         }
-        
-        a:hover, a:active {
-          background-color: #7d2439;
-          color: white;
+        #back:hover, #back:active {
+            background-color: green;
+        }  
+        p{
+          text-align: center;
         }
             </style>
 
-    <div class="col-md-7 col-sm-12 mb-5 bg-white p-0" style="padding-top: 5%">
+<div class="card-body" style="background-color: #b485ff;">
+  <a href="/" style="margin-left: 80px; margin-top: 80px;" id="back">< Kembali</a>
+
+
+    <div class="col-md-7 col-sm-12 mb-5 bg-white p-0">
         <div class="p-4">
+          <h2 style="font-size: 200%; font-weight: bold; text-align: center">{{ $post->title }}</h2>
             <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:30%; margin-left: auto; margin-right: auto; display: block;" class="center">
-            <h2 style="font-size: 200%; font-weight: bold; text-align: center">{{ $post->title }}</h2>
-            <p class="mt-5" style="text-align: center">{{ $post->body }}</p>
+            
+            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; margin-left: 600px; margin-top: 10px; border-radius:50%;">
+            <p>by {{ $post->user->name }}</p>
+
+            <p style="text-align: center; margin-top: 50px; text-orientation: upright">{{ $post->body }}</p>
+            <br><br><br><br><br><br><br><br>
+
         </div>
     </div>
 
-    <div class="card-body">
-        <a href="/" style="margin-left: 46%">Kembali</a>
-
+    
     </div>
            
        

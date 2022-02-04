@@ -2,7 +2,6 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
 
@@ -17,6 +16,7 @@
 
             <!-- Email Address -->
             <div>
+                *Untuk masuk ke website kami, anda perlu kontak admin agar di berikan approve
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
@@ -49,6 +49,7 @@
 
                 <x-button class="ml-3">
                     {{ __('Log in') }}
+                    
                 </x-button>
             </div>
         </form>

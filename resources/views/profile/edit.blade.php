@@ -6,8 +6,28 @@
         </h2>
       </x-slot>
 
+      <style> 
+        #submit {
+          background-color: #750073;
+          border: none;
+          color: white;
+          padding: 6px 22px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        #update {
+          background-color: #750073;
+          border: none;
+          color: white;
+          padding: 6px 22px;
+          text-decoration: none;
+          margin: 24px 2px;
+          cursor: pointer;        }
+        </style>
 
     <!-- /#sidebar-wrapper -->
+    <div class="bg-white shadow rounded-lg" style=" margin-left: 80px; margin-right: 80px; margin-bottom: 40px; margin-top: 20px; height: 550px; background-color: #ff4d36;">
 <div class="container" style="padding-left: 80px">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -15,7 +35,7 @@
                 <div class="card">
                 </div>
                 <br>
-                <h3 style="height:50px; font-size: 30px; color:#32c9b8; margin-left: 50px; font-weight: bold;">EDIT INFORMATION</h3>
+                <h3 style="height:50px; font-size: 30px; color:#750073; margin-left: 50px; font-weight: bold;">EDIT INFORMATION</h3>
                 <br>
                 <div style=" height: 200px;" class="rounded">
                     <div class="col-md-10 col-md-offset-1">
@@ -24,13 +44,12 @@
                         <form enctype="multipart/form-data" action="{{ route('profile.update_avatar') }}" method="POST" style="margin-top: 80px; ">
                             <input type="file" name="avatar" >
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="submit" class="pull-right btn btn-sm btn-primary" style="background-color: #32c9b8">
+                            <input type="submit" class="pull-right btn btn-sm btn-primary" id="submit">
                         </form>
                     </div>
                 </div>
-                <br>
 
-                <h3 style="height:50px; font-size: 30px; color:#3d3d3d; margin-left: 50px; font-weight: bold;">ACCOUNT INFORMATION</h3>
+                <h3 style="height:20px; font-size: 30px; color:#3d3d3d; margin-left: 50px; font-weight: bold;">ACCOUNT INFORMATION</h3>
                 <br>
                 <div class="card-body">
                     <form method="POST" action="{{ route('profile.update') }}" value="POST">
@@ -68,7 +87,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" style="color: blue">
+                                <button type="submit" class="btn btn-primary" id="update">
                                     Update Profile
                                 </button>
                             </div>
@@ -76,10 +95,10 @@
                         <br>
                         <br>
                     </form>
-                    <br><br><br><br><br><br><br>
                 </div>
             </div>
         </div>
     </div>
 </div>
+    </div>
 </x-app-layout>

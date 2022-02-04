@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color: #fca1ff">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     .header {
       padding: 60px;
       text-align: center;
-      background: #43377a;
       color: white;
       font-size: 18px;
     }
@@ -44,20 +44,28 @@ a:hover, a:active {
   background-color: #7d2439;
   color: white;
 }
+.button{
+  position: relative;
+  left: 500px;
+  bottom: 200px;
+}
     </style>
     <title>Document</title>
 </head>
-<body class="flex w3-light-grey w3-content" style="max-width:1600px">
+<body style="max-width:1600px">
     <div class="header">
+      <h1 style="font-family: cursive; color: black">Asterisk</h1>
+      <h4 style="font-family: cursive; color: black">Asterisk adalah sebuah website komunitas <br> yang didalam nya memiliki beberapa fitur
+      seperti Artikel, <br> User Profile, Private Chat dan Grup Chat.</h4>
         @if (Route::has('login'))
             <div>
                 @auth
-                    <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    <a href="{{ url('/dashboard') }}" class="button">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}">Log in</a>
+                    <a href="{{ route('login') }}" class="button">Log in</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}" class="button">Register</a>
                     @endif
                 @endauth
             </div>
@@ -66,28 +74,17 @@ a:hover, a:active {
     @foreach ($posts as $post)
   
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:100%;" class="w3-hover-opacity">
+      <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:100%; height: 350px;" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b>{{ $post->title }}</b></p>
         <p>by {{ $post->user->name }}</p>
 
         <a href="/detail/{{ $post->id }}" class="btn btn-primary">Baca Artikel</a>
         <p></p>
-
       </div>
     </div>
     @endforeach
 
-    {{-- @foreach ($posts as $post)
-                    <div class="card" style="width: 25%; background-color: azure; padding: 1%; border-style: solid; border-width: 5px; border-color: black">
-                   <div class="card-body"> 
-                   <h1 class="text-2xl">{{ $post->title }}</h1>
-               <p>by {{ $post->user->name }}</p>
-                   <a href="/detail/{{ $post->id }}" class="btn btn-primary" style="color: blue">> Baca Artikel <</a>
-               </div>
-               </div>
-
-             @endforeach --}}
             </div>
 </body>
 </html>

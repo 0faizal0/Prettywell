@@ -11,7 +11,8 @@
             padding: 10px;
             margin-top: 10px;
             margin-bottom: 20px;
-            margin-left: 50px;
+            margin-left: 240px;
+            margin-right: 240px;
         }
         #input{
             position: relative;
@@ -55,6 +56,13 @@
         #back:hover, #back:active {
             background-color: green;
         }  
+        #namechat{
+            font-size: 30px;
+            font-family: cursive;
+            border: 2px solid #750073;
+            margin-left: 60px;
+            border-radius: 20px;
+        }
     </style>
     <div id="app">
 
@@ -72,7 +80,7 @@
                 </div>
 
     <ul class="list-group">
-            <div class="card-header text-center" style="font-size: 30px; font-family: cursive; border: 2px solid black; margin-left: 60px">{{$u_name->name}}</div>
+            <div class="card-header text-center" id="namechat">{{$u_name->name}}</div>
             @foreach ($msgs as $msg)
 
                 @if ($msg->s_uid == auth()->user()->id)
