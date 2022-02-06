@@ -84,7 +84,6 @@
           <h2 style="font-size: 200%; font-weight: bold; text-align: center">{{ $post->title }}</h2>
             <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:30%; margin-left: auto; margin-right: auto; display: block;" class="center">
             
-            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; margin-left: 600px; margin-top: 10px; border-radius:50%;">
             <p>by {{ $post->user->name }}</p>
 
             <p style="text-align: center; margin-top: 50px; text-orientation: upright">{{ $post->body }}</p>

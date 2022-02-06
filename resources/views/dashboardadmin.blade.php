@@ -64,10 +64,12 @@
                       }
                         </style>
                         @if(session('message'))
-                        <div class="alert alert-succes">
+                        <div>
+                          <?php notify()->success('Successfully Update Role');?>
                             {{session('message')}}
                         </div>
                         @endif
+                        
                         <table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;">
                             <tr style="background-color:#4d76b3; color:#ffffff;">
                                 <td>Id</td>

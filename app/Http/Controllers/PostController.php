@@ -38,6 +38,7 @@ class PostController extends Controller
        $post->image_path = $newImageName;
    
        $post->save();
+       notify()->success('Successfully Make Article');
 
        return back();
 
@@ -89,8 +90,8 @@ public function detail($id)
         $body = $post->body;
         $post = Post::where('id', $id)
                     ->update(['title' => $title, 'body' => $body,]);
-        Session::flash('success', 'Artikel berhasil diedit');
-        return redirect()->action('App\Http\Controllers\PostController@index');
+                    notify()->success('Successfully Edit Article');
+        return redirect('/dashboard');
     }
 
     public function delete($id)
@@ -100,8 +101,8 @@ public function detail($id)
                             ->delete();
  
         //membuat pesan yang akan ditampilkan ketika artikel berhasil dihapus
-        Session::flash('success', 'Artikel berhasil dihapus');
-        return redirect()->action('App\Http\Controllers\PostController@index');
+        notify()->success('Successfully Delete Article');
+        return redirect('/dashboard');
     }
 
     public function admin(){

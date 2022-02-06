@@ -1,6 +1,6 @@
 <div>
     {{-- The whole world belongs to you --}}
-    <div class="bg-white shadow rounded-lg mt-10" style="margin-left: 80px; margin-right: 80px; margin-top: 90px; background-color: #ff4d36;">
+    <div class="bg-white shadow rounded-lg mt-10" style="margin-left: 80px; margin-right: 80px; margin-top: 90px;">
         <div class="border-b border-gray-200 p-6">
             <h2 class="text-2xl font-bold">Public Chat Rooms</h2>
         </div>

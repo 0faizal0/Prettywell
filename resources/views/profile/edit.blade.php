@@ -27,7 +27,7 @@
         </style>
 
     <!-- /#sidebar-wrapper -->
-    <div class="bg-white shadow rounded-lg" style=" margin-left: 80px; margin-right: 80px; margin-bottom: 40px; margin-top: 20px; height: 550px; background-color: #ff4d36;">
+    <div class="bg-white shadow rounded-lg" style=" margin-left: 80px; margin-right: 80px; margin-bottom: 40px; margin-top: 20px; height: 550px;">
 <div class="container" style="padding-left: 80px">
     <div class="row justify-content-center">
         <div class="col-md-12">

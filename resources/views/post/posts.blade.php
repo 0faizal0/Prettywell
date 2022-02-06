@@ -10,7 +10,7 @@
         <div class="overflow-hidden shadow-sm sm:rounded-lg">
           @foreach ($posts as $post)
            
-          <div class="p-6 bg-white border-b border-gray-200" style="background-color: #9eff7a; margin-bottom: 10px;">
+          <div class="p-6 bg-white border-b border-gray-200" style="margin-bottom: 10px;">
             <h1 class="text-2xl">{{ $post->title }}</h1>
             <p>by {{ $post->user->name }}</p>
                 <a href="/detail/{{ $post->id }}" class="btn btn-primary" style="color: blue">> Baca Artikel <</a>
