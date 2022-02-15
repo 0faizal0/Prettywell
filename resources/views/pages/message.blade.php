@@ -60,13 +60,22 @@
             font-size: 30px;
             font-family: cursive;
             border: 2px solid #750073;
+            width: 90%;
             margin-left: 60px;
             border-radius: 20px;
         }
-    </style>
-    <div id="app">
 
-      <main class="">
+        #card{
+            background-color: white;
+            width: 1380px;
+            height: 600px;
+            margin-left: 50px;
+            margin-top: 30px;
+        }
+    </style>
+    <div class="rounded-md p-2 shadow-lg border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="card">
+
+    <div id="app">
 
 
 <div class="container">
@@ -111,6 +120,6 @@
     </div>
 </div>
 
-</main>
+</div>
 </div>
 </x-app-layout>

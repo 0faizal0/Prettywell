@@ -60,8 +60,14 @@ class PostController extends Controller
 
 public function welcome()
 {
-    $posts = Post::with('user')->get();
+    $posts = Post::with('user')->take(5)->get();
     return view('welcome', ['posts' => $posts]);
+}
+
+public function artikel()
+{
+    $posts = Post::with('user')->get();
+    return view('artikel', ['posts' => $posts]);
 }
 
 public function adminpost()

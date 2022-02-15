@@ -17,7 +17,9 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PostController::class, 'welcome']); 
+Route::get('/', [PostController::class, 'welcome']);
+
+Route::get('/article', [PostController::class, 'artikel']);
 
 Route::get('/rooms', function () {
     return redirect()->route('rooms.index');

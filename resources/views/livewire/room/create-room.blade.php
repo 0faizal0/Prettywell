@@ -3,7 +3,7 @@
     <lable>Create Your Chat Room :</lable>
     <div class="flex flex-col">
 
-        <input type="text" wire:model.debounce.1000ms="name" placeholder="chat room name" class="rounded-md p-2 shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+        <input type="text" wire:model.debounce.1000ms="name" placeholder="chat room name" class="rounded-md p-2 shadow-lg border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
         @error('name')
         <span class="text-red-500 text-sm">{{ $message }}</span>
         @enderror
