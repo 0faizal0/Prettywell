@@ -13,7 +13,7 @@
       table.darkTable {
   font-family: "Comic Sans MS", cursive, sans-serif;
   width: 80%;
-  height: 500px;
+  height: 200px;
   /* background-color:#000000; */
   text-align: center;
   border-radius:8px;
@@ -56,7 +56,7 @@ table.darkTable tfoot td {
 }
   </style>
 
-<table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;margin-top: 5px;">
+<table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;margin-top: 20px;">
   <tr style="background-color:#4d76b3; color:#ffffff;">
       <td>Id</td>
       <td>Name</td>
