@@ -56,7 +56,7 @@ table.darkTable tfoot td {
 }
   </style>
 
-<table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;margin-top: 20px;">
+<table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;margin-top: 5px;">
   <tr style="background-color:#4d76b3; color:#ffffff;">
       <td>Id</td>
       <td>Name</td>
