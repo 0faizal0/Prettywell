@@ -65,6 +65,7 @@ table.darkTable tfoot td {
       <td>hapus</td>
   </tr>
   @foreach ($posts as $post)
+  @if ($post->user->id == Auth::user()->id)
   <tr style="background-color: #ffffff; color:Gray;">
       <td>{{$post['id']}}</td>
       <td>{{ $post->user->name }}</td>
@@ -72,6 +73,7 @@ table.darkTable tfoot td {
       <td><a href="/edit/{{ $post->id }}"><button class="btn btn-success" style="color: green">Edit</button></a></td>
       <td> <a href="/delete/{{ $post->id }}"><button class="btn btn-danger" style="color: red">Hapus</button></a></td>
 
+      @endif
       @endforeach
   </tr>
 </table>
