@@ -49,10 +49,10 @@ class PostController extends Controller
     //        MAKE model_has_permission v v v
     // auth()->user()->givePermissionTo('admin');
     //        MAKE model_has_role V V V
-    // auth()->user()->assignRole('admin');
+    auth()->user()->assignRole('admin');
     //       MAKE ROLE   V V V
-    $role = Role::create(['name' => 'admin']);
-    $permission = Permission::create(['name' => 'admin']);
+    // $role = Role::create(['name' => 'admin']);
+    // $permission = Permission::create(['name' => 'admin']);
 
     $posts = Post::with('user')->get();
     return view('post.posts', ['posts' => $posts]);
