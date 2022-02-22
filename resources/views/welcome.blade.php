@@ -365,8 +365,8 @@ function scrollFunction() {
 <div id='content'>
   <div class='container'>
     <section class='first-section'>
-      <p style="color: black; position: relative; bottom: 750px; left: 280px; font-size: 60px; font-family: 'Redressed', cursive;" data-aos="fade-down" data-aos-duration="2000">Welcome to website community Asteriks</p>
-      <hr style="width: 50%; color: #130d0a; background-color: #130d0a; position: relative; bottom: 800px; left: 350px; height: 3px;" data-aos="fade-up" data-aos-duration="2000">
+      <p style="color: black; position: relative; bottom: 750px; left: 350px; font-size: 60px; font-family: 'Redressed', cursive;" data-aos="fade-down" data-aos-duration="2000">Welcome to website community Asteriks</p>
+      <hr style="width: 50%; color: #130d0a; background-color: #130d0a; position: relative; bottom: 800px; left: 400px; height: 3px;" data-aos="fade-up" data-aos-duration="2000">
     </section>
   </div>
 </div>
@@ -396,32 +396,32 @@ function scrollFunction() {
 
             <div id="ourmisi">
               <p style="font-size: 40px;" data-aos="fade-up">Our Mission</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 610px; bottom: 40px;" data-aos="zoom-in">
+              <hr style="width: 10%; height: 2px; position: relative; left: 690px; bottom: 40px;" data-aos="zoom-in">
               <p data-aos="fade-up">'To make this community more solid'</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 610px; bottom: 10px;" data-aos="zoom-in">
+              <hr style="width: 10%; height: 2px; position: relative; left: 690px; bottom: 10px;" data-aos="zoom-in">
               <p data-aos="fade-up">'To make this community more bigger'</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 610px; bottom: 10px;" data-aos="zoom-in">
+              <hr style="width: 10%; height: 2px; position: relative; left: 690px; bottom: 10px;" data-aos="zoom-in">
               <p data-aos="fade-up">'To make this website more popular'</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 610px; bottom: 10px;" data-aos="zoom-in">
+              <hr style="width: 10%; height: 2px; position: relative; left: 690px; bottom: 10px;" data-aos="zoom-in">
               <p data-aos="fade-up">'To make the people have fun in our community'</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 610px; bottom: 10px;" data-aos="zoom-in">
+              <hr style="width: 10%; height: 2px; position: relative; left: 690px; bottom: 10px;" data-aos="zoom-in">
               <img src="../images/misi.png" alt="misi" style="position: relative; right: 450px; bottom: 250px;" data-aos="fade-right">
             </div>
 
             <div class="w3-third w3-container w3-margin-bottom" id="ourteam">
               <p style="font-size: 40px;" data-aos="fade-up">Our Team</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 595px; bottom: 40px;" data-aos="zoom-in-right">
+              <hr style="width: 10%; height: 2px; position: relative; left: 670px; bottom: 40px;" data-aos="zoom-in-right">
 
               <img src="../images/team1.png" alt="team1" id="imgteam">
               <img src="../images/team2.png" alt="team2" id="imgteam">
               <img src="../images/team3.png" alt="team3" id="imgteam">
 
               <p style="position: relative; right: 350px;" data-aos="fade-up">M. Faizal Zantri P.</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 240px; bottom: 10px;" data-aos="zoom-in-right">
+              <hr style="width: 10%; height: 2px; position: relative; left: 320px; bottom: 10px;" data-aos="zoom-in-right">
               <p style="position: relative; bottom: 70px;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 590px; bottom: 80px;" data-aos="zoom-in-right">
+              <hr style="width: 10%; height: 2px; position: relative; left: 665px; bottom: 80px;" data-aos="zoom-in-right">
               <p style="position: relative; left: 320px; bottom: 135px;" data-aos="fade-up">Ridwan Asy'ari</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 910px; bottom: 150px;" data-aos="zoom-in-right">
+              <hr style="width: 10%; height: 2px; position: relative; left: 990px; bottom: 150px;" data-aos="zoom-in-right">
             </div> 
         
     <!-- First Photo Grid-->

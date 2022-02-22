@@ -6,13 +6,24 @@
     </x-slot>
     <style>
         #chat{
-            background-color: peachpuff;
+            background-color: #4CAF50;
             border-radius: 20px;
             padding: 10px;
             margin-top: 10px;
             margin-bottom: 20px;
             margin-left: 240px;
             margin-right: 240px;
+            color: white;
+        }
+        #chat2{
+            background-color: rgb(148, 148, 148);
+            border-radius: 20px;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 240px;
+            margin-right: 240px;
+            color: white;
         }
         #input{
             position: relative;
@@ -59,10 +70,10 @@
         #namechat{
             font-size: 30px;
             font-family: cursive;
-            border: 2px solid #750073;
-            width: 90%;
-            margin-left: 60px;
-            border-radius: 20px;
+            width: 50%;
+            position: relative;
+            left:350px;
+            bottom: 50px;
         }
 
         #card{
@@ -90,6 +101,7 @@
 
     <ul class="list-group">
             <div class="card-header text-center" id="namechat">{{$u_name->name}}</div>
+            <hr>
             @foreach ($msgs as $msg)
 
                 @if ($msg->s_uid == auth()->user()->id)
@@ -98,7 +110,7 @@
 
                 @else
 
-                 <li class="list-group-item list-group-item-primary" id="chat">{{$msg->message}}</li>
+                 <li class="list-group-item list-group-item-primary" id="chat2">{{$msg->message}}</li>
 
                 @endif    
 
@@ -123,3 +135,4 @@
 </div>
 </div>
 </x-app-layout>
+<br><br><br><br>

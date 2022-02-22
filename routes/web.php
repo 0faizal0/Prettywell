@@ -36,6 +36,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/detail/{id}', [PostController::class, 'detail']);
+Route::get('/detail2/{id}', [PostController::class, 'detail2']);
 
 Route::get('/upload-image', [UploadImageController::class, 'index'])->name('upload-image');
 Route::post('/save', [UploadImageController::class, 'save']);

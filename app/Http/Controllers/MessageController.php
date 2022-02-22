@@ -27,7 +27,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -72,6 +72,7 @@ class MessageController extends Controller
     public function show($id)
     {
         $u_name = User::find($id);
+        
         $user_id = auth()->user()->id;
         $msgs = Message::where([
             ['r_uid', $id],
@@ -82,7 +83,7 @@ class MessageController extends Controller
             ['s_uid', $id],
         ])->get();
        
-        return view('pages.message')->with(compact('msgs', 'id', 'u_name'));
+        return view('pages.message')->with(compact('msgs', 'id', 'u_name', ));
     }
 
     /**

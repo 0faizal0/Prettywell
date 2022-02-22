@@ -85,7 +85,7 @@
                                 
                                     </a>
                                     
-                                    <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:98px; height:98px; border-radius:50%; display: inline-block; position: relative; bottom: 80px; right: 90px;">
+                                    <img src="/uploads/avatars/{{ $user->avatar }}" style="width:98px; height:98px; border-radius:50%; display: inline-block; position: relative; bottom: 80px; right: 90px;">
                                     <div id="indikatorOff"></div>
                                 </div>
                              @endif
