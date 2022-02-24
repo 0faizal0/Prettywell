@@ -330,7 +330,7 @@ function scrollFunction() {
 
   <header>
     <div class="navbar" id="navbar">
-      <a id="menu" href="#" style="position: relative; left: 100px; padding-left: 5px; padding-right: 5px;">Asterisk`</a>
+      <a id="menu" href="#" style="position: relative; left: 10%; padding-left: 5px; padding-right: 5px;">Asterisk`</a>
       <a id="menu" href="#contactus" style="padding-left: 5px; padding-right: 5px;">Contact Us</a>
       <a id="menu" href="#aboutus" style="padding-left: 5px; padding-right: 5px;">About Us</a>
       <a id="menu" href="#ourmisi" style="padding-left: 5px; padding-right: 5px;">Our Mission</a>
@@ -372,18 +372,18 @@ function scrollFunction() {
 </div>
   
     <div class="header">
-      <hr style="width: 10%; height: 2px; position: relative; left: 10px; bottom: 20px;" data-aos="fade-up-right">
-      <hr style="width: 10%; height: 2px; position: relative; left: 1200px; bottom: 20px;" data-aos="fade-up-left">
+      <hr style="width: 10%; height: 2px; position: relative; left: 1%; bottom: 20px;" data-aos="fade-up-right">
+      <hr style="width: 10%; height: 2px; position: relative; left: 88%; bottom: 20px;" data-aos="fade-up-left">
 
             <div id="contactus">
               <p style="position: relative; right: 15%;" data-aos="fade-left">Have Any Question !</p>
-              <p style="position: relative; left: 400px; font-size: 30px; text-align: left;" data-aos="fade-right">Don't Hesitate to Contact Us <br> Any Time</p>
+              <p style="position: relative; left: 30%; font-size: 30px; text-align: left;" data-aos="fade-right">Don't Hesitate to Contact Us <br> Any Time</p>
               <a id="kontak" href="/" data-aos="fade-left"> Contact Us</a>
-              <img src="../images/kontak.png" alt="contactUs" style="position: relative; bottom: 170px; right: 550px;" data-aos="fade-right">
+              <img src="../images/kontak.png" alt="contactUs" style="position: relative; bottom: 170px; right: 42%;" data-aos="fade-right">
             </div>
 
-            <hr style="width: 10%; height: 2px; position: relative; left: 10px; bottom: 20px;" data-aos="fade-up-right">
-            <hr style="width: 10%; height: 2px; position: relative; left: 1200px; bottom: 20px;" data-aos="fade-up-left">
+            <hr style="width: 10%; height: 2px; position: relative; left: 1%; bottom: 20px;" data-aos="fade-up-right">
+            <hr style="width: 10%; height: 2px; position: relative; left: 88%; bottom: 20px;" data-aos="fade-up-left">
 
             <div class="aboutus" id="aboutus">
               <p id="about" data-aos="fade-down">About Us</p>
@@ -391,7 +391,7 @@ function scrollFunction() {
               <p id="about" data-aos="fade-up">We created this website for our community to communicate through the website,<br>
                 build our community more solid with chat system, and give us some updates <br>
                 for events or news with articles. </p>
-                <img src="../images/about.png" alt="aboutUs" style="position: relative; left: 390px;" data-aos="fade-left">
+                <img src="../images/about.png" alt="aboutUs" style="position: relative; left: 29%;" data-aos="fade-left">
             </div>
 
             <div id="ourmisi">
@@ -405,7 +405,7 @@ function scrollFunction() {
               <hr style="width: 10%; height: 2px; position: relative; left: 45%; bottom: 10px;" data-aos="zoom-in">
               <p data-aos="fade-up">'To make the people have fun in our community'</p>
               <hr style="width: 10%; height: 2px; position: relative; left: 45%; bottom: 10px;" data-aos="zoom-in">
-              <img src="../images/misi.png" alt="misi" style="position: relative; right: 450px; bottom: 250px;" data-aos="fade-right">
+              <img src="../images/misi.png" alt="misi" style="position: relative; right: 35%; bottom: 250px;" data-aos="fade-right">
             </div>
 
             <div class="w3-third w3-container w3-margin-bottom" id="ourteam">
@@ -416,12 +416,12 @@ function scrollFunction() {
               <img src="../images/team2.png" alt="team2" id="imgteam">
               <img src="../images/team3.png" alt="team3" id="imgteam">
 
-              <p style="position: relative; right: 350px;" data-aos="fade-up">M. Faizal Zantri P.</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 18%; bottom: 10px;" data-aos="zoom-in-right">
-              <p style="position: relative; bottom: 70px;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
+              <p style="position: relative; right: 25%;" data-aos="fade-up">M. Faizal Zantri P.</p>
+              <hr style="width: 10%; height: 2px; position: relative; left: 20%; bottom: 10px;" data-aos="zoom-in-right">
+              <p style="position: relative; bottom: 10%;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
               <hr style="width: 10%; height: 2px; position: relative; left: 45%; bottom: 80px;" data-aos="zoom-in-right">
-              <p style="position: relative; left: 320px; bottom: 135px;" data-aos="fade-up">Ridwan Asy'ari</p>
-              <hr style="width: 8%; height: 2px; position: relative; left: 70%; bottom: 150px;" data-aos="zoom-in-right">
+              <p style="position: relative; left: 25%; bottom: 20%;" data-aos="fade-up">Ridwan Asy'ari</p>
+              <hr style="width: 8%; height: 2px; position: relative; left: 71%; bottom: 150px;" data-aos="zoom-in-right">
             </div> 
         
     <!-- First Photo Grid-->
