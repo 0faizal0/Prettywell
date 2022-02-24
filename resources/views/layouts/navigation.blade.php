@@ -13,12 +13,12 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <a style="margin-top: 21px; color: gray;" href="/">Home</a>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('new-post')" :active="request()->routeIs('new-post')">
                         {{ __('Add New Post') }}
                     </x-nav-link>
