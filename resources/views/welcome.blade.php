@@ -131,7 +131,7 @@ p{
   position: relative;
   background-color: #f44336;
   left: 35%;
-  bottom: 170px;
+  bottom: 70px;
   border-radius: 5px;
 }
 #kontak:hover, #kontak:active {
@@ -183,7 +183,7 @@ p{
 }
 #ourteam{
   width: 100%;
-  height: 700px;
+  height: 1200px;
   background-color: #130d0a;
   padding-top: 50px;
 }
@@ -416,11 +416,11 @@ function scrollFunction() {
               <img src="../images/team2.png" alt="team2" id="imgteam">
               <img src="../images/team3.png" alt="team3" id="imgteam">
 
-              <p style="position: relative; right: 25%;" data-aos="fade-up">M. Faizal Zantri P.</p>
+              <p style="position: relative; right: 25%; font-size: 1em;" data-aos="fade-up">M. Faizal Zantri P.</p>
               <hr style="width: 10%; height: 2px; position: relative; left: 20%; bottom: 10px;" data-aos="zoom-in-right">
-              <p style="position: relative; bottom: 10%;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
+              <p style="position: relative; bottom: 6%; font-size: 1em;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
               <hr style="width: 10%; height: 2px; position: relative; left: 45%; bottom: 80px;" data-aos="zoom-in-right">
-              <p style="position: relative; left: 25%; bottom: 20%;" data-aos="fade-up">Ridwan Asy'ari</p>
+              <p style="position: relative; left: 25%; bottom: 12%; font-size: 1em;" data-aos="fade-up">Ridwan Asy'ari</p>
               <hr style="width: 8%; height: 2px; position: relative; left: 71%; bottom: 150px;" data-aos="zoom-in-right">
             </div> 
         
