@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('avatar')->default('default.png');
             $table->string('role');
-            $table->tinyInteger('isban')->default('1');
+            $table->tinyInteger('isban')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });

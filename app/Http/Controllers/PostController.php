@@ -89,6 +89,12 @@ public function detail($id)
         return view('detail2', ['post'=>$post]);
     }
 
+    public function detail3($id)
+    {
+        $post = Post::where('id', $id)->first();
+        return view('detail3', ['post'=>$post]);
+    }
+
     public function edit($id)
     {
         $post = Post::where('id', $id)->first();

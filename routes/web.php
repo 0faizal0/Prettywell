@@ -17,12 +17,16 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PostController::class, 'welcome']);
+Route::get('/', [PostController::class, 'welcome'])->name('welcome');
 
 Route::get('/article', [PostController::class, 'artikel']);
 
 Route::get('/rooms', function () {
     return redirect()->route('rooms.index');
+});
+
+Route::get('/form', function () {
+    return view('form');
 });
 
 
@@ -37,6 +41,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/detail/{id}', [PostController::class, 'detail']);
 Route::get('/detail2/{id}', [PostController::class, 'detail2']);
+Route::get('/detail3/{id}', [PostController::class, 'detail3']);
 
 Route::get('/upload-image', [UploadImageController::class, 'index'])->name('upload-image');
 Route::post('/save', [UploadImageController::class, 'save']);

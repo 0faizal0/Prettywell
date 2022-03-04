@@ -12,16 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
     
 
 <style>
     /* Style the body */
     body {
-      padding: 0;
-      margin: 0;
       font-family: "Playfair Display", serif;
       color: #fff;
-      opacity: 0;
       transition: opacity 3s;
     }
     
@@ -29,7 +27,7 @@
     .header {
       text-align: center;
       color: white;
-      font-size: 18px;
+      font-size: 1.2em;
       width: 100%;
       height: 1080px;
       background-color: #130d0a;
@@ -45,14 +43,14 @@
 
 .button:link, .button:visited {
   position: relative;
-  right: 20px;
+  right: 30px;
   top: 10px;
   margin-left: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   float: right;
   background-color: #f44336;
   color: white;
-  padding: 14px 25px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -82,7 +80,7 @@ p{
   left: 20px;
   font-size: 26px;
   color: white;
-  text-align: left;
+  text-align: center;
 }
 .read:link {
   padding: 10px 15px;
@@ -91,7 +89,6 @@ p{
   display: inline-block;
   position: relative; 
   bottom: 20px;
-  right: 150px;
 }
 
 .read:visited{
@@ -128,10 +125,7 @@ p{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  position: relative;
   background-color: #f44336;
-  left: 35%;
-  bottom: 70px;
   border-radius: 5px;
 }
 #kontak:hover, #kontak:active {
@@ -147,29 +141,62 @@ p{
   font-size: 20px;
   top: 15px;
 }
-.navbar{
+.topnav {
   width: 100%;
-  height: 70px;
-  top: -70px;
-  z-index: 100;
-  position: fixed;
-  color: white;
   background-color: #130d0a;
-  transition: top 0.3s;
-  border-bottom: 2px solid gray;
+  border-bottom: 1px solid gray;
+  position: fixed;
+  z-index: 1;
 }
 
-.navbar a {
+.topnav a {
   float: left;
   display: block;
-  color: white;
+  color: #f2f2f2;
   text-align: center;
+  padding: 7px 8px;
   text-decoration: none;
+  font-size: 1.2em;
+  margin-top: 1%;
+  margin-bottom: 2%;
 }
 
-.navbar a:hover {
+.topnav a:hover {
   background-color: #ddd;
   color: black;
+  border-radius: 5%;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 #contactus{
@@ -188,8 +215,7 @@ p{
   padding-top: 50px;
 }
 #imgteam{
-  padding-left: 20px;
-  padding-right: 20px;
+  
 }
 #ourmisi{
   padding-top: 50px;
@@ -277,26 +303,24 @@ p {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png");
 }
 
-@media only screen and (max-width: 100%) {
-  #hero {
-    display: none;
-  }
-
-  #hero-mobile {
-    display: block;
-  }
+@media only screen and (max-width: 768px) {
+	#hero {
+		display: none;
+	}
+	#hero-mobile {
+		display: block;
+	}
 }
 
     </style>
 
     <script>
-      window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("navbar").style.top = "0";
+      function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
   } else {
-    document.getElementById("navbar").style.top = "-70px";
+    x.className = "topnav";
   }
 }
     </script>
@@ -316,6 +340,7 @@ function scrollFunction() {
       depth = layer.getAttribute('data-depth');
       movement = -(topDistance * depth);
       translate3d = 'translate3d(0, ' + movement + 'px, 0)';
+      
       layer.style['-webkit-transform'] = translate3d;
       layer.style['-moz-transform'] = translate3d;
       layer.style['-ms-transform'] = translate3d;
@@ -329,22 +354,25 @@ function scrollFunction() {
   </script>
 
   <header>
-    <div class="navbar" id="navbar">
-      <a id="menu" href="#" style="position: relative; left: 10%; padding-left: 5px; padding-right: 5px;">Asterisk`</a>
-      <a id="menu" href="#contactus" style="padding-left: 5px; padding-right: 5px;">Contact Us</a>
-      <a id="menu" href="#aboutus" style="padding-left: 5px; padding-right: 5px;">About Us</a>
-      <a id="menu" href="#ourmisi" style="padding-left: 5px; padding-right: 5px;">Our Mission</a>
-      <a id="menu" href="#ourteam" style="padding-left: 5px; padding-right: 5px;">Our Team</a>
-      <a id="menu" href="#article" style="padding-left: 5px; padding-right: 5px;">Article</a>
+    <div class="topnav" id="myTopnav">
+      <a id="menu" href="#" style="position: relative; left: 10%; padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-gamepad"></i> Asterisk</a>
+      <a id="menu" href="#contactus" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      <a id="menu" href="#aboutus" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-users"></i> About Us</a>
+      <a id="menu" href="#ourmisi" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-clipboard-list"></i> Our Mission</a>
+      <a id="menu" href="#ourteam" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-id-card"></i> Our Team</a>
+      <a id="menu" href="#article" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-newspaper"></i> Article</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+      </a>
       @if (Route::has('login'))
       <div>
           @auth
-              <a href="{{ url('/dashboard') }}" class="button">Dashboard</a>
+              <a href="{{ url('/dashboard') }}" class="button"><i class="fa-solid fa-house-user"></i> Dashboard</a>
           @else
-              <a href="{{ route('login') }}" class="button">Login</a>
+              <a href="{{ route('login') }}" class="button"><i class="fa-solid fa-user-ninja"></i> Login</a>
 
               @if (Route::has('register'))
-                  <a href="{{ route('register') }}" class="button">Register</a>
+                  <a href="{{ route('register') }}" class="button"><i class="fa-solid fa-user-ninja"></i> Register</a>
               @endif
           @endauth
           @endif
@@ -361,37 +389,42 @@ function scrollFunction() {
     <div class='layer-4 layer' data-depth='1.00' data-type='parallax'></div>
   </div>
 
-  <div id='hero-mobile'></div>
-<div id='content'>
+  <div id='hero-mobile'>
+  </div>
+
+{{-- <div id='content'>
   <div class='container'>
     <section class='first-section'>
-      <p style="color: black; position: relative; bottom: 750px; left: 20%; font-size: 60px; font-family: 'Redressed', cursive;" data-aos="fade-down" data-aos-duration="2000">Welcome to website community Asteriks</p>
-      <hr style="width: 50%; color: #130d0a; background-color: #130d0a; position: relative; bottom: 800px; left: 26%; height: 3px;" data-aos="fade-up" data-aos-duration="2000">
+      <p style="color: black; position: font-size: 3em; font-family: 'Redressed', cursive;" data-aos="fade-down" data-aos-duration="2000">Welcome to website community Asteriks</p>
+      <hr style="width: 50%; color: #130d0a; background-color: #130d0a; height: 3px;" data-aos="fade-up" data-aos-duration="2000">
     </section>
   </div>
-</div>
+</div> --}}
   
     <div class="header">
-      <hr style="width: 10%; height: 2px; position: relative; left: 1%; bottom: 20px;" data-aos="fade-up-right">
-      <hr style="width: 10%; height: 2px; position: relative; left: 88%; bottom: 20px;" data-aos="fade-up-left">
+      {{-- <hr style="width: 10%; height: 2px; position: relative; left: 1%; bottom: 20px;" data-aos="fade-up-right">
+      <hr style="width: 10%; height: 2px; position: relative; left: 88%; bottom: 20px;" data-aos="fade-up-left"> --}}
+
+      <p style="color: white; font-family: 'Redressed', cursive; font-size: 3em;" data-aos="fade-down" data-aos-duration="1500">Welcome to website community Asteriks</p>
+      <hr style="width: 50%; color: #130d0a; background-color: #130d0a; height: 3px; margin-left: auto; margin-right: auto; position: relative; bottom: 50px;" data-aos="fade-up" data-aos-duration="1500">
 
             <div id="contactus">
-              <p style="position: relative; right: 15%;" data-aos="fade-left">Have Any Question !</p>
-              <p style="position: relative; left: 30%; font-size: 30px; text-align: left;" data-aos="fade-right">Don't Hesitate to Contact Us <br> Any Time</p>
-              <a id="kontak" href="/" data-aos="fade-left"> Contact Us</a>
-              <img src="../images/kontak.png" alt="contactUs" style="position: relative; bottom: 170px; right: 520px;" data-aos="fade-right">
+              <p style="font-size: 0.9em;" data-aos="fade-left">Have Any Question !</p>
+              <p style="font-size: 2em;" data-aos="fade-right">Don't Hesitate to Contact Us <br> Any Time</p>
+              <a id="kontak" href="/form" data-aos="fade-left"> Contact Us</a>
             </div>
+            <img src="../images/kontak.png" alt="contactUs" style="position: relative; bottom: 200px; right: 450px;" data-aos="fade-right">
 
-            <hr style="width: 10%; height: 2px; position: relative; left: 1%; bottom: 20px;" data-aos="fade-up-right">
-            <hr style="width: 10%; height: 2px; position: relative; left: 88%; bottom: 20px;" data-aos="fade-up-left">
+            {{-- <hr style="width: 10%; height: 2px; position: relative; left: 1%; bottom: 20px;" data-aos="fade-up-right">
+            <hr style="width: 10%; height: 2px; position: relative; left: 88%; bottom: 20px;" data-aos="fade-up-left"> --}}
 
             <div class="aboutus" id="aboutus">
               <p id="about" data-aos="fade-down">About Us</p>
-              <hr style="width: 50%; height: 2px; position: relative; top: 150px; left: 20px;" data-aos="zoom-in">
+              {{-- <hr style="width: 50%; height: 2px; position: relative; top: 145px; left: 27%;" data-aos="zoom-in"> --}}
               <p id="about" data-aos="fade-up">We created this website for our community to communicate through the website,<br>
                 build our community more solid with chat system, and give us some updates <br>
                 for events or news with articles. </p>
-                <img src="../images/about.png" alt="aboutUs" style="position: relative; left: 390px;" data-aos="fade-left">
+                <img src="../images/about2.png" alt="aboutUs" style="position: relative; right: 500px;" data-aos="fade-left">
             </div>
 
             <div id="ourmisi">
@@ -413,15 +446,15 @@ function scrollFunction() {
               <hr style="width: 10%; height: 2px; position: relative; left: 45%; bottom: 40px;" data-aos="zoom-in-right">
 
               <img src="../images/team1.png" alt="team1" id="imgteam">
-              <img src="../images/team2.png" alt="team2" id="imgteam">
-              <img src="../images/team3.png" alt="team3" id="imgteam">
+              <p style="font-size: 1em; display: inline-block;" data-aos="fade-up">M. Faizal Zantri P.</p>
 
-              <p style="position: relative; right: 25%; font-size: 1em;" data-aos="fade-up">M. Faizal Zantri P.</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 20%; bottom: 10px;" data-aos="zoom-in-right">
-              <p style="position: relative; bottom: 6%; font-size: 1em;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
-              <hr style="width: 10%; height: 2px; position: relative; left: 45%; bottom: 80px;" data-aos="zoom-in-right">
-              <p style="position: relative; left: 25%; bottom: 12%; font-size: 1em;" data-aos="fade-up">Ridwan Asy'ari</p>
-              <hr style="width: 8%; height: 2px; position: relative; left: 71%; bottom: 150px;" data-aos="zoom-in-right">
+              <img src="../images/team2.png" alt="team2" id="imgteam">
+              <p style="font-size: 1em; display: inline-block;" data-aos="fade-up">Wisnu Arya Tegar A.</p>
+
+              <img src="../images/team3.png" alt="team3" id="imgteam">
+              <p style="font-size: 1em; display: inline-block;" data-aos="fade-up">Ridwan Asy'ari</p>
+              
+              
             </div> 
         
     <!-- First Photo Grid-->

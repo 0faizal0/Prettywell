@@ -2,12 +2,12 @@
 
   
 
-    <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('Dashboard') }}
-      </h2>
-      <a href="/post/create" style="background-color: #3480e3; padding: 10px 21px; margin-left: 80%; color: white; border-radius: 25px">+ Tambah Artikel</a>
-    </x-slot>
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="display: inline-block;">
+      {{ __('Dashboard') }}
+    </h2>
+    <a href="/post/create" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" style="margin-left: 80%;">+Artikel</a>
+  </x-slot>
     
     <style>
       table.darkTable {

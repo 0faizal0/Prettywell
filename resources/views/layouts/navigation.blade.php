@@ -13,8 +13,10 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <a style="margin-top: 21px; color: gray;" href="/">Home</a>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+                        {{ __('Home') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
@@ -64,23 +66,89 @@
 
                     <x-slot name="content">
 
-                        <form method="GET" action="{{ route('profile.edit') }}">
+                        <form method="GET" action="{{ route('welcome') }}">
                             @csrf
-                        {{-- <x-dropdown-link :href="route('profile.edit')"
+                         <x-dropdown-link :href="route('welcome')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Profile') }}
-                             </x-dropdown-link> --}}
+                        {{ __('Home') }}
+                             </x-dropdown-link>
                         </form>
 
-                             {{-- <form method="GET" action="{{ route('chatify') }}">
-                                @csrf
-                            <x-dropdown-link :href="route('chatify')"
+                    <form method="GET" action="{{ route('dashboard') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('dashboard')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Dashboard') }}
+                             </x-dropdown-link>
+                        </form>
+
+                        <form method="GET" action="{{ route('new-post') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('new-post')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Add New Post') }}
+                             </x-dropdown-link>
+                        </form>
+
+                        <form method="GET" action="{{ route('posts') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('posts')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('All Posts') }}
+                             </x-dropdown-link>
+                        </form>
+
+                        <form method="GET" action="{{ route('rooms.index') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('rooms.index')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Group Chat') }}
+                             </x-dropdown-link>
+                        </form>
+
+                        <form method="GET" action="{{ route('chat') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('chat')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Private Chat') }}
                              </x-dropdown-link>
-                             </form> --}}
+                        </form>
+
+                        <form method="GET" action="{{ route('profile.edit') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('profile.edit')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Profile') }}
+                             </x-dropdown-link>
+                        </form>
+
+                        @role('admin')
+                        <form method="GET" action="{{ route('adminpost') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('adminpost')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Admin Posts') }}
+                             </x-dropdown-link>
+                        </form>
+
+                        <form method="GET" action="{{ route('admin') }}">
+                            @csrf
+                         <x-dropdown-link :href="route('admin')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('User Permission') }}
+                             </x-dropdown-link>
+                        </form>
+                        @endrole
+
                         <!-- Authentication -->
 
                         <form method="POST" action="{{ route('logout') }}">
