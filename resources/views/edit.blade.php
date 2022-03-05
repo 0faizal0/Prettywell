@@ -15,7 +15,7 @@
             
             <div class="form-group">
                 <x-label for="body" :value="__('Body')" />
-                <textarea class="form-control" name="body" rows="12" style="width: 50%">{{ $post->body }}
+                <textarea class="form-control" name="body" rows="12" style="width: 50%; padding-left: 10px;">{{ $post->body }}
                 </textarea>
             </div>
 
@@ -30,8 +30,8 @@
                     {{ __('Edit') }}
                  </x-button>
 
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('dashboard') }}" style="margin-left: 2%">
-                    	{{ __('Cancel ?') }}
+                <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" href="{{ route('dashboard') }}" style="margin-left: 2%">
+                    	{{ __('Cancel') }}
                 </a>
 
             	</div>

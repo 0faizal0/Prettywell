@@ -38,7 +38,7 @@
                  </x-nav-link>
                   @role('admin')
                   <x-nav-link :href="route('adminpost')" :active="request()->routeIs('adminpost')">
-                    {{ __('Admin Posts') }}
+                    {{ __('All Article') }}
               </x-nav-link>
               <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
                 {{ __('User Permission') }}

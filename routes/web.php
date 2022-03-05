@@ -19,6 +19,7 @@ use App\Models\User;
 */
 Route::get('/', [PostController::class, 'welcome'])->name('welcome');
 
+
 Route::get('/article', [PostController::class, 'artikel']);
 
 Route::get('/rooms', function () {
@@ -26,6 +27,10 @@ Route::get('/rooms', function () {
 });
 
 Route::get('/form', function () {
+    return view('form');
+});
+
+Route::post('/form', function () {
     return view('form');
 });
 
@@ -56,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('status-update/{id}', [RegisteredUserController::class, 'status_update']);
     Route::get('/post/create', [PostController::class, 'create'])->name('new-post');
-    Route::post('/post/store', [PostController::class, 'store'])->name('store'); 
+    Route::post('/post/store', [PostController::class, 'store'])->name('store');
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
     Route::get('/edit/{id}', [PostController::class, 'edit']);
     Route::get('/delete/{id}', [PostController::class, 'delete']);

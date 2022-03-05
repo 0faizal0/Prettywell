@@ -1,9 +1,11 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <a href="/"><i class="fa-solid fa-user-ninja" style="font-size: 5em;"></i>
             </a>
         </x-slot>
+
+        <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -25,7 +27,7 @@
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full"
+                <x-input style="display: inline-block;" id="password" class="block mt-1 w-full"
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />

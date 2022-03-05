@@ -164,7 +164,7 @@ p{
 .topnav a:hover {
   background-color: #ddd;
   color: black;
-  border-radius: 5%;
+  border-radius: 10px;
 }
 
 .topnav a.active {
@@ -355,7 +355,7 @@ p {
 
   <header>
     <div class="topnav" id="myTopnav">
-      <a id="menu" href="#" style="position: relative; left: 10%; padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-gamepad"></i> Asterisk</a>
+      <a id="menu" href="#" style="position: relative; left: 10%; padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-gamepad"></i> Asteriks</a>
       <a id="menu" href="#contactus" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-phone"></i> Contact Us</a>
       <a id="menu" href="#aboutus" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-users"></i> About Us</a>
       <a id="menu" href="#ourmisi" style="padding-left: 5px; padding-right: 5px;"><i class="fa-solid fa-clipboard-list"></i> Our Mission</a>

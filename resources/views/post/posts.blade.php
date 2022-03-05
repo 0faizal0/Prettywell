@@ -29,7 +29,7 @@
                             display: inline-block;
                             background-color: white;
                             width: 400px;
-                            height: 400px;
+                            height: 450px;
                             float: left;
                             margin-left: 20px;
                             margin-right: 5px;
@@ -43,12 +43,12 @@
       <div class="w3-third w3-container w3-margin-bottom">
       <div class="rounded-md p-2 shadow-lg border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="user">
         
-        <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity">
+        <img src="{{ URL($post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity">
         <div style="width:60%; margin-left: 21px; color: #130d0a;">
-          <p><b>{{ $post->title }}</b></p>
+          <p style="font-size: 2em;"><b>{{ $post->title }}</b></p>
           <p style="text-align: left;">{{ Str::limit($post->body, 80) }}</p>
   
-          <a href="/detail2/{{ $post->id }}" class="read">Read More..</a>
+          <a href="/detail2/{{ $post->id }}" style="margin-top: 10px;" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Read More..</a>
           
         </div>
       </div>

@@ -8,6 +8,7 @@ use Spatie\Permission\Models\Permission;
 use App\Models\Post; 
 use App\Models\User; 
 use Auth;
+use Cloudinary;
 use Session;
 
 class PostController extends Controller
@@ -26,16 +27,18 @@ class PostController extends Controller
         'image' => 'required|mimes:jpg,png,jpeg,svg',
     ]);
 
-    $newImageName = time() . '-' . $request->name . '.' .
-    $request->image->extension();
-    $request->image->move(public_path('images'), $newImageName);
+    // $newImageName = time() . '-' . $request->name . '.' .
+    // $request->image->extension();
+    // $request->image->move('images', $newImageName);
+    $uploadedFileUrl = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+    
 
        $post = new Post;
    
        $post->title = $request->title;
        $post->body = $request->body;
        $post->user_id = Auth::user()->id;
-       $post->image_path = $newImageName;
+       $post->image_path = $uploadedFileUrl;
    
        $post->save();
        notify()->success('Successfully Make Article');
