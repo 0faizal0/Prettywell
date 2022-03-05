@@ -55,7 +55,7 @@
   
     <div class="w3-third w3-container w3-margin-bottom">
       
-      <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity" id="article">
+      <img src="{{ URL($post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity" id="article">
       <div style="width:90%; margin-left: 21px;">
         <p><b>{{ $post->title }}</b></p>
         <p style="text-align: left;">{{ Str::limit($post->body, 120) }}</p>

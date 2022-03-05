@@ -464,7 +464,7 @@ p {
   
     <div class="w3-third w3-container w3-margin-bottom" data-aos="fade-up" style="background-color: #130d0a;" id="article">
       
-      <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity">
+      <img src="{{ URL($post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity">
       <div style="width:90%; margin-left: 21px; background-color: #130d0a;">
         <p><b>{{ $post->title }}</b></p>
         <p style="text-align: left;">{{ Str::limit($post->body, 120) }}</p>

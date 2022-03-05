@@ -63,7 +63,7 @@ a:hover, a:active {
 
   <div class="card">
 
-    <img src="{{ asset('images/' . $post->image_path) }}" alt="Image" id="img">
+    <img src="{{ URL($post->image_path) }}" alt="Image" id="img">
 
     <p id="posted">posted by | {{ $post->user->name }}</p>
 
