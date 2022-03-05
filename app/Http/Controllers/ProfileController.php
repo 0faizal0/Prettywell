@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProfileRequest;
 use Validator;
 use Auth;
 use Image;
+use Cloudinary;
 
 class ProfileController extends Controller
 {
