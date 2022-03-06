@@ -365,7 +365,6 @@ p {
     <i class="fa fa-bars"></i>
       </a>
       @if (Route::has('login'))
-      <div>
           @auth
               <a href="{{ url('/dashboard') }}" class="button"><i class="fa-solid fa-house-user"></i> Dashboard</a>
           @else
@@ -376,7 +375,6 @@ p {
               @endif
           @endauth
           @endif
-      </div>
     </div>
   </header>
 
