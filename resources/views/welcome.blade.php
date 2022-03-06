@@ -456,7 +456,7 @@ p {
             </div> 
         
     <!-- First Photo Grid-->
-    <div style="background-color: #130d0a; width: 100%; height: 1800px;">
+    <div style="background-color: #130d0a; width: 100%; height: 2300px;">
     <p style="color: #68461a; font-size: 50px; background-color: #130d0a;" data-aos="fade-up">Our Articles</p>
     @foreach ($posts as $post)
   
