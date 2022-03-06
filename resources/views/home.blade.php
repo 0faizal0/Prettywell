@@ -70,12 +70,22 @@
                             @if ($user->id != auth()->user()->id)
                           
                             @if($user->isOnline())
-                                    <a href="message/{{$user->id}}" class="list-group-item list-group-item-action m-2" id="username">
+                            <div class="rounded-md p-2 shadow-lg border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="user">
+                                <a href="message/{{$user->id}}" class="list-group-item list-group-item-action m-2" id="username">
+                        
+                                    {{$user->name}}  <span class="float-right badge badge-dark"></span>
+                            
+                                </a>
+                                
+                                <img src="{{ URL($user->avatar) }}" style="width:98px; height:98px; border-radius:50%; display: inline-block; position: relative; bottom: 80px; right: 90px;">
+                                <div id="indikatorOn"></div>
+                            </div>
+                                    {{-- <a href="message/{{$user->id}}" class="list-group-item list-group-item-action m-2" id="username">
                             
                                         {{$user->name}}  <span class="float-right badge badge-primary">Online</span>
                                         <div id="indikatorOn"></div>
                                 
-                                    </a>
+                                    </a> --}}
                                     {{-- <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; right:90px; border-radius:50%; display: inline-block;"> --}}
                             @else
                             <div class="rounded-md p-2 shadow-lg border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="user">
