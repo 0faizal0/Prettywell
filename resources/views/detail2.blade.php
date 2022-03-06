@@ -24,9 +24,9 @@ a:hover, a:active {
 }
 
         #img{
-          width:80%;
+          /* width:100%;
           height: 50%;
-          margin-left: 90px;
+          margin-left: 90px; */
         }
         #title{
           font-family: cursive;
@@ -45,14 +45,15 @@ a:hover, a:active {
           text-align: left;
         }
         .card{
-          float: right; 
+          float: right;
+          width: 40%;
           background-color: whitesmoke;
           margin-top: 50px; 
           margin-right: 100px;
           padding-top: 120px;
           padding-bottom: 120px;
-          padding-left: 200px;
-          padding-right: 200px;
+          padding-left: 20%;
+          padding-right: 20%;
         }
 
             </style>

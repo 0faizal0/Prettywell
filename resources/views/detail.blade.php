@@ -23,11 +23,11 @@ a:hover, a:active {
   background-color: red;
 }
 
-        #img{
+        /* #img{
           width:80%;
           height: 50%;
           margin-left: 90px;
-        }
+        } */
         #title{
           font-family: cursive;
           text-align: center;
@@ -46,13 +46,14 @@ a:hover, a:active {
         }
         .card{
           float: right; 
+          width: 40%;
           background-color: whitesmoke;
           margin-top: 50px; 
           margin-right: 100px;
           padding-top: 120px;
           padding-bottom: 120px;
-          padding-left: 200px;
-          padding-right: 200px;
+          padding-left: 20%;
+          padding-right: 20%;
         }
 
             </style>
