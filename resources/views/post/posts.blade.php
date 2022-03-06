@@ -45,7 +45,7 @@
         
         <img src="{{ URL($post->image_path) }}" alt="Image" style="width:100%; height: 250px;" class="w3-hover-opacity">
         <div style="width:60%; margin-left: 21px; color: #130d0a;">
-          <p style="font-size: 2em;"><b>{{ $post->title }}</b></p>
+          <p style="font-size: 2em;"><b>{{ Str::limit($post->title, 14) }}</b></p>
           <p style="text-align: left;">{{ Str::limit($post->body, 80) }}</p>
   
           <a href="/detail2/{{ $post->id }}" style="margin-top: 10px;" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Read More..</a>
