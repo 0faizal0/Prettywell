@@ -75,9 +75,9 @@ p{
   font-size: 50px;
 }
 #about{
+  width: 100%;
   position: relative;
   top: 150px;
-  left: 20px;
   font-size: 26px;
   color: white;
   text-align: center;
@@ -419,8 +419,8 @@ p {
             <div class="aboutus" id="aboutus">
               <p id="about" data-aos="fade-down">About Us</p>
               {{-- <hr style="width: 50%; height: 2px; position: relative; top: 145px; left: 27%;" data-aos="zoom-in"> --}}
-              <p id="about" data-aos="fade-up">We created this website for our community to communicate through the website,
-                build our community more solid with chat system, and give us some updates
+              <p id="about" data-aos="fade-up">We created this website for our community to communicate <br> through the website,
+                build our community <br> more solid with chat system, <br> and give us some updates
                 for events or news with articles. </p>
                 <img src="../images/about2.png" alt="aboutUs" style="position: relative; right: 500px;" data-aos="fade-left">
             </div>
