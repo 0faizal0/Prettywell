@@ -13,7 +13,6 @@
 <style>
     body {
       width: 100%;
-      font-family: cursive;
       margin: 0;
       display: inline-block;
       align-content: center;

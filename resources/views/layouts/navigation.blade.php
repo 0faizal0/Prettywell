@@ -13,7 +13,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-top: 20px;">
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                         {{ __('Home') }}
                     </x-nav-link>
@@ -49,11 +49,11 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="sm:flex sm:items-center sm:ml-6">
+            <div class="sm:flex sm:items-center sm:ml-6" style="margin-top: 20px; margin-right: 20px;">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                            <img src="{{ URL(Auth::user()->avatar) }}" style="width:32px; height:32px; position:absolute; right:90px; border-radius:50%;">
+                            <img src="{{ URL(Auth::user()->avatar) }}" style="width:32px; height:32px; position:absolute; right:70px; border-radius:50%;">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
