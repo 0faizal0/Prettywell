@@ -50,16 +50,14 @@ background-color: red;
     }
     #isi{
       font-family: "Comic Sans MS", cursive, sans-serif;
-      max-width: 650px;
+      max-width: 1000px;
       overflow: hidden;
       text-align: left;
     }
     .card{
       float: right;
-      width: 40%;
+      width: 60%;
       background-color: whitesmoke;
-      margin-top: 50px; 
-      margin-right: 100px;
       padding-top: 120px;
       padding-bottom: 120px;
       padding-left: 20%;
