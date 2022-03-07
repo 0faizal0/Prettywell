@@ -1,21 +1,8 @@
-<style>
-    #back:link, #back:visited {
-            background-color: rgb(3, 245, 3);
-            color: white;
-            padding: 9px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 10px;
-        }
-        #back:hover, #back:active {
-            background-color: green;
-        }
-</style>
+
 <div class="max-w-7xl mx-auto">
     <div class="bg-white shadow rounded-lg mt-10 p-4 space-y-4  flex flex-col" style="height: 700px;">
         <div class="card-body">
-            <a href="/rooms" id="back">< Kembali</a>
+            <a href="/rooms" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="back">< Kembali</a>
         
         </div>
         <div class="border-b border-gray-200 pb-4">

@@ -1,39 +1,50 @@
-<x-app-layout>
-
-  
-
-    <x-slot name="header">
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0B141A; font-family: Proxima Nova, system-ui, sans-serif;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>Private Chat</title>
+</head>
+<body>
     <style>
-        #chat{
-            width: 40%;
-            background-color: #4CAF50;
-            border-radius: 20px;
+        #chat{ 
+            display: inline-block;
+            height: 10%;
+            background-color: #005C4B;
+            border-radius: 10px;
             padding: 10px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-right: 100%;
             color: white;
+            list-style-type: none;
         }
         #chat2{
-            width: 40%;
-            background-color: rgb(148, 148, 148);
-            border-radius: 20px;
+            display: inline-block;
+            float: right;
+            height: 10%;
+            background-color: #202C33;
+            border-radius: 10px;
             padding: 10px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-left: 100%;
             color: white;
+            list-style-type: none;
         }
         #input{
             /* position: relative; */
-            float: left;
-            width: 50%;
-            margin-top: 200px;
+            /* float: left; */
+            background-color: #2A3942;
+            color: white;
+            width: 90%;
+            height: 50px;
+            margin-top: 20px;
             border-radius: 10px;
-            margin-left: 20%;
+            margin-left: 5%;
+            padding-left: 10px;
             display: inline-block;
         }
         #send{
@@ -50,7 +61,7 @@
             cursor: pointer;
             float: left;
             border-radius: 10px;
-            margin-top: 200px;
+            /* margin-top: 200px; */
             display: inline-block;
         }
         #send:hover {
@@ -58,57 +69,48 @@
         }
         
         #back:link, #back:visited {
-            background-color: rgb(3, 245, 3);
-            color: white;
-            padding: 9px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 10px;
-            margin: 20px;
+            margin: 50px;
         }
-        #back:hover, #back:active {
-            background-color: green;
-        }  
+
         #namechat{
             font-size: 2em;
             width: 50%;
+            height: 100%;
             position: relative;
             left:25%;
             bottom: 50px;
+            color: white;
         }
 
         #card{
-            background-color: white;
-            width: 90%;
-            height: 600px;
-            margin-left: 50px;
-            margin-top: 30px;
+            background-color: #0B141A;
+            width: 100%;
+            height: 900px;
+            /* margin-left: 50px;
+            margin-top: 30px; */
+        }
+        #kotakpesan{
+            background-color: #202C33;
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+
         }
     </style>
-    <div class="rounded-md p-2 shadow-lg border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="card">
+    <div class="card" id="card">
 
-    <div id="app">
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 p-0 m-0">
-            <div class="card">
-        
-                <div class="card-body">
-                    <a href="/chat" id="back">< Kembali</a>
-            
-                </div>
-
-    <ul class="list-group">
+                    <a href="/chat" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="back">< Kembali</a>
+    
+    <ul class="list-group" style="width: 80%; margin-left: auto; margin-right: auto; padding-bottom: 100px;">
             <div class="card-header text-center" id="namechat">{{$u_name->name}}</div>
-            <hr>
+            <hr style="width: 100%;">
+            <br>
             @foreach ($msgs as $msg)
 
                 @if ($msg->s_uid == auth()->user()->id)
 
-                 <li class="list-group-item list-group-item-warning text-right" id="chat">{{$msg->message}}</li>
+                <li class="list-group-item list-group-item-warning text-right" id="chat">{{$msg->message}}</li>
 
                 @else
 
@@ -119,22 +121,15 @@
             @endforeach
        
             </ul> 
+            <div id="kotakpesan">
             <form action="{{url('message', $id)}}" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
-                    <div class="input-group">
-                            <input type="text" name="message" class="form-control border border-primary" placeholder="message" aria-label="Recipient's username" aria-describedby="basic-addon2" id="input">
-                            <div class="input-group-append">
-                            <button class="btn btn-info" type="submit" id="send">send</button>
+                            <input cols="30" type="text" name="message" class="form-control border border-primary" placeholder="Ketik Pesan" aria-label="Recipient's username" aria-describedby="basic-addon2" id="input">
+                            {{-- <button class="btn btn-info" type="submit" id="send">send</button> --}}
                             </div>
                     </div>
 
             </form>
             </div>
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
-</x-app-layout>
-<br><br><br><br>
+</body>
+</html>
