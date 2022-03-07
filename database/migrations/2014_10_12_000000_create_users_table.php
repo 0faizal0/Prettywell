@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('avatar')->default('default.png');
+            $table->string('avatar')->default('https://res.cloudinary.com/asteriks/image/upload/v1646627093/an3szlmxb0cqlg9lainu.png');
             $table->string('role');
             $table->tinyInteger('isban')->default('0');
             $table->rememberToken();
