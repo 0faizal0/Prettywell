@@ -53,20 +53,29 @@ border-bottom: 1px solid black;
 table.darkTable tfoot td {
   font-size: 12px;
 }
+
+/* Penomoran otomatis pada baris */
+.darkTable {
+  counter-reset: serial-number;  /* Atur penomoran ke 0 */
+}
+.darkTable td:first-child:before {
+  counter-increment: serial-number;  /* Kenaikan penomoran */
+  content: counter(serial-number);  /* Tampilan counter */
+}
   </style>
 
 <table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;margin-top: 20px;">
   <tr style="background-color:#4d76b3; color:#ffffff;">
-      <td>No</td>
-      <td>Name</td>
-      <td>title</td>
-      <td>edit</td>
-      <td>hapus</td>
+      <th>No</th>
+      <th>Name</th>
+      <th>title</th>
+      <th>edit</th>
+      <th>hapus</th>
   </tr>
   @foreach ($posts as $post)
   @if ($post->user->id == Auth::user()->id)
   <tr style="background-color: #ffffff; color:Gray;">
-      <td>{{$post['id']}}</td>
+      <td></td>
       <td>{{ $post->user->name }}</td>
       <td>{{ $post->title }}</td>
       <td><a href="/edit/{{ $post->id }}"><button class="btn btn-success" style="color: green">Edit</button></a></td>

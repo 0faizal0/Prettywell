@@ -62,6 +62,14 @@
                       table.darkTable tfoot td {
                         font-size: 12px;
                       }
+
+                      .darkTable {
+                        counter-reset: serial-number;  /* Atur penomoran ke 0 */
+                     }
+                      .darkTable td:first-child:before {
+                        counter-increment: serial-number;  /* Kenaikan penomoran */
+                        content: counter(serial-number);  /* Tampilan counter */
+                      }
                         </style>
                         @if(session('message'))
                         <div>
@@ -72,16 +80,16 @@
                         
                         <table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;">
                             <tr style="background-color:#4d76b3; color:#ffffff;">
-                                <td>Id</td>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>Role</td>
-                                <td>Added On</td>
-                                <td>Active/Inactive</td>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Added On</th>
+                                <th>Active/Inactive</th>
                             </tr>
                             @foreach ($community_db as $member)
                             <tr style="background-color: #ffffff; color:Gray;">
-                                <td>{{$member['id']}}</td>
+                                <td></td>
                                 <td>{{$member['name']}}</td>
                                 <td>{{$member['email']}}</td>
                                 <td>{{$member['role']}}</td>
