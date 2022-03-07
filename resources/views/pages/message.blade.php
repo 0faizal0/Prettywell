@@ -6,37 +6,39 @@
     </x-slot>
     <style>
         #chat{
+            width: 40%;
             background-color: #4CAF50;
             border-radius: 20px;
             padding: 10px;
             margin-top: 10px;
             margin-bottom: 20px;
-            margin-left: 240px;
-            margin-right: 240px;
+            margin-left: auto;
+            margin-right: auto;
             color: white;
         }
         #chat2{
+            width: 40%;
             background-color: rgb(148, 148, 148);
             border-radius: 20px;
             padding: 10px;
             margin-top: 10px;
             margin-bottom: 20px;
-            margin-left: 240px;
-            margin-right: 240px;
+            margin-left: auto;
+            margin-right: auto;
             color: white;
         }
         #input{
-            position: relative;
+            /* position: relative; */
             float: left;
-            width: 800px;
+            width: 50%;
             margin-top: 200px;
             border-radius: 10px;
-            margin-left: 200px;
+            margin-left: 20%;
+            display: inline-block;
         }
         #send{
             position: relative;
-            float: left;
-            margin-left: 10px;
+            margin-left: 1%;
             background-color: #4CAF50; /* Green */
             border: none;
             color: white;
@@ -49,6 +51,7 @@
             float: left;
             border-radius: 10px;
             margin-top: 200px;
+            display: inline-block;
         }
         #send:hover {
             background-color: #3e8e41;
@@ -68,17 +71,17 @@
             background-color: green;
         }  
         #namechat{
-            font-size: 30px;
+            font-size: 2em;
             font-family: cursive;
             width: 50%;
             position: relative;
-            left:350px;
+            left:25%;
             bottom: 50px;
         }
 
         #card{
             background-color: white;
-            width: 1380px;
+            width: 90%;
             height: 600px;
             margin-left: 50px;
             margin-top: 30px;
