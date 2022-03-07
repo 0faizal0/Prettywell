@@ -72,7 +72,6 @@
         }  
         #namechat{
             font-size: 2em;
-            font-family: cursive;
             width: 50%;
             position: relative;
             left:25%;

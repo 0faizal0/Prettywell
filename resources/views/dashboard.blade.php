@@ -11,7 +11,6 @@
     
     <style>
       table.darkTable {
-  font-family: "Comic Sans MS", cursive, sans-serif;
   width: 80%;
   height: 200px;
   /* background-color:#000000; */

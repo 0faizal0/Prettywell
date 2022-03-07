@@ -13,7 +13,6 @@
     <style>
         /* Style the body */
         body {
-          font-family: "Comic Sans MS", cursive, sans-serif;
           margin: 0;
           background-color: rgb(70, 70, 70);
           width: 100%;
@@ -39,17 +38,14 @@ background-color: red;
       /* margin-left: 90px; */
     }
     #title{
-      font-family: "Comic Sans MS", cursive, sans-serif;
       text-align: center;
 
     }
     #posted{
       color: gray;
-      font-family: "Comic Sans MS", cursive, sans-serif;
       text-align: center;
     }
     #isi{
-      font-family: "Comic Sans MS", cursive, sans-serif;
       max-width: 1000px;
       overflow: hidden;
       text-align: left;
