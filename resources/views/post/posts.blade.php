@@ -31,7 +31,7 @@
                             width: 400px;
                             height: 450px;
                             float: left;
-                            margin-left: 20px;
+                            margin-left: 1%;
                             margin-right: 5px;
                             margin-top: 10px;
                             margin-bottom: 5px;
