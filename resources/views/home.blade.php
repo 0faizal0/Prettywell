@@ -27,13 +27,11 @@
                           margin-top: 160px;
                           margin-left: 120px;
                           border-radius: 20px;
-                          font-family: cursive;
                         }
                         
                         #username:hover, #username:active {
                           background-color: #9cc0ff;
                           color: black;
-                          font-family: cursive;
                         }
                         #user{
                             display: inline-block;
