@@ -1,6 +1,6 @@
 <form wire:submit.prevent="send" class="flex items-start space-x-3">
     <div class="flex flex-col w-full">
-        <input wire:model.debounce.1000ms="message" class="rounded-md p-2 shadow-sm border-gray-500 w-full" placeholder="Your Message" >
+        <input wire:model.debounce.1000ms="message" class="rounded-md p-2 shadow-sm border-gray-500 w-full" placeholder="Your Message" style="background-color: #1F2029;">
         @error('message')
         <span class="text-red-500 text-sm">{{ $message }}</span>
         @enderror

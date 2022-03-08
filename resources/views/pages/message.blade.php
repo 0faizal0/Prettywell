@@ -88,7 +88,9 @@
             height: 900px;
             /* margin-left: 50px;
             margin-top: 30px; */
+            
         }
+
         #kotakpesan{
             background-color: #202C33;
             width: 100%;
@@ -102,7 +104,7 @@
 
                     <a href="/chat" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="back">< Kembali</a>
     
-    <ul class="list-group" style="width: 80%; margin-left: auto; margin-right: auto; padding-bottom: 100px;">
+    <ul class="list-group" style="width: 80%; margin-left: auto; margin-right: auto; padding-bottom: 150px;">
             <div class="card-header text-center" id="namechat">{{$u_name->name}}</div>
             <hr style="width: 100%;">
             <br>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="background-color: rgb(243 244 246);">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="background-color: #1F2029;">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div>
             @include('layouts.navigation')
 
 
