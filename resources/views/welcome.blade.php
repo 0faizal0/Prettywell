@@ -406,7 +406,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translateZ(-1px) scale(2) translate(-25%, -25%);
-  width: 60%;
+  width: 80%;
 }
 
 .section3 {
@@ -1259,7 +1259,7 @@ a {
   </section>
 
   <section class="section3">
-    <p style="text-align: left; margin-left: 6%;">'To make this community more solid'<br>
+    <p style="text-align: left; margin-left: 10%;">'To make this community more solid'<br>
       'To make this community more bigger'<br>
       'To make this website more popular'<br>
       'To make the people have fun in our community'<br>
