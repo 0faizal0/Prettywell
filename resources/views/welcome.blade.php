@@ -1259,7 +1259,7 @@ a {
   </section>
 
   <section class="section3">
-    <p style="text-align: left; margin-left: 17%;">'To make this community more solid'<br>
+    <p style="text-align: left; margin-left: auto; margin-right: auto;">'To make this community more solid'<br>
       'To make this community more bigger'<br>
       'To make this website more popular'<br>
       'To make the people have fun in our community'<br>
