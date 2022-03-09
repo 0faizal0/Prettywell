@@ -4,62 +4,471 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
   <title>Dashboard User</title>
 </head>
 <body>
   <style>
-     table.darkTable {
-                        font-family: "Comic Sans MS", cursive, sans-serif;
-                        width: 80%;
-                        height: 200px;
-                        /* background-color:#000000; */
-                        text-align: center;
-                        border-radius:8px;
-                        border-collapse: collapse;
-                        overflow: hidden;
-                        -moz-border-radius:6px;
-                      }
-                      /* table.darkTable td, table.darkTable th {
-                        border: 2px solid #4A4A4A;
-                        padding: 3px 2px;
-                      } */
-                      table.darkTable tbody td {
-                        font-size: 13px;
-                        border-bottom: 1px solid #b5b5b3;
-                      }
-                      /* table.darkTable tr:nth-child(even) {
-                        background: #888888;
-                      } */
-                      table.darkTable thead {
-                        background: #067479;
-                        border-bottom: 3px solid #000000;
-                      }
-                      table.darkTable thead th {
-                        font-size: 15px;
-                        font-weight: bold;
-                        color: #3d5657;
-                        text-align: center;
-                        border-left: 2px solid #4A4A4A;
-                      }
-                      table.darkTable thead th:first-child {
-                        border-left: none;
-                      }
-                      
-                      tr.border_bottom td {
-                      border-bottom: 1px solid black;
-                    }
-                    
-                      table.darkTable tfoot td {
-                        font-size: 12px;
-                      }
 
-                      .darkTable {
-                        counter-reset: serial-number;  /* Atur penomoran ke 0 */
-                     }
-                      .darkTable td:first-child:before {
-                        counter-increment: serial-number;  /* Kenaikan penomoran */
-                        content: counter(serial-number);  /* Tampilan counter */
-                      }
+/* Google fonts - Open Sans */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+/* colors */
+/* body */
+body {
+  background: rgba(0, 0, 0, 0.9);
+  font-family: "Open Sans", sans-serif;
+}
+
+/* links */
+.nfl a, .mlb a, .nhl a, .pga a {
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.nfl a {
+  color: #4fc0d2;
+}
+
+.nfl a:hover {
+  color: #268695;
+}
+
+.mlb a {
+  color: #52d29a;
+}
+
+.mlb a:hover {
+  color: #279766;
+}
+
+.nhl a {
+  color: rgba(231, 196, 104, 0.7);
+}
+
+.nhl a:hover {
+  color: rgba(201, 154, 32, 0.7);
+}
+
+.pga a {
+  color: #eb7655;
+}
+
+.pga a:hover {
+  color: #c33d17;
+}
+
+/* wrapper */
+.wrapper {
+  width: 95%;
+  /* max-width: 1000px; */
+  margin: 20px auto 100px auto;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  position: relative;
+}
+
+/* lists */
+.row ul {
+  margin: 0;
+  padding: 0;
+}
+
+.row ul li {
+  margin: 0;
+  font-size: 26px;
+  font-weight: normal;
+  list-style: none;
+  display: inline-block;
+  width: 20%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  .row ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .row ul li {
+    font-size: 13px;
+  }
+}
+
+.title ul li {
+  padding: 15px 13px;
+}
+
+.row ul li {
+  padding: 5px 10px;
+}
+
+/* rows */
+.row {
+  padding: 20px 0;
+  height: 30px;
+  font-size: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row:hover {
+  background-color: rgba(26, 26, 26, 0.9);
+  height: 65px;
+}
+@media only screen and (max-width: 767px) {
+  .row:hover {
+    height: 85px;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .row:hover {
+    height: 105px;
+  }
+}
+
+.title {
+  padding: 25px 0 5px 0;
+  height: 45px;
+  font-size: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.title:hover {
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (max-width: 767px) {
+  .title-hide {
+    display: none;
+  }
+}
+
+.nfl {
+  border-left: 3px solid #1c616c;
+}
+
+.nfl:hover {
+  border-left: 3px solid #4fc0d2;
+}
+
+.mlb {
+  border-left: 3px solid #1d6e4b;
+}
+
+.mlb:hover {
+  border-left: 3px solid #52d29a;
+}
+
+.nhl {
+  border-left: 3px solid rgba(157, 121, 25, 0.7);
+}
+
+.nhl:hover {
+  border-left: 3px solid rgba(231, 196, 104, 0.7);
+}
+
+.pga {
+  border-left: 3px solid #952f12;
+}
+
+.pga:hover {
+  border-left: 3px solid #eb7655;
+}
+
+/* row one - fadeIn */
+.row-fadeIn-wrapper {
+  opacity: 0;
+  font-size: 0;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-out;
+  -webkit-animation: fadeIn 0.4s ease-out 2s 1 alternate;
+          animation: fadeIn 0.4s ease-out 2s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.row-fadeIn-wrapper:hover {
+  height: 35px;
+}
+@media only screen and (max-width: 767px) {
+  .row-fadeIn-wrapper:hover {
+    height: 55px;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .row-fadeIn-wrapper:hover {
+    height: 75px;
+  }
+}
+
+.fadeIn {
+  padding: 20px 0;
+  font-size: 0;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.fadeIn:hover {
+  background-color: rgba(26, 26, 26, 0.9);
+}
+
+/* row two - fadeOut */
+.row-fadeOut-wrapper {
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-out;
+  -webkit-animation: fadeOut 0.4s ease-out 8s 1 alternate;
+          animation: fadeOut 0.4s ease-out 8s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 1;
+  height: 65px;
+}
+
+.row-fadeOut-wrapper:hover {
+  height: 100px;
+}
+
+/* update content */
+.update-row {
+  -webkit-animation: update 0.5s ease-out 12s 1 alternate;
+          animation: update 0.5s ease-out 12s 1 alternate;
+}
+
+.update1 {
+  position: absolute;
+  top: 25px;
+  display: inline-block;
+  opacity: 1;
+  -webkit-animation: update1 1s ease-out 12s 1 alternate;
+          animation: update1 1s ease-out 12s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.update2 {
+  position: absolute;
+  top: 25px;
+  display: inline-block;
+  opacity: 0;
+  -webkit-animation: update2 4s ease-out 13s 1 alternate;
+          animation: update2 4s ease-out 13s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+/* more content */
+ul.more-content li {
+  position: relative;
+  top: 22px;
+  font-size: 13px;
+  margin: 0;
+  padding: 10px 13px;
+  display: block;
+  height: 50px;
+  width: 100%;
+  color: rgba(128, 128, 128, 0.9);
+}
+@media only screen and (max-width: 767px) {
+  ul.more-content li {
+    font-size: 11px;
+  }
+}
+
+/* small content */
+.small {
+  color: rgba(102, 102, 102, 0.9);
+  font-size: 10px;
+  padding: 0 10px;
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .small {
+    display: none;
+  }
+}
+
+/* keyframe animations */
+@-webkit-keyframes fadeIn {
+  from {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    padding: 0;
+  }
+  to {
+    background: rgba(51, 51, 51, 0.1);
+    opacity: 1;
+    padding: 0 0 65px 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    padding: 0;
+  }
+  to {
+    background: rgba(51, 51, 51, 0.1);
+    opacity: 1;
+    padding: 0 0 65px 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    background: rgba(51, 51, 51, 0.1);
+    opacity: 1;
+    height: 65px;
+  }
+  to {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    height: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    background: rgba(51, 51, 51, 0.1);
+    opacity: 1;
+    height: 65px;
+  }
+  to {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    height: 0;
+  }
+}
+@-webkit-keyframes update {
+  0% {
+    background: rgba(51, 51, 51, 0.1);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    background: rgba(51, 51, 51, 0.1);
+  }
+}
+@keyframes update {
+  0% {
+    background: rgba(51, 51, 51, 0.1);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    background: rgba(51, 51, 51, 0.1);
+  }
+}
+@-webkit-keyframes update1 {
+  0% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes update1 {
+  0% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes update2 {
+  0% {
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  20% {
+    opacity: 1;
+    color: #52d29a;
+  }
+  100% {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+@keyframes update2 {
+  0% {
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  20% {
+    opacity: 1;
+    color: #52d29a;
+  }
+  100% {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+    /* table.darkTable {
+width: 80%;
+height: 200px;
+text-align: center;
+border-radius:8px;
+border-collapse: collapse;
+overflow: hidden;
+-moz-border-radius:6px;
+margin-left:auto;
+margin-right:auto;
+}
+
+table.darkTable tbody td {
+font-size: 13px;
+border-bottom: 1px solid #b5b5b3;
+}
+
+table.darkTable thead {
+background: #067479;
+border-bottom: 3px solid #000000;
+}
+table.darkTable thead th {
+font-size: 15px;
+font-weight: bold;
+color: #3d5657;
+text-align: center;
+border-left: 2px solid #4A4A4A;
+}
+table.darkTable thead th:first-child {
+border-left: none;
+}
+
+tr.border_bottom td {
+border-bottom: 1px solid black;
+}
+
+table.darkTable tfoot td {
+font-size: 12px;
+}
+
+.darkTable {
+counter-reset: serial-number;
+}
+.darkTable td:first-child:before {
+counter-increment: serial-number;
+content: counter(serial-number);
+} */
+
+
 
 /* Please ❤ this if you like it! */
 
@@ -73,7 +482,7 @@ body{
 	line-height: 1.7;
 	color: #ececee;
 	background-color: #1f2029;
-	overflow: hidden;
+	/* overflow: hidden; */
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
   background-position: center;
   background-repeat: repeat;
@@ -195,6 +604,7 @@ h1{
   margin: 0;
   z-index: 9;
   overflow: hidden;
+  text-decoration: none;
   box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
   background-color: #353746;
   animation: border-transform 7s linear infinite;
@@ -250,6 +660,7 @@ h1{
   text-align: center;
   list-style: none;
   pointer-events: none;
+  text-decoration: none;
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px);
@@ -275,6 +686,7 @@ h1{
   font-weight: 800;
   display: inline-block;
   position: relative;
+  text-decoration: none;
   color: #ececee;
   transition: all 250ms linear;
 }
@@ -333,7 +745,9 @@ h1{
   transition-delay: 1960ms;
 }
 
-
+.menu-icon:checked ~ .nav ul li:nth-child(9){
+  transition-delay: 2040ms;
+}
 
 .logo {
 	position: absolute;
@@ -371,23 +785,24 @@ h1{
     color: #ffeba7;
   }
   .nav ul li a{
-    font-size: 8vh;
+    font-size: 3vh;
   }
 }
 </style>
 
-  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
   <label for="menu-icon"></label>
   <nav class="nav"> 		
     <ul class="pt-5">
-      <li><a href="/">Home</a></li>
-      <li><a href="/dashboard">Dashboard</a></li>
-      <li><a href="/post/create">Create Article</a></li>
-      <li><a href="/posts">All Article</a></li>
-      <li><a href="/rooms">Group Chat</a></li>
-      <li><a href="/chat">Private Chat</a></li>
-      <li><a href="/profile">Profile</a></li>
-      <li><a href="/adminpost">Admin Page</a></li>
+      <li><a href="/"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+    <li><a href="/dashboard"><i class="fa-solid fa-house-user"></i> Dashboard</a></li>
+      <li><a href="/post/create"><i class="fa-solid fa-square-plus"></i> Create Article</a></li>
+      <li><a href="/posts"><i class="fa-solid fa-newspaper"></i> All Article</a></li>
+      <li><a href="/rooms"><i class="fa-solid fa-comments"></i> Group Chat</a></li>
+      <li><a href="/chat"><i class="fa-solid fa-comment-dots"></i> Private Chat</a></li>
+      <li><a href="/profile"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+      <li><a href="/adminpost"><i class="fa-solid fa-hammer"></i> Admin Page</a></li>
+      <li><a href="{{ route('logout') }}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
     </ul>
   </nav>
 
@@ -401,33 +816,43 @@ h1{
                             {{session('message')}}
                         </div>
                         @endif
+
+                        <section class="wrapper">
+                          <!-- Row title -->
+                          <main class="row title">
+                            <ul>
+                              <li>Name</li>
+                              <li>Email</li>
+                              <li>Role</li>
+                              <li>Added On</li>
+                              <li>Active/Inactive</li>
+                            </ul>
+                          </main>
+                          <!-- Row 1 - fadeIn -->
+                          @foreach ($community_db as $member)
+                          <section class="row-fadeIn-wrapper">
+                            <article class="row fadeIn nfl">
+                              
+                              <ul>
+                                <li>{{$member['name']}}</li>
+                                <li>{{$member['email']}}</li>
+                                <li>{{$member['role']}}</li>
+                                <li>{{ Str::limit($member->created_at, 10) }}</li>
+                                <li><?php if($member->isban == '1'){ ?>
+                                  <a href="{{ url('/status-update',$member->id) }} " class="badge badge-pill btn-danger px3 py-2">Inactive</a>
+                                  <?php }else{ ?>
+                                  <a href="{{ url('/status-update',$member->id) }}" class="badge badge-pill btn-success px3 py-2">Active</a>
+                                  <?php } ?></li>
+                              </ul>
+                              
+                              {{-- <ul class="more-content">
+                                <li>This 1665-player contest boasts a $300,000.00 prize pool and pays out the top 300 finishing positions. First place wins $100,000.00. Good luck!</li>
+                              </ul> --}}
+                            </article>
+                          </section>
+                                @endforeach
                         
-                        <table cellspacing="0" cellpadding="0" class="darkTable" style="margin-left:auto;margin-right:auto;">
-                            <tr style="background-color:#4d76b3; color:#ffffff;">
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Added On</th>
-                                <th>Active/Inactive</th>
-                            </tr>
-                            @foreach ($community_db as $member)
-                            <tr style="background-color: #ffffff; color:Gray;">
-                                <td></td>
-                                <td>{{$member['name']}}</td>
-                                <td>{{$member['email']}}</td>
-                                <td>{{$member['role']}}</td>
-                                <td>{{ $member->created_at }}</td>
-                                <td>
-                                    
-                               <?php if($member->isban == '1'){ ?>
-                               <a href="{{ url('/status-update',$member->id) }} " class="badge badge-pill btn-danger px3 py-2">Inactive</a>
-                               <?php }else{ ?>
-                               <a href="{{ url('/status-update',$member->id) }}" class="badge badge-pill btn-success px3 py-2">Active</a>
-                               <?php } ?>
-                            </tr>
-                            @endforeach
-                        </table>
+                        
 </body>
 </html>
     

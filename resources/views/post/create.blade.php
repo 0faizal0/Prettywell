@@ -5,6 +5,7 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <meta http-equiv="X-UA-Compatible" content="ie=edge">
        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+       <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
        <title>Add Article</title>
 
        <style>
@@ -282,7 +283,9 @@ h1{
   transition-delay: 1960ms;
 }
 
-
+.menu-icon:checked ~ .nav ul li:nth-child(9){
+  transition-delay: 2040ms;
+}
 
 .logo {
 	position: absolute;
@@ -320,7 +323,7 @@ h1{
     color: #ffeba7;
   }
   .nav ul li a{
-    font-size: 8vh;
+    font-size: 3vh;
   }
 }
        </style>
@@ -330,14 +333,17 @@ h1{
   	<label for="menu-icon"></label>
   	<nav class="nav"> 		
   		<ul class="pt-5">
-            <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/posts">All Article</a></li>
-            <li><a href="/rooms">Group Chat</a></li>
-            <li><a href="/chat">Private Chat</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/adminpost">Admin Page</a></li>
-            <li><a href="/admin">User Management</a></li>
+        <li><a href="/"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+            <li><a href="/dashboard"><i class="fa-solid fa-house-user"></i> Dashboard</a></li>
+            <li><a href="/posts"><i class="fa-solid fa-newspaper"></i> All Article</a></li>
+      <li><a href="/rooms"><i class="fa-solid fa-comments"></i> Group Chat</a></li>
+      <li><a href="/chat"><i class="fa-solid fa-comment-dots"></i> Private Chat</a></li>
+      <li><a href="/profile"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+      @role('admin')
+      <li><a href="/adminpost"><i class="fa-solid fa-hammer"></i> Admin Page</a></li>
+      <li><a href="/admin"><i class="fa-solid fa-user-gear"></i> User Management</a></li>
+      @endrole
+      <li><a href="{{ route('logout') }}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
   		</ul>
   	</nav>
 
@@ -600,7 +606,7 @@ h1{
                 <input class="block mt-1 w-full" name="image" type="file" style="color: whitesmoke;"/>
             </div>
   
-            <div class="flex items-center justify-end mt-4" style="position: relative; bottom: 50px;">
+            <div class="flex items-center justify-end mt-4">
                 <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" href="{{ route('new-post') }}">
                         {{ __('Cancel') }}
                 </a>

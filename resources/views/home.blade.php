@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
     <title>Private Chat</title>
 
     <style>
         #username:link, #username:visited {
           background-color: #353746;
           color: whitesmoke;
-          border: 2px solid #9cc0ff;
+          border: 2px solid #ffeba7;
           padding: 10px 20px;
           text-align: center;
           text-decoration: none;
@@ -22,7 +23,7 @@
         }
         
         #username:hover, #username:active {
-          background-color: #9cc0ff;
+          background-color: #ffeba7;
           color: black;
         }
         #user{
@@ -332,7 +333,9 @@ h1{
   transition-delay: 1960ms;
 }
 
-
+.menu-icon:checked ~ .nav ul li:nth-child(9){
+  transition-delay: 2040ms;
+}
 
 .logo {
 	position: absolute;
@@ -370,7 +373,7 @@ h1{
     color: #ffeba7;
   }
   .nav ul li a{
-    font-size: 8vh;
+    font-size: 3vh;
   }
 }
         </style>
@@ -380,14 +383,17 @@ h1{
 <label for="menu-icon"></label>
 <nav class="nav"> 		
   <ul class="pt-5">
-    <li><a href="/">Home</a></li>
-    <li><a href="/dashboard">Dashboard</a></li>
-    <li><a href="/post/create">Create Article</a></li>
-    <li><a href="/posts">All Article</a></li>
-    <li><a href="/rooms">Group Chat</a></li>
-    <li><a href="/profile">Profile</a></li>
-    <li><a href="/adminpost">Admin Page</a></li>
-    <li><a href="/admin">User Management</a></li>
+    <li><a href="/"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+    <li><a href="/dashboard"><i class="fa-solid fa-house-user"></i> Dashboard</a></li>
+    <li><a href="/post/create"><i class="fa-solid fa-square-plus"></i> Create Article</a></li>
+    <li><a href="/posts"><i class="fa-solid fa-newspaper"></i> All Article</a></li>
+      <li><a href="/rooms"><i class="fa-solid fa-comments"></i> Group Chat</a></li>
+    <li><a href="/profile"><i class="fa-solid fa-address-card"></i> Profile</a></li>
+    @role('admin')
+      <li><a href="/adminpost"><i class="fa-solid fa-hammer"></i> Admin Page</a></li>
+      <li><a href="/admin"><i class="fa-solid fa-user-gear"></i> User Management</a></li>
+      @endrole
+      <li><a href="{{ route('logout') }}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
   </ul>
 </nav>
 

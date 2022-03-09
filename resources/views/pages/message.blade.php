@@ -69,16 +69,16 @@
         }
         
         #back:link, #back:visited {
-            margin: 50px;
+            margin: 30px;
+
         }
 
         #namechat{
             font-size: 2em;
             width: 50%;
-            height: 100%;
-            position: relative;
-            left:25%;
-            bottom: 50px;
+            position: absolute;
+            left:24%;
+            bottom: 20px;
             color: white;
         }
 
@@ -99,13 +99,44 @@
             bottom: 0;
 
         }
+
+        .topcard{
+            background-color: #202C33;
+            height: 120px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        a:link, a:visited {
+  background-color: #005C4B;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 2%;
+}
+
+a:hover, a:active {
+  background-color: #008d73;
+}
     </style>
     <div class="card" id="card">
 
-                    <a href="/chat" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="back">< Kembali</a>
-    
-    <ul class="list-group" style="width: 80%; margin-left: auto; margin-right: auto; padding-bottom: 150px;">
+        <div class="topcard">
+
+        <a href="/chat">< Kembali</a>
+
+         <img src="{{ URL($u_name->avatar) }}" style="width:40px; height:40px; margin-left: 42%; position: relative; bottom: 50px; border-radius:50%;">
             <div class="card-header text-center" id="namechat">{{$u_name->name}}</div>
+
+        </div>
+        
+
+    <ul class="list-group" style="width: 80%; margin-left: auto; margin-right: auto; padding-bottom: 150px; padding-top: 120px;">
+
             <hr style="width: 100%;">
             <br>
             @foreach ($msgs as $msg)
@@ -122,7 +153,7 @@
 
             @endforeach
        
-            </ul> 
+            </ul>
             <div id="kotakpesan">
             <form action="{{url('message', $id)}}" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
