@@ -1259,7 +1259,7 @@ a {
   </section>
 
   <section class="section3">
-    <p style="text-align: left; margin-left: 10%;">'To make this community more solid'<br>
+    <p style="text-align: left; margin-left: 17%;">'To make this community more solid'<br>
       'To make this community more bigger'<br>
       'To make this website more popular'<br>
       'To make the people have fun in our community'<br>
@@ -1277,6 +1277,7 @@ a {
       </section>
 
 
+      <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%;">Our Article</h2>
                   @foreach ($posts as $post)
                     <div class="card-grid-space" style="display: inline-block;">
                       <a class="card" href="/detail/{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">
