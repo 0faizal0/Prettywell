@@ -4,865 +4,549 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
-  <title>Dashboard User</title>
-</head>
-<body>
+  <title>Admin Page</title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+const toggle = document.getElementById(toggleId),
+nav = document.getElementById(navId),
+bodypd = document.getElementById(bodyId),
+headerpd = document.getElementById(headerId)
+
+// Validate that all variables exist
+if(toggle && nav && bodypd && headerpd){
+toggle.addEventListener('click', ()=>{
+// show navbar
+nav.classList.toggle('show')
+// change icon
+toggle.classList.toggle('bx-x')
+// add padding to body
+bodypd.classList.toggle('body-pd')
+// add padding to header
+headerpd.classList.toggle('body-pd')
+})
+}
+}
+
+showNavbar('header-toggle','nav-bar','body-pd','header')
+
+/*===== LINK ACTIVE =====*/
+const linkColor = document.querySelectorAll('.nav_link')
+
+function colorLink(){
+if(linkColor){
+linkColor.forEach(l=> l.classList.remove('active'))
+this.classList.add('active')
+}
+}
+linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+// Your code to run since DOM is loaded and ready
+});
+  </script>
+
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
-/* Google fonts - Open Sans */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-/* colors */
-/* body */
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
 body {
-  background: rgba(0, 0, 0, 0.9);
-  font-family: "Open Sans", sans-serif;
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
 }
 
-/* links */
-.nfl a, .mlb a, .nhl a, .pga a {
-  text-decoration: none;
-  transition: color 0.2s ease-out;
+a {
+    text-decoration: none
 }
 
-.nfl a {
-  color: #4fc0d2;
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--white-color);
+    z-index: var(--z-fixed);
+    transition: .5s
 }
 
-.nfl a:hover {
-  color: #268695;
+.header_toggle {
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer
 }
 
-.mlb a {
-  color: #52d29a;
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
 }
 
-.mlb a:hover {
-  color: #279766;
+.header_img img {
+    width: 40px
 }
 
-.nhl a {
-  color: rgba(231, 196, 104, 0.7);
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--first-color);
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed)
 }
 
-.nhl a:hover {
-  color: rgba(201, 154, 32, 0.7);
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
 }
 
-.pga a {
-  color: #eb7655;
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
 }
 
-.pga a:hover {
-  color: #c33d17;
+.nav_logo {
+    margin-bottom: 2rem
 }
 
-/* wrapper */
-.wrapper {
-  width: 95%;
-  /* max-width: 1000px; */
-  margin: 20px auto 100px auto;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
-  overflow: hidden;
-  position: relative;
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
 }
 
-/* lists */
-.row ul {
-  margin: 0;
-  padding: 0;
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
 }
 
-.row ul li {
-  margin: 0;
-  font-size: 26px;
-  font-weight: normal;
-  list-style: none;
-  display: inline-block;
-  width: 20%;
+.nav_link {
+    position: relative;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: var(--white-color)
+}
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: var(--white-color)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.height-100 {
+    height: 100vh
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px)
+    }
+}
+
+* {
   box-sizing: border-box;
 }
-@media only screen and (max-width: 767px) and (min-width: 480px) {
-  .row ul li {
-    font-size: 13px;
-  }
-}
-@media only screen and (max-width: 479px) {
-  .row ul li {
-    font-size: 13px;
-  }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
 }
 
-.title ul li {
-  padding: 15px 13px;
-}
-
-.row ul li {
-  padding: 5px 10px;
-}
-
-/* rows */
-.row {
-  padding: 20px 0;
-  height: 30px;
-  font-size: 0;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.2s ease-out;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.row:hover {
-  background-color: rgba(26, 26, 26, 0.9);
-  height: 65px;
-}
-@media only screen and (max-width: 767px) {
-  .row:hover {
-    height: 85px;
-  }
-}
-@media only screen and (max-width: 359px) {
-  .row:hover {
-    height: 105px;
-  }
-}
-
-.title {
-  padding: 25px 0 5px 0;
-  height: 45px;
-  font-size: 0;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid rgba(255, 255, 255, 0.1);
-}
-
-.title:hover {
-  height: 45px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid rgba(255, 255, 255, 0.1);
-}
-
-@media only screen and (max-width: 767px) {
-  .title-hide {
-    display: none;
-  }
-}
-
-.nfl {
-  border-left: 3px solid #1c616c;
-}
-
-.nfl:hover {
-  border-left: 3px solid #4fc0d2;
-}
-
-.mlb {
-  border-left: 3px solid #1d6e4b;
-}
-
-.mlb:hover {
-  border-left: 3px solid #52d29a;
-}
-
-.nhl {
-  border-left: 3px solid rgba(157, 121, 25, 0.7);
-}
-
-.nhl:hover {
-  border-left: 3px solid rgba(231, 196, 104, 0.7);
-}
-
-.pga {
-  border-left: 3px solid #952f12;
-}
-
-.pga:hover {
-  border-left: 3px solid #eb7655;
-}
-
-/* row one - fadeIn */
-.row-fadeIn-wrapper {
-  opacity: 0;
-  font-size: 0;
-  height: 0;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.2s ease-out;
-  -webkit-animation: fadeIn 0.4s ease-out 2s 1 alternate;
-          animation: fadeIn 0.4s ease-out 2s 1 alternate;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.row-fadeIn-wrapper:hover {
-  height: 35px;
-}
-@media only screen and (max-width: 767px) {
-  .row-fadeIn-wrapper:hover {
-    height: 55px;
-  }
-}
-@media only screen and (max-width: 359px) {
-  .row-fadeIn-wrapper:hover {
-    height: 75px;
-  }
-}
-
-.fadeIn {
-  padding: 20px 0;
-  font-size: 0;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-
-.fadeIn:hover {
-  background-color: rgba(26, 26, 26, 0.9);
-}
-
-/* row two - fadeOut */
-.row-fadeOut-wrapper {
-  font-size: 0;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.2s ease-out;
-  -webkit-animation: fadeOut 0.4s ease-out 8s 1 alternate;
-          animation: fadeOut 0.4s ease-out 8s 1 alternate;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  opacity: 1;
-  height: 65px;
-}
-
-.row-fadeOut-wrapper:hover {
-  height: 100px;
-}
-
-/* update content */
-.update-row {
-  -webkit-animation: update 0.5s ease-out 12s 1 alternate;
-          animation: update 0.5s ease-out 12s 1 alternate;
-}
-
-.update1 {
-  position: absolute;
-  top: 25px;
-  display: inline-block;
-  opacity: 1;
-  -webkit-animation: update1 1s ease-out 12s 1 alternate;
-          animation: update1 1s ease-out 12s 1 alternate;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.update2 {
-  position: absolute;
-  top: 25px;
-  display: inline-block;
-  opacity: 0;
-  -webkit-animation: update2 4s ease-out 13s 1 alternate;
-          animation: update2 4s ease-out 13s 1 alternate;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-/* more content */
-ul.more-content li {
-  position: relative;
-  top: 22px;
-  font-size: 13px;
-  margin: 0;
-  padding: 10px 13px;
-  display: block;
-  height: 50px;
-  width: 100%;
-  color: rgba(128, 128, 128, 0.9);
-}
-@media only screen and (max-width: 767px) {
-  ul.more-content li {
-    font-size: 11px;
-  }
-}
-
-/* small content */
-.small {
-  color: rgba(102, 102, 102, 0.9);
-  font-size: 10px;
-  padding: 0 10px;
-  margin: 0;
-}
-@media only screen and (max-width: 767px) {
-  .small {
-    display: none;
-  }
-}
-
-/* keyframe animations */
-@-webkit-keyframes fadeIn {
-  from {
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    padding: 0;
-  }
-  to {
-    background: rgba(51, 51, 51, 0.1);
-    opacity: 1;
-    padding: 0 0 65px 0;
-  }
-}
-@keyframes fadeIn {
-  from {
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    padding: 0;
-  }
-  to {
-    background: rgba(51, 51, 51, 0.1);
-    opacity: 1;
-    padding: 0 0 65px 0;
-  }
-}
-@-webkit-keyframes fadeOut {
-  from {
-    background: rgba(51, 51, 51, 0.1);
-    opacity: 1;
-    height: 65px;
-  }
-  to {
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    height: 0;
-  }
-}
-@keyframes fadeOut {
-  from {
-    background: rgba(51, 51, 51, 0.1);
-    opacity: 1;
-    height: 65px;
-  }
-  to {
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    height: 0;
-  }
-}
-@-webkit-keyframes update {
-  0% {
-    background: rgba(51, 51, 51, 0.1);
-  }
-  50% {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    background: rgba(51, 51, 51, 0.1);
-  }
-}
-@keyframes update {
-  0% {
-    background: rgba(51, 51, 51, 0.1);
-  }
-  50% {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    background: rgba(51, 51, 51, 0.1);
-  }
-}
-@-webkit-keyframes update1 {
-  0% {
-    opacity: 0;
-  }
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes update1 {
-  0% {
-    opacity: 0;
-  }
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes update2 {
-  0% {
-    opacity: 0;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  20% {
-    opacity: 1;
-    color: #52d29a;
-  }
-  100% {
-    opacity: 1;
-    color: rgba(255, 255, 255, 0.9);
-  }
-}
-@keyframes update2 {
-  0% {
-    opacity: 0;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  20% {
-    opacity: 1;
-    color: #52d29a;
-  }
-  100% {
-    opacity: 1;
-    color: rgba(255, 255, 255, 0.9);
-  }
-}
-
-    /* table.darkTable {
-width: 80%;
-height: 200px;
-text-align: center;
-border-radius:8px;
-border-collapse: collapse;
-overflow: hidden;
--moz-border-radius:6px;
-margin-left:auto;
-margin-right:auto;
-}
-
-table.darkTable tbody td {
-font-size: 13px;
-border-bottom: 1px solid #b5b5b3;
-}
-
-table.darkTable thead {
-background: #067479;
-border-bottom: 3px solid #000000;
-}
-table.darkTable thead th {
-font-size: 15px;
-font-weight: bold;
-color: #3d5657;
-text-align: center;
-border-left: 2px solid #4A4A4A;
-}
-table.darkTable thead th:first-child {
-border-left: none;
-}
-
-tr.border_bottom td {
-border-bottom: 1px solid black;
-}
-
-table.darkTable tfoot td {
-font-size: 12px;
-}
-
-.darkTable {
-counter-reset: serial-number;
-}
-.darkTable td:first-child:before {
-counter-increment: serial-number;
-content: counter(serial-number);
-} */
-
-
-
-/* Please ❤ this if you like it! */
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-
-body{
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 300;
-	font-size: 15px;
-	line-height: 1.7;
-	color: #ececee;
-	background-color: #1f2029;
-	/* overflow: hidden; */
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
-  background-position: center;
-  background-repeat: repeat;
-  background-size: 4%;
-  height: 100vh;
-  width: 100%;
-  padding-top: 200px;
-}
-.section-center{
-  position: absolute;
-  left: 0;
-  top: 15%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  z-index: 6;
+p {
   text-align: center;
-  transform: translateY(-50%);
+  margin: 20px 0 60px;
 }
-h1{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 7vw;
+
+main {
+  background-color: #2C3845;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+}
+
+table {
+  display: block;
+}
+
+tr, td, tbody, tfoot {
+  display: block;
+}
+
+thead {
+  display: none;
+}
+
+tr {
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 10px 10px 0;
+  text-align: center;
+}
+td:before {
+  content: attr(data-title);
+  color: #7a91aa;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding-right: 10px;
+  display: block;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+}
+
+thead th {
+  background-color: #202932;
+  color: #fff;
+  border: 1px solid #202932;
+}
+
+tfoot th {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #b8c4d2;
+}
+
+.button {
   line-height: 1;
-  color: #ffeba7;
-  text-align: center;
-  -webkit-text-stroke: 2px #ffeba7;
-  text-stroke: 2px #ffeba7;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  color: transparent;
-  padding-top: 20px;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px;
+  background-color: #4b908f;
 }
 
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
-  position: absolute;
-  left: -9999px;
+.select {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #28333f;
 }
-.menu-icon:checked + label,
-.menu-icon:not(:checked) + label{
+.select:before {
+  display: none;
+}
+
+.detail {
+  background-color: #BD2A4E;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
   position: fixed;
-  top: 63px;
-  right: 75px;
-  display: block;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  z-index: 10;
-}
-.menu-icon:checked + label:before,
-.menu-icon:not(:checked) + label:before{
-  position: absolute;
-  content: '';
-  display: block;
-  width: 30px;
-  height: 20px;
-  z-index: 20;
   top: 0;
   left: 0;
-  border-top: 2px solid #ececee;
-  border-bottom: 2px solid #ececee;
-  transition: border-width 100ms 1500ms ease, 
-              top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), 
-              background-color 200ms ease,
-              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: auto;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
-.menu-icon:checked + label:after,
-.menu-icon:not(:checked) + label:after{
-  position: absolute;
-  content: '';
-  display: block;
-  width: 22px;
-  height: 2px;
-  z-index: 20;
-  top: 10px;
-  right: 4px;
-  background-color: #ececee;
-  margin-top: -1px;
-  transition: width 100ms 1750ms ease, 
-              right 100ms 1750ms ease,
-              margin-top 100ms ease, 
-              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.menu-icon:checked + label:before{
-  top: 10px;
-  transform: rotate(45deg);
-  height: 2px;
-  background-color: #ececee;
-  border-width: 0;
-  transition: border-width 100ms 340ms ease, 
-              top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), 
-              background-color 200ms 500ms ease,
-              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.menu-icon:checked + label:after{
-  width: 30px;
-  margin-top: 0;
-  right: 0;
-  transform: rotate(-45deg);
-  transition: width 100ms ease,
-              right 100ms ease,  
-              margin-top 100ms 500ms ease, 
-              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+.detail.open {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 
-.nav{
+.detail-container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 500px;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+dd {
+  margin: 0 0 40px 0;
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ac2647;
+  box-shadow: 0 1px 0 #c52c51;
+}
+
+.close {
+  background: none;
+  padding: 18px;
+  color: #fff;
+  font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  line-height: 1;
+  font-size: 1.8rem;
   position: fixed;
-  top: 33px;
-  right: 50px;
-  display: block;
-  width: 80px;
-  height: 80px;
-  padding: 0;
-  margin: 0;
-  z-index: 9;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
-  background-color: #353746;
-  animation: border-transform 7s linear infinite;
-  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),  
-              right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 250ms 1100ms ease,
-              width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  right: 40px;
+  top: 20px;
+  -moz-transition: border 0.3s linear;
+  -o-transition: border 0.3s linear;
+  -webkit-transition: border 0.3s linear;
+  transition: border 0.3s linear;
 }
-@keyframes border-transform{
-    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
-  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
-  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
-  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
-  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
-  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
-  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+.close:hover, .close:focus {
+  background-color: #a82545;
+  border: 1px solid #a82545;
 }
 
-.menu-icon:checked ~ .nav {
-  animation-play-state: paused;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  width: 200%;
-  height: 200%;
-  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),  
-              right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 250ms 700ms ease,
-              width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.nav ul{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  z-index: 6;
-  text-align: center;
-  transform: translateY(-50%);
-  list-style: none;
-}
-.nav ul li{
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  text-align: center;
-  list-style: none;
-  pointer-events: none;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(30px);
-  transition: all 250ms linear;
-}
-.nav ul li:nth-child(1){
-  transition-delay: 200ms;
-}
-.nav ul li:nth-child(2){
-  transition-delay: 150ms;
-}
-.nav ul li:nth-child(3){
-  transition-delay: 100ms;
-}
-.nav ul li:nth-child(4){
-  transition-delay: 50ms;
-}
-.nav ul li a{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 5vh;
-  text-transform: uppercase;
-  line-height: 1.2;
-  font-weight: 800;
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: #ececee;
-  transition: all 250ms linear;
-}
-.nav ul li a:hover{
-  text-decoration: none;
-  color: #ffeba7;
-}
-.nav ul li a:after{
-  display: block;
-  position: absolute;
-  top: 50%;
-  content: '';
-  height: 2vh;
-  margin-top: -1vh;
-  width: 0;
-  left: 0;
-  background-color: #353746;
-  opacity: 0.8;
-  transition: width 250ms linear;
-}
-.nav ul li a:hover:after{
-  width: 100%;
-}
-
-
-.menu-icon:checked ~ .nav  ul li {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 350ms ease,
-              transform 250ms ease;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(1){
-  transition-delay: 1400ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(2){
-  transition-delay: 1480ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(3){
-  transition-delay: 1560ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(4){
-  transition-delay: 1640ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(5){
-  transition-delay: 1720ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(6){
-  transition-delay: 1800ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(7){
-  transition-delay: 1880ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(8){
-  transition-delay: 1960ms;
-}
-
-.menu-icon:checked ~ .nav ul li:nth-child(9){
-  transition-delay: 2040ms;
-}
-
-.logo {
-	position: absolute;
-	top: 60px;
-	left: 50px;
-	display: block;
-	z-index: 11;
-	transition: all 250ms linear;
-}
-.logo img {
-	height: 26px;
-	width: auto;
-	display: block;
-}
-
-
-
-@media screen and (max-width: 991px) {
-  .menu-icon:checked + label,
-  .menu-icon:not(:checked) + label{
-    right: 55px;
+@media (min-width: 460px) {
+  td {
+    text-align: left;
   }
-  .logo {
-    left: 30px;
+  td:before {
+    display: inline-block;
+    text-align: right;
+    width: 140px;
   }
-  .nav{
-    right: 30px;
-  }
-  h1{
-    font-size: 9vw;
-    -webkit-text-stroke: 2px transparent;
-    text-stroke: 2px transparent;
-    -webkit-text-fill-color: #ffeba7;
-    text-fill-color: #ffeba7;
-    color: #ffeba7;
-  }
-  .nav ul li a{
-    font-size: 3vh;
+
+  .select {
+    padding-left: 160px;
   }
 }
-</style>
+@media (min-width: 720px) {
+  table {
+    display: table;
+  }
 
-<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-<label for="menu-icon"></label>
-<nav class="nav"> 		
-  <ul class="pt-5">
-    <li><a href="/"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
-  <li><a href="/dashboard"><i class="fa-solid fa-house-user"></i> Dashboard</a></li>
-  <li><a href="/post/create"><i class="fa-solid fa-square-plus"></i> Create Article</a></li>
-  <li><a href="/posts"><i class="fa-solid fa-newspaper"></i> All Article</a></li>
-    <li><a href="/rooms"><i class="fa-solid fa-comments"></i> Group Chat</a></li>
-    <li><a href="/chat"><i class="fa-solid fa-comment-dots"></i> Private Chat</a></li>
-    <li><a href="/profile"><i class="fa-solid fa-address-card"></i> Profile</a></li>
-    <li><a href="/admin"><i class="fa-solid fa-user-gear"></i> User Management</a></li>
-    <li><a href="{{ route('logout') }}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
-  </ul>
-</nav>
+  tr {
+    display: table-row;
+  }
 
-  <div class="section-center">
-    <h1 class="mb-0">Admin Page</h1>
+  td, th {
+    display: table-cell;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  td {
+    border: 1px solid #28333f;
+  }
+  td:before {
+    display: none;
+  }
+
+  td, th {
+    padding: 10px;
+  }
+
+  tr:nth-child(2n+2) td {
+    background-color: #242e39;
+  }
+
+  tfoot th {
+    display: table-cell;
+  }
+
+  .select {
+    padding: 10px;
+  }
+}
+  </style>
+
+</head>
+<body id="body-pd">
+  <header class="header" id="header">
+      <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+      <p style="color: black; margin-top: auto; margin-bottom: auto; margin-left: 80%;">{{ Auth::user()->name }}</p>
+      <div class="header_img" style="margin-right: 10%;"> <img src="{{ URL(Auth::user()->avatar) }}" alt="avatar"> </div>
+  </header>
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+      <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> 
+        <span class="nav_logo-name">Asteriks</span> </a>
+          <div class="nav_list"> <a href="/dashboard" class="nav_link"> 
+            <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+            <a href="/post/create" class="nav_link"> <i class="fa-solid fa-square-plus"></i>
+              <span class="nav_name">Create Article</span> </a> <a href="/posts" class="nav_link"> 
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="nav_name">All Article</span> </a> <a href="/rooms" class="nav_link"> 
+                  <i class="fa-solid fa-comments"></i> <span class="nav_name">Group Chat</span> </a> 
+                  <a href="/chat" class="nav_link"><i class="fa-solid fa-comment-dots"></i> 
+                    <span class="nav_name">Private Chat</span> </a> <a href="/profile" class="nav_link"> 
+                      <i class="fa-solid fa-address-card"></i> <span class="nav_name">Profile</span> 
+                    </a> @role('admin') <a href="/adminpost" class="nav_link active"> 
+                      <i class="fa-solid fa-hammer"></i> <span class="nav_name">Admin Page</span> 
+                    </a> 
+                    <a href="/admin" class="nav_link">
+                      <i class="fa-solid fa-user-gear"></i> <span class="nav_name">User Management</span> 
+                    </a> @endrole</div>
+
+      </div> <a href="{{ route('logout') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+  </nav>
   </div>
+  <!--Container Main start-->
+  <div class="height-100 bg-light">
+    <h1 style="color: black; text-align: center;
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">Admin Page</h1>
 
-  <section class="wrapper">
-    <!-- Row title -->
-    <main class="row title">
-      <ul>
-        <li>No</li>
-        <li>Name</li>
-        <li>Title</li>
-        <li>Edit</li>
-        <li>Delete</li>
-      </ul>
-    </main>
-    <!-- Row 1 - fadeIn -->
-    @foreach ($posts as $post)
-    <section class="row-fadeIn-wrapper">
-      <article class="row fadeIn nfl">
-        
-        <ul>
-          <li></li>
-          <li>{{ $post->user->name }}</li>
-          <li>{{ Str::limit($post->title, 15) }}</li>
-          <li><a href="/edit/{{ $post->id }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Edit</a></li>
-          <li><a href="/delete/{{ $post->id }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Delete</a></li>
-        </ul>
-        
-        {{-- <ul class="more-content">
-          <li>This 1665-player contest boasts a $300,000.00 prize pool and pays out the top 300 finishing positions. First place wins $100,000.00. Good luck!</li>
-        </ul> --}}
-      </article>
-    </section>
-          @endforeach
+      <main>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Title
+              </th>
+              <th>
+                Action
+              </th>
+              <th></th>
+            </tr>
+          </thead>
 
-    {{-- <table cellspacing="0" cellpadding="0" class="darkTable">
-      <tr style="background-color:#4d76b3; color:#ffffff;">
-          <th>No</th>
-          <th>Name</th>
-          <th>title</th>
-          <th>edit</th>
-          <th>hapus</th>
-      </tr>
-      
-      @foreach ($posts as $post)
-      @if ($post->user->id == Auth::user()->id)
-      <tr style="background-color: #ffffff; color:Gray;">
-          <td></td>
-          <td>{{ $post->user->name }}</td>
-          <td>{{ $post->title }}</td>
-          <td><a href="/edit/{{ $post->id }}"><button class="btn btn-success" style="color: green">Edit</button></a></td>
-          <td> <a href="/delete/{{ $post->id }}"><button class="btn btn-danger" style="color: red">Hapus</button></a></td>
-      
-          @endif
+          @foreach ($posts as $post)
+          <tbody>
+            <tr>
+              <td data-title='Provider Name'>
+                {{ $post->user->name }}
+              </td>
+              <td data-title='E-mail'>
+                {{ Str::limit($post->title, 25) }}
+              </td>
+              <td class='select'>
+                <a class='button' href='/edit/{{ $post->id }}'>
+                  Edit
+                </a>
+              </td>
+              <td class='select'>
+                <a class='button' href='/delete/{{ $post->id }}'>
+                  Delete
+                </a>
+              </td>
+            </tr>
+            
+          </tbody>
           @endforeach
-      </tr>
-      </table> --}}
+        </table>
+        
+      </main>
+  </div>
+  <!--Container Main end-->
+
+
 </body>
 </html>
-    
