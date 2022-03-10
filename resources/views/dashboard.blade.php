@@ -523,10 +523,10 @@ dd {
           @if ($post->user->id == Auth::user()->id)
           <tbody>
             <tr>
-              <td data-title='Provider Name'>
+              <td data-title='Name'>
                 {{ $post->user->name }}
               </td>
-              <td data-title='E-mail'>
+              <td data-title='Action'>
                 {{ ($post->title) }}
               </td>
               <td class='select'>
