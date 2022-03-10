@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
+  <title>Create Article</title>
 
   <script>
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -234,236 +235,6 @@ a {
         padding-left: calc(var(--nav-width) + 188px)
     }
 }
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  color: #fff;
-  font-size: 1rem;
-  font-family: 'Lato', sans-serif;
-}
-
-p {
-  text-align: center;
-  margin: 20px 0 60px;
-}
-
-main {
-  background-color: #2C3845;
-}
-
-h1 {
-  text-align: center;
-  font-weight: 300;
-}
-
-table {
-  display: block;
-}
-
-tr, td, tbody, tfoot {
-  display: block;
-}
-
-thead {
-  display: none;
-}
-
-tr {
-  padding-bottom: 10px;
-}
-
-td {
-  padding: 10px 10px 0;
-  text-align: center;
-}
-td:before {
-  content: attr(data-title);
-  color: #7a91aa;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  padding-right: 10px;
-  display: block;
-}
-
-table {
-  width: 100%;
-}
-
-th {
-  text-align: left;
-  font-weight: 700;
-}
-
-thead th {
-  background-color: #202932;
-  color: #fff;
-  border: 1px solid #202932;
-}
-
-tfoot th {
-  display: block;
-  padding: 10px;
-  text-align: center;
-  color: #b8c4d2;
-}
-
-.button {
-  line-height: 1;
-  display: inline-block;
-  font-size: 1.2rem;
-  text-decoration: none;
-  border-radius: 5px;
-  color: #fff;
-  padding: 8px;
-  background-color: #4b908f;
-}
-
-.select {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #28333f;
-}
-.select:before {
-  display: none;
-}
-
-.detail {
-  background-color: #BD2A4E;
-  width: 100%;
-  height: 100%;
-  padding: 40px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-}
-.detail.open {
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-
-.detail-container {
-  margin: 0 auto;
-  padding: 40px;
-  max-width: 500px;
-}
-
-dl {
-  margin: 0;
-  padding: 0;
-}
-
-dt {
-  font-size: 2.2rem;
-  font-weight: 300;
-}
-
-dd {
-  margin: 0 0 40px 0;
-  font-size: 1.8rem;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ac2647;
-  box-shadow: 0 1px 0 #c52c51;
-}
-
-.close {
-  background: none;
-  padding: 18px;
-  color: #fff;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 4px;
-  line-height: 1;
-  font-size: 1.8rem;
-  position: fixed;
-  right: 40px;
-  top: 20px;
-  -moz-transition: border 0.3s linear;
-  -o-transition: border 0.3s linear;
-  -webkit-transition: border 0.3s linear;
-  transition: border 0.3s linear;
-}
-.close:hover, .close:focus {
-  background-color: #a82545;
-  border: 1px solid #a82545;
-}
-
-@media (min-width: 460px) {
-  td {
-    text-align: left;
-  }
-  td:before {
-    display: inline-block;
-    text-align: right;
-    width: 140px;
-  }
-
-  .select {
-    padding-left: 160px;
-  }
-}
-@media (min-width: 720px) {
-  table {
-    display: table;
-  }
-
-  tr {
-    display: table-row;
-  }
-
-  td, th {
-    display: table-cell;
-  }
-
-  tbody {
-    display: table-row-group;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tfoot {
-    display: table-footer-group;
-  }
-
-  td {
-    border: 1px solid #28333f;
-  }
-  td:before {
-    display: none;
-  }
-
-  td, th {
-    padding: 10px;
-  }
-
-  tr:nth-child(2n+2) td {
-    background-color: #242e39;
-  }
-
-  tfoot th {
-    display: table-cell;
-  }
-
-  .select {
-    padding: 10px;
-  }
-}
-
   </style>
 
 </head>
@@ -472,82 +243,77 @@ dd {
       <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
       <p style="color: black; margin-top: auto; margin-bottom: auto; margin-left: 80%;">{{ Auth::user()->name }}</p>
       <div class="header_img" style="margin-right: 10%;"> <img src="{{ URL(Auth::user()->avatar) }}" alt="avatar"> </div>
-      
   </header>
   <div class="l-navbar" id="nav-bar">
-      <nav class="nav">
-          <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> 
-            <span class="nav_logo-name">Asteriks</span> </a>
-              <div class="nav_list"> <a href="/dashboard" class="nav_link active"> 
-                <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
-                <a href="/post/create" class="nav_link"> <i class="fa-solid fa-square-plus"></i>
-                  <span class="nav_name">Create Article</span> </a> <a href="/posts" class="nav_link"> 
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span class="nav_name">All Article</span> </a> <a href="/rooms" class="nav_link"> 
-                      <i class="fa-solid fa-comments"></i> <span class="nav_name">Group Chat</span> </a> 
-                      <a href="/chat" class="nav_link"><i class="fa-solid fa-comment-dots"></i> 
-                        <span class="nav_name">Private Chat</span> </a> <a href="/profile" class="nav_link"> 
-                          <i class="fa-solid fa-address-card"></i> <span class="nav_name">Profile</span> 
-                        </a> @role('admin') <a href="/adminpost" class="nav_link"> 
-                          <i class="fa-solid fa-hammer"></i> <span class="nav_name">Admin Page</span> 
-                        </a> 
-                        <a href="/admin" class="nav_link">
-                          <i class="fa-solid fa-user-gear"></i> <span class="nav_name">User Management</span> 
-                        </a> @endrole</div>
+    <nav class="nav">
+      <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> 
+        <span class="nav_logo-name">Asteriks</span> </a>
+          <div class="nav_list"> <a href="/dashboard" class="nav_link"> 
+            <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+            <a href="/post/create" class="nav_link active"> <i class="fa-solid fa-square-plus"></i>
+              <span class="nav_name">Create Article</span> </a> <a href="/posts" class="nav_link"> 
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="nav_name">All Article</span> </a> <a href="/rooms" class="nav_link"> 
+                  <i class="fa-solid fa-comments"></i> <span class="nav_name">Group Chat</span> </a> 
+                  <a href="/chat" class="nav_link"><i class="fa-solid fa-comment-dots"></i> 
+                    <span class="nav_name">Private Chat</span> </a> <a href="/profile" class="nav_link"> 
+                      <i class="fa-solid fa-address-card"></i> <span class="nav_name">Profile</span> 
+                    </a> @role('admin') <a href="/adminpost" class="nav_link"> 
+                      <i class="fa-solid fa-hammer"></i> <span class="nav_name">Admin Page</span> 
+                    </a> 
+                    <a href="/admin" class="nav_link">
+                      <i class="fa-solid fa-user-gear"></i> <span class="nav_name">User Management</span> 
+                    </a> @endrole</div>
 
-          </div> <a href="{{ route('logout') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-      </nav>
+      </div> <a href="{{ route('logout') }}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+  </nav>
   </div>
   <!--Container Main start-->
   <div class="height-100 bg-light">
-      <h1 style="color: black;">Dashboard</h1>
+    <h1 style="color: black; text-align: center;
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">Create Article</h1>
 
-      <main>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Name
-              </th>
-              <th>
-                Title
-              </th>
-              <th>
-                Action
-              </th>
-              <th></th>
-            </tr>
-          </thead>
+      <div class="py-12" >
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" >
+                <div class="p-6 bg-white border-b border-gray-200">
+                <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
+            @csrf
 
-          @foreach ($posts as $post)
-          @if ($post->user->id == Auth::user()->id)
-          <tbody>
-            <tr>
-              <td data-title='Provider Name'>
-                {{ $post->user->name }}
-              </td>
-              <td data-title='E-mail'>
-                {{ ($post->title) }}
-              </td>
-              <td class='select'>
-                <a class='button' href='/edit/{{ $post->id }}'>
-                  Edit
+            <!-- Title -->
+            <div>
+                <x-label for="title" :value="__('Title')" />
+                <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus />
+            </div>
+
+            <!-- Body -->
+            <div class="mt-4">
+                <x-label for="body" :value="__('Body')" />
+                {{-- <x-input id="body" class="block mt-1 w-full" type="text" name="body" :value="old('body')" required /> --}}
+                <textarea class="form-control" name="body" rows="12" style="width: 50%" required>
+                </textarea>
+            </div>
+
+            <!-- Image -->
+            <div>
+                <x-label for="title" :value="__('Image')" />
+                <x-input class="block mt-1 w-full" name="image" type="file" />
+            </div>
+  
+            <div class="flex items-center justify-end mt-4">
+                <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" href="{{ route('new-post') }}">
+                    	{{ __('Cancel') }}
                 </a>
-              </td>
-              <td class='select'>
-                <a class='button' href='/delete/{{ $post->id }}'>
-                  Delete
-                </a>
-              </td>
-            </tr>
-            
-          </tbody>
-          @endif
-          @endforeach
-        </table>
-        
-      </main>
-  </div>
+
+                <x-button class="ml-4">
+                    	{{ __('Submit') }}
+                </x-button>
+            	</div>
+        	</form>
+               </div>
+            </div>
+        </div>
+    </div>
   <!--Container Main end-->
 
 
