@@ -235,6 +235,10 @@ a {
         padding-left: calc(var(--nav-width) + 188px)
     }
 }
+
+body {
+    background: #eee
+}
   </style>
 
 </head>
@@ -269,9 +273,9 @@ a {
   </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
+  <div>
     <h1 style="color: black; text-align: center;
-    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">Create Article</h1>
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw); margin-top: 7%;">Create Article</h1>
 
       <div class="py-12" >
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >

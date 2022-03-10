@@ -464,6 +464,10 @@ dd {
   }
 }
 
+body {
+    background: #eee
+}
+
   </style>
 
 </head>
@@ -498,9 +502,9 @@ dd {
   </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
+  <div>
     <h1 style="color: black; text-align: center;
-    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">User Management</h1>
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw); margin-top: 7%; margin-bottom: 2%;">User Management</h1>
 
       <main>
         <table>
@@ -528,16 +532,16 @@ dd {
           @foreach ($community_db as $member)
           <tbody>
             <tr>
-              <td data-title='Provider Name'>
+              <td data-title='Name'>
                 {{$member['name']}}
               </td>
               <td data-title='E-mail'>
                 {{$member['email']}}
               </td>
-              <td data-title='E-mail'>
+              <td data-title='Role'>
                 {{$member['role']}}
               </td>
-              <td data-title='E-mail'>
+              <td data-title='Added On'>
                 {{ $member->created_at }}
               </td>
               <?php if($member->isban == '1'){ ?>

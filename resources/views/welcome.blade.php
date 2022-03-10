@@ -302,7 +302,7 @@ header::before {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   display: block;
-  background: url(https://picsum.photos/g/1921/1081?random) top center;
+  background: url(https://picsum.photos/1921/1081?random) top center;
   background-size: cover;
   transform: translateZ(-1px) scale(2.1);
   min-height: 100%;
@@ -354,7 +354,7 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   display: block;
-  background: url(https://picsum.photos/1919/1081?random) top center;
+  background: url(https://picsum.photos/g/1919/1081?random) top center;
   background-size: cover;
   transform: translateZ(-.5px) scale(1.6);
   z-index: -1;
@@ -365,7 +365,7 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   display: block;
-  background: url(https://picsum.photos/g/1919/1081?random) top center;
+  background: url(https://picsum.photos/1919/1081?random) top center;
   background-size: cover;
   transform: translateZ(-.5px) scale(1.6);
   z-index: -1;
@@ -1289,7 +1289,7 @@ a {
 
 
       <section class="section7">
-      <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%; color: whitesmoke;">Our Article</h2>
+      <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%; box-shadow: 0 0 20px #333; background-color: white; width: 25%; padding: 1rem;">Our Article</h2>
                   @foreach ($posts as $post)
                     <div class="card-grid-space" style="display: inline-block;">
                       <a class="card" href="/detail/{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">

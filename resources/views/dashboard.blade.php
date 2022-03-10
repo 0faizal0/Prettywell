@@ -464,6 +464,9 @@ dd {
   }
 }
 
+body {
+    background: #eee
+}
   </style>
 
 </head>
@@ -499,8 +502,8 @@ dd {
       </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
-      <h1 style="color: black;">Dashboard</h1>
+  <div>
+      <h1 style="color: black; margin-top: 7%; margin-bottom: 2%;">Dashboard</h1>
 
       <main>
         <table>
@@ -526,7 +529,7 @@ dd {
               <td data-title='Name'>
                 {{ $post->user->name }}
               </td>
-              <td data-title='Action'>
+              <td data-title='Title'>
                 {{ ($post->title) }}
               </td>
               <td class='select'>

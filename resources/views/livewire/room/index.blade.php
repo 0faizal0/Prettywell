@@ -260,6 +260,10 @@ a {
     -5px -5px 30px 15px rgba(0,0,0,0.22);
         }
 
+        body {
+    background: #eee
+}
+
   </style>
 
 </head>
@@ -294,9 +298,9 @@ a {
   </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
+  <div>
     <h1 style="color: black; text-align: center;
-    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">Group Chat</h1>
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw); margin-top: 7%; margin-bottom: 2%;">Group Chat</h1>
     
       {{-- The whole world belongs to you --}}
       <div class="bg-white shadow rounded-lg mt-10" style="width: 90%; height: 100%; background-color: #353746; margin: 0; margin-left: auto; margin-right: auto; padding-bottom: 200px;">

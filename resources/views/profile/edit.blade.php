@@ -237,6 +237,85 @@ a {
     }
 }
 
+body {
+    background: #eee
+}
+
+.card {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #E1BEE7;
+    transform: scaleY(1);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #8E24AA;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+
+.card:hover::after {
+    transform: scaleY(1)
+}
+
+.fonts {
+    font-size: 11px
+}
+
+.social-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0
+}
+
+.social-list li {
+    padding: 10px;
+    color: #8E24AA;
+    font-size: 19px
+}
+
+.buttons button:nth-child(1) {
+    border: 1px solid #8E24AA !important;
+    color: #8E24AA;
+    height: 40px
+}
+
+.buttons button:nth-child(1):hover {
+    border: 1px solid #8E24AA !important;
+    color: #fff;
+    height: 40px;
+    background-color: #8E24AA
+}
+
+.buttons button:nth-child(2) {
+    border: 1px solid #8E24AA !important;
+    background-color: #8E24AA;
+    color: #fff;
+    height: 40px
+}
+
   </style>
 
 </head>
@@ -271,11 +350,76 @@ a {
   </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
+  <div>
     <h1 style="color: black; text-align: center;
-    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">Profile</h1>
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw); margin-top: 7%;">Profile</h1>
+  </div>
+
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+      <div class="col-md-7">
+          <div class="card p-3 py-4">
+              <div class="text-center"> <img src="{{ URL($user->avatar) }}" width="100" class="rounded-circle">
+                <form enctype="multipart/form-data" action="{{ route('profile.update_avatar') }}" method="POST">
+                  <input type="file" name="avatar">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="submit">
+              </form> </div>
+              <div class="text-center mt-3">
+                  <h5 class="mt-2 mb-0">{{ Auth::user()->name }}</h5> <span>Edit Name And Email Here</span>
+                  <div class="px-4 mt-1">
+                    <form method="POST" action="{{ route('profile.update') }}" value="POST">
+                      @method('post')
+                      @csrf
+
+                      <div class="form-group row">
+                          <label for="name" class="col-md-4 col-form-label text-md-right" >{{ __('Name') }}</label>
+
+                          <div class="col-md-6">
+                              <input id="name" type="text"  class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $user->name) }}" autocomplete="name" autofocus>
+
+                              @error('name')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+
+                      <div class="form-group row" style="margin-top: 2%;">
+                          <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                          <div class="col-md-6">
+                              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" autocomplete="email">
+
+                              @error('email')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
+                      </div>
+
+                      <div class="form-group row mb-0" style="margin-top: 2%;">
+                          <div class="col-md-6 offset-md-4">
+                              <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="update">
+                                  Update Profile
+                              </button>
+                          </div>
+                      </div>
+                      <br>
+                      <br>
+                  </form>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
     
-      <div>
+      {{-- <div>
     
         <h3 class="text-lg font-medium text-gray-900" style="position: relative; top: 120px; width: 20%; margin-left: 50px;">Profile Picture</h3>
         <p class="mt-1 text-sm text-gray-600" style="position: relative; top: 120px; width: 20%; margin-left: 50px;">
@@ -349,7 +493,7 @@ a {
             </div>
         </div>
     </div>
-        </div>
+        </div> --}}
   <!--Container Main end-->
 
 

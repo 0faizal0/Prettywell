@@ -1,6 +1,6 @@
 
 <div class="max-w-7xl mx-auto">
-    <div class="shadow rounded-lg mt-10 p-4 space-y-4  flex flex-col" style="height: 700px; background-color: #353746; color: whitesmoke;">
+    <div class="shadow rounded-lg mt-10 p-4 space-y-4  flex flex-col" style="height: 700px; background-color: #F7F6FB; color: black;">
         <div class="card-body">
             <a href="/rooms" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" id="back">< Kembali</a>
         

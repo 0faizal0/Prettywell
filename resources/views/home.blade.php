@@ -236,6 +236,10 @@ a {
     }
 }
 
+body {
+    background: #eee
+}
+
   </style>
 
 </head>
@@ -270,9 +274,9 @@ a {
   </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
+  <div>
     <h1 style="color: black; text-align: center;
-    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">Private Chat</h1>
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw); margin-top: 7%; margin-bottom: 2%;">Private Chat</h1>
     
       <div class="container">
         <div class="row justify-content-center">

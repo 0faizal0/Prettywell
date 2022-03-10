@@ -256,6 +256,10 @@ a {
   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
+
+body {
+    background: #eee
+}
   </style>
 
 </head>
@@ -290,9 +294,9 @@ a {
   </nav>
   </div>
   <!--Container Main start-->
-  <div class="height-100 bg-light">
+  <div>
     <h1 style="color: black; text-align: center;
-    font-weight: 300; font-size: calc(1.375rem + 1.5vw);">All Article</h1>
+    font-weight: 300; font-size: calc(1.375rem + 1.5vw); margin-top: 7%;">All Article</h1>
 
       @foreach ($posts as $post)
         
