@@ -50,7 +50,7 @@ class PostController extends Controller
    public function index()
 {
     //        MAKE model_has_permission v v v
-    auth()->user()->givePermissionTo('admin');
+    // auth()->user()->givePermissionTo('admin');
     //        MAKE model_has_role V V V
     // auth()->user()->assignRole('admin');
     //       MAKE ROLE   V V V
