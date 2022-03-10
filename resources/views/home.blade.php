@@ -276,7 +276,7 @@ a {
     
       <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8" style="width: 1200px;">
                 <div class="card">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -284,7 +284,7 @@ a {
                             </div>
                         @endif  
                         
-                    <div class="card-body" style="background-color: #F8F9FA">
+                    <div class="card-body" style="background-color: #F8F9FA;">
                         <style>
                             #username:link, #username:visited {
                               background-color: white;
