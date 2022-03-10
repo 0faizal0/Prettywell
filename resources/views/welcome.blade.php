@@ -360,6 +360,17 @@ section {
   z-index: -1;
 }
 
+.section7::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: block;
+  background: url(https://picsum.photos/g/1919/1081?random) top center;
+  background-size: cover;
+  transform: translateZ(-.5px) scale(1.6);
+  z-index: -1;
+}
+
 /*************************************************************
   HEADINGS
 **************************************************************/
@@ -1006,7 +1017,7 @@ DEMO DEPENDENCIES
   }
 
   #imgteam{
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 9%;
     display: inline-block;
   }
@@ -1049,12 +1060,12 @@ a {
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
   height: 20em;
-  width: 15em;
+  width: 30em;
   font-size: 1.5em;
   color: white;
   border-radius: 1em;
   padding: 1em;
-  margin: 2em;
+  margin: 1em;
   display: inline-block;
   align-items: flex-end;
   background-size: cover;
@@ -1277,6 +1288,7 @@ a {
       </section>
 
 
+      <section class="section7">
       <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%;">Our Article</h2>
                   @foreach ($posts as $post)
                     <div class="card-grid-space" style="display: inline-block;">
@@ -1291,6 +1303,7 @@ a {
                       </a>
                     </div>
                     @endforeach
+                  </section>
 
                   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>

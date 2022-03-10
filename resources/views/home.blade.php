@@ -381,7 +381,7 @@ h1{
 <body>
     <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
 <label for="menu-icon"></label>
-<nav class="nav"> 		
+<nav class="nav">
   <ul class="pt-5">
     <li><a href="/"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
     <li><a href="/dashboard"><i class="fa-solid fa-house-user"></i> Dashboard</a></li>
