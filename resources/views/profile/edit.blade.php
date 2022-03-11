@@ -324,6 +324,9 @@ body {
       <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
       <p style="color: black; margin-top: auto; margin-bottom: auto; margin-left: 80%;">{{ Auth::user()->name }}</p>
       <div class="header_img" style="margin-right: 10%;"> <img src="{{ URL(Auth::user()->avatar) }}" alt="avatar"> </div>
+      @notifyCss
+    <x:notify-messages />
+    @notifyJs
   </header>
   <div class="l-navbar" id="nav-bar">
     <nav class="nav">
@@ -495,7 +498,6 @@ body {
     </div>
         </div> --}}
   <!--Container Main end-->
-
 
 </body>
 </html>
