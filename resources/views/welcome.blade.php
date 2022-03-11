@@ -1218,6 +1218,23 @@ a {
     margin: 0;
   }
 }
+
+.read2:link, .read2:visited {
+  background-color: #ffdb8e;
+  padding: 70px 65px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: relative; 
+  left: 400px;
+  bottom: 100px;
+  border-radius: 20px;
+  color: black;
+  font-size: 40px;
+}
+.read2:hover, .read2:active {
+  background-color: rgb(255, 233, 137);
+}
 </style>
 
 <body>
@@ -1303,15 +1320,15 @@ a {
                       </a>
                     </div>
                     @endforeach
-                    {{-- <a href="/article" class="read2">> Read More Article here</a> --}}
-                    <div class="section" style="position: relative; bottom: 410px;">
+                    <a href="/article" class="read2">></a>
+                    {{-- <div class="section" style="position: relative; bottom: 410px;">
                       <div class="section__item">
                         <div class="section__box">
                           <a href="/article" class="r-link ai-element ai-element_type3 ai-element6">
                             <span class="ai-element__label" style="font-size: 0.8em;">Read More..</span>
                           </a>
                         </div>
-                  </section>
+                  </section> --}}
 
                   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
