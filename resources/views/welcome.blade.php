@@ -1226,7 +1226,7 @@ a {
   text-decoration: none;
   display: inline-block;
   position: relative; 
-  left: 400px;
+  left: 200px;
   bottom: 100px;
   border-radius: 20px;
   color: black;
