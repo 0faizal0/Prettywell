@@ -1306,7 +1306,7 @@ a {
 
 
       <section class="section7">
-      <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%; box-shadow: 0 0 20px #333; background-color: white; width: 25%; padding: 1rem;">Our Article</h2>
+      <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%; box-shadow: 0 0 20px #333; background-color: white; width: 25%; padding: 1rem;" id="#article">Our Article</h2>
                   @foreach ($posts as $post)
                     <div class="card-grid-space" style="display: inline-block;">
                       <a class="card" href="/detail/{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">
