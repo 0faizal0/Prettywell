@@ -1303,6 +1303,14 @@ a {
                       </a>
                     </div>
                     @endforeach
+                    {{-- <a href="/article" class="read2">> Read More Article here</a> --}}
+                    <div class="section" style="position: relative; bottom: 410px;">
+                      <div class="section__item">
+                        <div class="section__box">
+                          <a href="/article" class="r-link ai-element ai-element_type3 ai-element6">
+                            <span class="ai-element__label" style="font-size: 0.8em;">Read More..</span>
+                          </a>
+                        </div>
                   </section>
 
                   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
