@@ -22,9 +22,10 @@
     }
 
 .button:link, .button:visited {
-  position: relative;
+  /* position: relative;
   top: 110px;
-  left: 10%;
+  left: 10%; */
+  margin: 2%;
   border-radius: 10px;
   background-color: #f44336;
   color: white;
@@ -231,10 +232,10 @@ a {
 </style>
 <body>
     <a class="button" href="/#article"><i class="fa-solid fa-house"></i> Home</a>
-    <p style="color: #68461a; font-size: 3em; text-align: center;">Our Articles</p>
+    <h2 style="font-size: 3em; margin-left: auto; margin-right: auto; text-align: center; box-shadow: 0 0 20px #333; background-color: white; width: 90%; padding: 0.5rem; color: black;" id="#article">Our Article</h2>
     @foreach ($posts as $post)
                     <div class="card-grid-space" style="display: inline-block;">
-                      <a class="card" href="/detail/3{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">
+                      <a class="card" href="/detail3/{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">
                         <div>
                           <h3>{{ $post->title }}</h3>
                           <h4>{{ Str::limit($post->body, 50) }}</h4>

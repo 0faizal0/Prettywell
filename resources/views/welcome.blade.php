@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>Asteriks</title>
 </head>
 
@@ -1221,7 +1222,7 @@ a {
 
 .read2:link, .read2:visited {
   background-color: #ffdb8e;
-  padding: 70px 65px;
+  padding: 20px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -1306,7 +1307,7 @@ a {
 
 
       <section class="section7">
-      <h2 style="font-size: 6em; margin-left: 3%; margin-top: 4%; box-shadow: 0 0 20px #333; background-color: white; width: 25%; padding: 1rem;" id="#article">Our Article</h2>
+      <h2 style="font-size: 6em; margin-left: auto; margin-right: auto; text-align: center; margin-top: 4%; box-shadow: 0 0 20px #333; background-color: white; width: 90%; padding: 1rem;" id="#article">Our Article</h2>
                   @foreach ($posts as $post)
                     <div class="card-grid-space" style="display: inline-block;">
                       <a class="card" href="/detail/{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">
@@ -1320,7 +1321,7 @@ a {
                       </a>
                     </div>
                     @endforeach
-                    <a href="/article" class="read2">></a>
+                    <a href="/article" class="read2">More Article..</a>
                     {{-- <div class="section" style="position: relative; bottom: 410px;">
                       <div class="section__item">
                         <div class="section__box">
