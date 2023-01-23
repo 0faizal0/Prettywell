@@ -1,8 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/"><i class="fa-solid fa-user-ninja" style="font-size: 5em;"></i>
-            </a>
+
         </x-slot>
 
         <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
@@ -13,9 +12,12 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}" style="margin-bottom: 25%;">
             @csrf
 
+            <h1 style="font-size: 36px;
+            font-family: Poppins-SemiBold;
+            margin-bottom: 16px; font-weight: 400; text-align: center; color: #123049;"><b>Login</b></h1>
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />

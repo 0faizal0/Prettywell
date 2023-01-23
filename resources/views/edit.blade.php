@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Edit Article</title>
@@ -39,7 +40,7 @@ body{
             
             <div class="form-group">
                 <x-label for="body" :value="__('Body')" style="color: whitesmoke"/>
-                <textarea class="form-control" name="body" rows="12" style="width: 50%; padding-left: 10px; background-color: #353746; color: whitesmoke;">{{ $post->body }}
+                <textarea class="form-control" name="body" rows="12" style="width: 46%; padding-left: 10px; background-color: #353746; color: whitesmoke;">{{ $post->body }}
                 </textarea>
             </div>
 
@@ -49,7 +50,7 @@ body{
                     {{ __('Edit') }}
                  </x-button>
 
-                <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" href="{{ route('dashboard') }}" style="margin-left: 2%">
+                <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" href="{{ route('adminpost') }}" style="margin-left: 2%">
                     	{{ __('Cancel') }}
                 </a>
 

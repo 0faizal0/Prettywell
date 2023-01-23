@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use App\Models\Image;
+use App\Models\Photo;
  
  
 class UploadImageController extends Controller
@@ -23,7 +23,7 @@ class UploadImageController extends Controller
  
         $name = $request->file('image')->getClientOriginalName();
  
-        $path = $request->file('image')->store('public/images');
+        $path = $request->file('image')->store('public/images/');
  
  
         $save = new Photo;
@@ -33,7 +33,7 @@ class UploadImageController extends Controller
  
         $save->save();
  
-        return redirect('upload-image')->with('status', 'Image Has been uploaded');
+        return back()->with('status', 'Image Has been uploaded');
  
     }
 }

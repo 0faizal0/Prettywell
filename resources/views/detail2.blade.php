@@ -4,180 +4,147 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
   <title>Article</title>
 </head>
-<body>
- <style>
-   * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-body {
-  background-color: salmon;
-  padding-top: 50px;
-  padding-bottom: 50px;
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+* {
+  /* I know I could write "margin: 0; padding: 0;". But that's not performant. */
+  font-family: "Open Sans";
+  line-height: 170%;
+  color: #444;
 }
-
-.container {
-  width: 80%;
-  min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
+body,
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
 }
-
-.center {
-  align-items: center;
-  justify-content: center;
+h2 {
+  margin-top: 20px;
 }
-
-.card {
+mark {
   background-color: white;
-  width: 70%;
-  min-height: 404.5px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin: 5px;
-  box-shadow: -20px -20px 0px 0px #fb968b;
-  border-radius: 10px;
-  -webkit-animation-name: shadow-show;
-  /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 1.5s;
-  /* Safari 4.0 - 8.0 */
-  animation-name: shadow-show;
-  animation-duration: 1.5s;
-  transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-  /* custom */
-}
-.card h1, .card h2, .card h3, .card h4, .card h5 {
-  margin: 0px;
-  padding: 0px 0px 15px 0px;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 30px;
-  color: #282828;
-}
-.card hr {
-  display: block;
-  border: none;
-  height: 3px;
-  background-color: salmon;
-  margin: 0px;
-  -webkit-animation-name: line-show;
-  /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 0.3s;
-  /* Safari 4.0 - 8.0 */
-  animation-name: line-show;
-  animation-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-  /* custom */
+  padding: 0px 3px;
 }
 
-a:link, a:visited {
-  background-color: salmon;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+.wrapper {
+  padding: 100px;
+  margin: 0 0 50px 0;
+  text-align: left;
+  height: 80vh;
+  background: url("../images/{{ $post->image_path }}") no-repeat
+    center center fixed;
+  background-size: cover;
+  transition: all 0.4s ease;
+}
+.articleText {
+  margin: 0 10% 30px 20%;
+  width: 60%;
+  max-width: 800px;
+  padding-left: 30px;
+  border-left: 1px solid #cccccc;
+  transition: all 0.4s ease;
+}
+.introduction {
+  margin-bottom: 20px;
+}
+.accountInfo {
+  transition: all ease 0.5s;
+  display: none;
+  height: 420px;
+  width: 250px;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.accountInfo .header {
+  background: url("../images/{{ $post->image_path }}") no-repeat;
+  height: 120px;
+  width: 100%;
+  padding: 20px 10px;
+}
+.accountInfo .profilePicture {
+  z-index: 1;
+  margin: -25px auto 10px auto;
+  background: url("../images/{{ $post->image_path }}") no-repeat;
+  height: 100px;
   width: 100px;
+  border-radius: 5px;
 }
-
-a:hover, a:active {
-  background-color: red;
-  transition: 1s;
+.accountInfo .profileText {
+  text-align: center;
+  margin-bottom: 20px;
 }
-.card p {
-  margin: 15px 0px 0px 0px;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 100;
-  letter-spacing: -0.25px;
-  line-height: 1.25;
+button {
   font-size: 16px;
-  word-break: break-all;
-  word-wrap: pre-wrap;
-  color: #282828;
-  -webkit-animation-name: p-show;
-  /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 1.5s;
-  /* Safari 4.0 - 8.0 */
-  animation-name: p-show;
-  animation-duration: 1.5s;
+  width: 100%;
+  background: white;
+  border: 0;
+  padding: 12px 0px;
+  transition: all ease 0.5s;
+  cursor: pointer;
 }
-.card button {
-  border: none;
-  background-color: salmon;
-  width: 50%;
-  margin: 10px auto;
-  padding: 10px 30px;
+button:hover {
+  box-shadow: inset 400px 0 0 0 #444;
   color: white;
-  font-family: "Noto Sans KR", sans-serif;
-  text-transform: uppercase;
 }
 
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes line-show {
-  from {
-    margin: 0px 100px;
-  }
-  to {
-    margin: 0px;
-  }
-}
-/* Standard syntax */
-@keyframes line-show {
-  from {
-    margin: 0px 100px;
-  }
-  to {
-    margin: 0px;
+@media only screen and (max-width: 1000px) {
+  /* For tablets: */
+  .articleText {
+    margin: 0 10% 30px 10%;
+    width: 80%;
+    max-width: 800px;
+    padding-left: 0px;
+    border: 0;
   }
 }
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes p-show {
-  from {
-    color: white;
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .articleText {
+    margin: 0 5% 30px 5%;
+    width: 90%;
   }
-  to {
-    color: #282828;
-  }
-}
-/* Standard syntax */
-@keyframes p-show {
-  from {
-    color: white;
-  }
-  to {
-    color: #282828;
+  .wrapper {
+    padding: 5%;
   }
 }
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes shadow-show {
-  from {
-    box-shadow: 0px 0px 0px 0px #e0e0e0;
-  }
-  to {
-    box-shadow: -20px -20px 0px 0px #fb968b;
-  }
-}
-/* Standard syntax */
-@keyframes shadow-show {
-  from {
-    box-shadow: 0px 0px 0px 0px #e0e0e0;
-  }
-  to {
-    box-shadow: -20px -20px 0px 0px #fb968b;
-  }
-}
- </style>
 
-<div class="container center">
+#back{
+  font-size: .8em; 
+  padding-left: 60%;
+  color: #5AD67D; 
+  text-decoration: none;
+}
+
+#back:hover {
+  color: #24853f;
+}
+
+#deskripsi{
+        overflow: hidden;
+        font-family: sans-serif;
+        display: inline-block;
+        margin: 0;
+    }
+    pre{
+      margin: 0;
+    }
+</style>
+
+<body>
+
+{{-- <div class="container center">
 
 <div class="card">
 
@@ -189,21 +156,40 @@ a:hover, a:active {
 
 <p id="isi">{{ $post->body }}</p>
 
-<a href="/posts">< Kembali</a>
+<a href="/posts">< Kembali</a> --}}
 
-
-
-</div>
-
-
-
-
-
-
+<div class="article">
+  <div class="wrapper">
+    <div class="wrapperText">
+      <h1>
+        <mark>{{ $post->title }}</mark>
+      </h1>
+      <p id="author">
+        <mark>by {{ $post->user->name }}</mark>
+      </p>
+      <div id="accountDetail" class="accountInfo">
+        <div class="header">
+          <h2><mark>Lina Regental</mark></h2>
+          <p><mark>Producer & Author</mark></p>
+        </div>
+        <div class="profilePicture"></div>
+        <p class="profileText">Chef, Community Volunteer, Conveyor of Messages, Electro Producer, Scapegoat. Is that a double rainbow? D:.</p>
+        <button>Check me out ></button>
+      </div>
     </div>
+  </div>
+  <!--The Text is generated with hipsum.co :) Check it out! -->
+  <div class="articleText">
+    <h4 class="introduction">
+
+      <?php
+      echo '<pre>';
+        echo "<div id=\"deskripsi\"> $post->body </div>"
+        ?> 
+
+      <a href="/posts" id="back">< back</a></h4>
+  </div>
 </div>
 
-
-</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <title>Dashboard</title>
   <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
 
@@ -164,7 +168,7 @@ a {
 .nav_link {
     position: relative;
     color: var(--first-color-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
     transition: .3s
 }
 
@@ -472,27 +476,50 @@ body {
 </head>
 <body id="body-pd">
   <header class="header" id="header">
-      <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-      <p style="color: black; margin-top: auto; margin-bottom: auto; margin-left: 80%;">{{ Auth::user()->name }}</p>
+
+    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+
+    <?php
+    $pesanan_utama = \App\Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+    if(!empty($pesanan_utama))
+       {
+        $notif = \App\PesananDetail::where('pesanan_id', $pesanan_utama->id)->count(); 
+       }
+   ?>
+   <a class="nav-link" href="{{ url('check-out') }}" style="width: 90%;">
+       <i class="fa fa-shopping-cart"></i>
+       @if(!empty($notif))
+       <span class="badge badge-danger">{{ $notif }}</span>
+       @endif
+   </a>
+
+      <p style="color: black; margin-top: auto; margin-bottom: auto; margin-left: 1%;">{{ Auth::user()->name }}</p>
       <div class="header_img" style="margin-right: 10%;"> <img src="{{ URL(Auth::user()->avatar) }}" alt="avatar"> </div>
       
   </header>
   <div class="l-navbar" id="nav-bar">
       <nav class="nav">
           <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> 
-            <span class="nav_logo-name">Asteriks</span> </a>
+            <span class="nav_logo-name">Prettywell</span> </a>
               <div class="nav_list"> <a href="/dashboard" class="nav_link active"> 
-                <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
-                <a href="/post/create" class="nav_link"> <i class="fa-solid fa-square-plus"></i>
-                  <span class="nav_name">Create Article</span> </a> <a href="/posts" class="nav_link"> 
+                <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a>
+                <a href="/toko" class="nav_link"> 
+                  <i class="fa-solid fa-store"></i> <span class="nav_name">Shop</span> </a> 
+                  <a href="/history" class="nav_link"> 
+                    <i class="fa-solid fa-clock-rotate-left"></i> <span class="nav_name">History</span> </a>
+                 <a href="/posts" class="nav_link"> 
                     <i class="fa-solid fa-newspaper"></i>
                     <span class="nav_name">All Article</span> </a> <a href="/rooms" class="nav_link"> 
                       <i class="fa-solid fa-comments"></i> <span class="nav_name">Group Chat</span> </a> 
                       <a href="/chat" class="nav_link"><i class="fa-solid fa-comment-dots"></i> 
                         <span class="nav_name">Private Chat</span> </a> <a href="/profile" class="nav_link"> 
                           <i class="fa-solid fa-address-card"></i> <span class="nav_name">Profile</span> 
-                        </a> @role('admin') <a href="/adminpost" class="nav_link"> 
-                          <i class="fa-solid fa-hammer"></i> <span class="nav_name">Admin Page</span> 
+                        </a> @role('admin') 
+                        <a href="/adminku" class="nav_link"> 
+                          <i class="fa-solid fa-cart-plus"></i> <span class="nav_name">Order Management</span> 
+                        </a> 
+                        <a href="/adminpost" class="nav_link"> 
+                          <i class="fa-solid fa-hammer"></i> <span class="nav_name">Post Management</span> 
                         </a> 
                         <a href="/admin" class="nav_link">
                           <i class="fa-solid fa-user-gear"></i> <span class="nav_name">User Management</span> 
@@ -555,4 +582,4 @@ body {
 
 
 </body>
-</html>
+</html> --}}

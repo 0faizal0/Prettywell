@@ -1,4 +1,5 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0" style="background-color: #EDF4F9;">
+    <img src="../img/ptlogo.png" alt="logo" style="width: 10%; height: 10%; margin-right: 85%; margin-bottom: 4%; display: inline;">
     <div>
         {{ $logo }}
     </div>

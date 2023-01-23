@@ -1,10 +1,13 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/"><i class="fa-solid fa-user-ninja" style="font-size: 5em;"></i>
+            <a href="/"><i class="fa-solid fa-image-portrait" style="font-size: 5em;"></i>
             </a>
         </x-slot>
         <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -12,6 +15,9 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            <h1 style="font-size: 36px;
+            font-family: Poppins-SemiBold;
+            margin-bottom: 16px; font-weight: 400; text-align: center; color: #123049;">Registration</h1>
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />

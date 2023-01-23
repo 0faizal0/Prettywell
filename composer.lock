@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1ac1b5c48ddd046aad262f383c1aa2a",
+    "content-hash": "f824d3a9ded96579bad0805b6701c7b0",
     "packages": [
+        {
+            "name": "beyondcode/laravel-vouchers",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beyondcode/laravel-vouchers.git",
+                "reference": "5c0a2fd49b7c55c048076edd7813973cc1c49339"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beyondcode/laravel-vouchers/zipball/5c0a2fd49b7c55c048076edd7813973cc1c49339",
+                "reference": "5c0a2fd49b7c55c048076edd7813973cc1c49339",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^8.0",
+                "illuminate/database": "^8.0",
+                "illuminate/support": "^8.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BeyondCode\\Vouchers\\VouchersServiceProvider"
+                    ],
+                    "aliases": {
+                        "Vouchers": "BeyondCode\\Vouchers\\Facades\\Vouchers"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BeyondCode\\Vouchers\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "marcel@beyondco.de",
+                    "homepage": "https://beyondcode.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allow users to redeem vouchers that are bound to models..",
+            "homepage": "https://github.com/beyondcode/laravel-vouchers",
+            "keywords": [
+                "beyondcode",
+                "laravel-vouchers"
+            ],
+            "support": {
+                "issues": "https://github.com/beyondcode/laravel-vouchers/issues",
+                "source": "https://github.com/beyondcode/laravel-vouchers/tree/2.0.0"
+            },
+            "time": "2021-04-12T21:25:40+00:00"
+        },
         {
             "name": "beyondcode/laravel-websockets",
             "version": "1.13.0",
@@ -1547,6 +1612,70 @@
             "time": "2021-12-16T16:49:26+00:00"
         },
         {
+            "name": "kavist/rajaongkir",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kavist/rajaongkir.git",
+                "reference": "c1ab72000d05b1cb6b0a1a1364d6200b78976377"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kavist/rajaongkir/zipball/c1ab72000d05b1cb6b0a1a1364d6200b78976377",
+                "reference": "c1ab72000d05b1cb6b0a1a1364d6200b78976377",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.26.2",
+                "fzaninotto/faker": "^1.8",
+                "mockery/mockery": "^1.2",
+                "orchestra/testbench": "^4.1",
+                "phpunit/phpunit": "^8.0",
+                "spatie/phpunit-watcher": "^1.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kavist\\RajaOngkir\\Providers\\LaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "RajaOngkir": "Kavist\\RajaOngkir\\Facades\\RajaOngkir"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kavist\\RajaOngkir\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Mustafa",
+                    "email": "mail@ianmustafa.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Klien API PHP untuk RajaOngkir",
+            "homepage": "https://github.com/kavist/rajaongkir",
+            "keywords": [
+                "laravel",
+                "rajaongkir"
+            ],
+            "support": {
+                "issues": "https://github.com/kavist/rajaongkir/issues",
+                "source": "https://github.com/kavist/rajaongkir/tree/v1.1.0"
+            },
+            "time": "2019-10-11T01:21:56+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v8.83.1",
             "source": {
@@ -2387,6 +2516,61 @@
                 }
             ],
             "time": "2021-05-29T13:22:21+00:00"
+        },
+        {
+            "name": "midtrans/midtrans-php",
+            "version": "2.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Midtrans/midtrans-php.git",
+                "reference": "a1ad0c824449ca8c68c4cf11b3417ad518311d2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Midtrans/midtrans-php/zipball/a1ad0c824449ca8c68c4cf11b3417ad518311d2b",
+                "reference": "a1ad0c824449ca8c68c4cf11b3417ad518311d2b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.*",
+                "psy/psysh": "0.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Midtrans\\": "Midtrans/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andri Setiawan",
+                    "email": "andri.setiawan@veritrans.co.id"
+                },
+                {
+                    "name": "Alvin Litani",
+                    "email": "alvin.litani@veritrans.co.id"
+                },
+                {
+                    "name": "Ismail Faruqi",
+                    "email": "ismail.faruqi@veritrans.co.id"
+                }
+            ],
+            "description": "PHP Wrapper for Midtrans Payment API.",
+            "homepage": "https://midtrans.com",
+            "support": {
+                "issues": "https://github.com/Midtrans/midtrans-php/issues",
+                "source": "https://github.com/Midtrans/midtrans-php/tree/2.5.2"
+            },
+            "time": "2021-08-23T08:52:05+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7176,6 +7360,72 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
+        },
+        {
+            "name": "uxweb/sweet-alert",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uxweb/sweet-alert.git",
+                "reference": "e9eb83d7d991de0fcb74398a698e0cdfef6d189d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uxweb/sweet-alert/zipball/e9eb83d7d991de0fcb74398a698e0cdfef6d189d",
+                "reference": "e9eb83d7d991de0fcb74398a698e0cdfef6d189d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "~5.0|^6.0|^7.0|^8.0",
+                "illuminate/support": "~5.0|^6.0|^7.0|^8.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "UxWeb\\SweetAlert\\SweetAlertServiceProvider"
+                    ],
+                    "aliases": {
+                        "Alert": "UxWeb\\SweetAlert\\SweetAlert"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/SweetAlert/functions.php"
+                ],
+                "psr-4": {
+                    "UxWeb\\SweetAlert\\": "src/SweetAlert/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Uziel Bueno",
+                    "email": "ux.webs@gmail.com"
+                }
+            ],
+            "description": "A simple PHP package to show Sweet Alerts with the Laravel Framework",
+            "keywords": [
+                "alert",
+                "laravel",
+                "notifier",
+                "sweet"
+            ],
+            "support": {
+                "issues": "https://github.com/uxweb/sweet-alert/issues",
+                "source": "https://github.com/uxweb/sweet-alert/tree/2.0.5"
+            },
+            "time": "2020-09-14T23:22:32+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

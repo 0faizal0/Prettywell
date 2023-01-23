@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Barang;
 use App\User;
 
 class HomeController extends Controller
@@ -26,5 +27,10 @@ class HomeController extends Controller
     {
         $users = User::All();
         return view('home')->with('users', $users);
+    }
+
+    public function toko(){
+        $barangs = Barang::paginate(200);
+        return view('toko', compact('barangs'));
     }
 }

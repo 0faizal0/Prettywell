@@ -1,1337 +1,1146 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <title>Asteriks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8040ad99ed.js" crossorigin="anonymous"></script>
+
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" type="text/css" href="../css/loader.css" />
+<link rel="stylesheet" type="text/css" href="../css/navbar.css" />
+<link rel="stylesheet" type="text/css" href="../css/home2.css" />
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--PLUGIN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prettywell</title>
 </head>
 
 <style>
-  
 
-/* Please ❤ this if you like it! */
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
-  position: absolute;
-  left: -9999px;
-}
-.menu-icon:checked + label,
-.menu-icon:not(:checked) + label{
-  position: fixed;
-  top: 63px;
-  right: 75px;
-  display: block;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  z-index: 10;
-}
-.menu-icon:checked + label:before,
-.menu-icon:not(:checked) + label:before{
-  position: absolute;
-  content: '';
-  display: block;
-  width: 30px;
-  height: 20px;
-  z-index: 20;
-  top: 0;
-  left: 0;
-  border-top: 2px solid #ececee;
-  border-bottom: 2px solid #ececee;
-  transition: border-width 100ms 1500ms ease, 
-              top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), 
-              background-color 200ms ease,
-              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.menu-icon:checked + label:after,
-.menu-icon:not(:checked) + label:after{
-  position: absolute;
-  content: '';
-  display: block;
-  width: 22px;
-  height: 2px;
-  z-index: 20;
-  top: 10px;
-  right: 4px;
-  background-color: #ececee;
-  margin-top: -1px;
-  transition: width 100ms 1750ms ease, 
-              right 100ms 1750ms ease,
-              margin-top 100ms ease, 
-              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.menu-icon:checked + label:before{
-  top: 10px;
-  transform: rotate(45deg);
-  height: 2px;
-  background-color: #ececee;
-  border-width: 0;
-  transition: border-width 100ms 340ms ease, 
-              top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), 
-              background-color 200ms 500ms ease,
-              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.menu-icon:checked + label:after{
-  width: 30px;
-  margin-top: 0;
-  right: 0;
-  transform: rotate(-45deg);
-  transition: width 100ms ease,
-              right 100ms ease,  
-              margin-top 100ms 500ms ease, 
-              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.nav{
-  position: fixed;
-  top: 33px;
-  right: 50px;
-  display: block;
-  width: 80px;
-  height: 80px;
-  padding: 0;
-  margin: 0;
-  z-index: 9;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
-  background-color: #353746;
-  animation: border-transform 7s linear infinite;
-  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),  
-              right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 250ms 1100ms ease,
-              width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-@keyframes border-transform{
-    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
-  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
-  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
-  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
-  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
-  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
-  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
-}
-
-.menu-icon:checked ~ .nav {
-  animation-play-state: paused;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  width: 200%;
-  height: 200%;
-  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),  
-              right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 250ms 700ms ease,
-              width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.nav ul{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  z-index: 6;
-  text-align: center;
-  transform: translateY(-50%);
-  list-style: none;
-}
-.nav ul li{
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  text-align: center;
-  list-style: none;
-  pointer-events: none;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(30px);
-  transition: all 250ms linear;
-}
-.nav ul li:nth-child(1){
-  transition-delay: 200ms;
-}
-.nav ul li:nth-child(2){
-  transition-delay: 150ms;
-}
-.nav ul li:nth-child(3){
-  transition-delay: 100ms;
-}
-.nav ul li:nth-child(4){
-  transition-delay: 50ms;
-}
-.nav ul li a{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 5vh;
-  text-transform: uppercase;
-  line-height: 1.2;
-  font-weight: 800;
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: #ececee;
-  transition: all 250ms linear;
-}
-.nav ul li a:hover{
-  text-decoration: none;
-  color: #ffeba7;
-}
-.nav ul li a:after{
-  display: block;
-  position: absolute;
-  top: 50%;
-  content: '';
-  height: 2vh;
-  margin-top: -1vh;
-  width: 0;
-  left: 0;
-  background-color: #353746;
-  opacity: 0.8;
-  transition: width 250ms linear;
-}
-.nav ul li a:hover:after{
-  width: 100%;
-}
-
-
-.menu-icon:checked ~ .nav  ul li {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 350ms ease,
-              transform 250ms ease;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(1){
-  transition-delay: 1400ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(2){
-  transition-delay: 1480ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(3){
-  transition-delay: 1560ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(4){
-  transition-delay: 1640ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(5){
-  transition-delay: 1720ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(6){
-  transition-delay: 1800ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(7){
-  transition-delay: 1880ms;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(8){
-  transition-delay: 1960ms;
-}
-
-
-
-.logo {
-	position: absolute;
-	top: 60px;
-	left: 50px;
-	display: block;
-	z-index: 11;
-	transition: all 250ms linear;
-}
-.logo img {
-	height: 26px;
-	width: auto;
-	display: block;
-}
-
-
-
-@media screen and (max-width: 991px) {
-  .menu-icon:checked + label,
-  .menu-icon:not(:checked) + label{
-    right: 55px;
-  }
-  .logo {
-    left: 30px;
-  }
-  .nav{
-    right: 30px;
-  }
-  h1{
-    font-size: 9vw;
-    -webkit-text-stroke: 2px transparent;
-    text-stroke: 2px transparent;
-    -webkit-text-fill-color: #000000;
-    text-fill-color: #000000;
-    color: #000000;
-  }
-  .nav ul li a{
-    font-size: 3vh;
-  }
-}
-
-/*************************************************************
-  HEADER
-**************************************************************/
-header {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  transform-style: inherit;
-  z-index: -1;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: block;
-  background: url(https://picsum.photos/1921/1081?random) top center;
-  background-size: cover;
-  transform: translateZ(-1px) scale(2.1);
-  min-height: 100%;
-  z-index: -2;
-}
-
-
-/*************************************************************
-  SECTIONS
-**************************************************************/
-section {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  transform-style: inherit;
-}
-
-.section1 {
-  background: #fafafa;
-  box-shadow: 0 0 20px #333;
-  z-index: 1;
-}
-
-.section2::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: block;
-  background: url(https://picsum.photos/g/1920/1080?random) top center;
-  background-size: cover;
-  transform: translateZ(-.5px) scale(1.6);
-  z-index: -1;
-}
-
-.section4::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: block;
-  background: url(https://picsum.photos/1920/1080?random) top center;
-  background-size: cover;
-  transform: translateZ(-.5px) scale(1.6);
-  z-index: -1;
-}
-
-.section5::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: block;
-  background: url(https://picsum.photos/g/1919/1081?random) top center;
-  background-size: cover;
-  transform: translateZ(-.5px) scale(1.6);
-  z-index: -1;
-}
-
-.section7::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: block;
-  background: url(https://picsum.photos/1919/1081?random) top center;
-  background-size: cover;
-  transform: translateZ(-.5px) scale(1.6);
-  z-index: -1;
-}
-
-/*************************************************************
-  HEADINGS
-**************************************************************/
-h1 {
-  font-size: 4em;
-  text-align: center;
-  position: absolute;
-  padding: 1rem;
-  background: #fafafa;
-  box-shadow: 0 0 20px #333;
-  top: 50%;
-  left: 50%;
-  transform: translateZ(-1px) scale(2) translate(-25%, -25%);
-}
-
-.section1 h1 {
-  z-index: 3;
-  transform: translate(-50%, -50%);
-  box-shadow: none;
-}
-
-.section2 h1 {
-  transform: translateZ(-.3px) scale(1.3) translate(-39%, -39%);
-  z-index: 3;
-}
-
-.section4 h1 {
-  transform: translateZ(-.3px) scale(1.3) translate(-39%, -39%);
-  z-index: 3;
-}
-
-.section5 h1 {
-  transform: translateZ(-.3px) scale(1.3) translate(-39%, -39%);
-  z-index: 3;
+a {
+  color: currentColor;
 }
 
 p {
-  font-size: 3em;
-  text-align: center;
-  position: absolute;
-  padding: 1em;
-  background: #fafafafa;
-  box-shadow: 0 0 50px #333;
-  top: 50%;
-  left: 50%;
-  transform: translateZ(-1px) scale(2) translate(-25%, -25%);
-  width: 80%;
+  margin: 0 0 20px 0;
 }
 
-.section3 {
-  background: #fafafa;
-  box-shadow: 0 0 20px #333;
-  z-index: 1;
+h2 {
+  margin: 0 0 14px 0;
+  font-size: 1.8rem;
 }
 
-.section6 {
-  background: #fafafa;
-  box-shadow: 0 0 20px #333;
-  z-index: 1;
-}
-
-.section3 p {
-  z-index: 3;
-  transform: translate(-50%, -50%);
-  box-shadow: none;
-}
-
-/*************************************************************
-  BASIC STYLES
-**************************************************************/
 *,
-*::before,
-*::after,
-:root {
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.credits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.button {
+  padding: 10px 12px;
+  color: var(--blue);
+  background-color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.dialog {
+  position: fixed;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.6);
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+.dialog[aria-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dialog[aria-hidden="true"] .dialog__wrapper {
+  transform: scale(0.8);
+}
+.dialog__wrapper {
+  margin: auto;
+  padding: 60px 40px;
+  width: 700px;
+  max-width: calc(100% - 40px);
+  color: #fff;
+  background: var(--blue);
+  border-radius: 3px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  position: relative;
+  transition: transform 300ms ease-in-out;
+}
+
+.dialog__button {
+  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
 }
 
-@import 'https://fonts.googleapis.com/css?family=Overlock:400,400i,700|Oleo+Script';
-
-html {
-  overflow: hidden;
-  height: 100%;
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 100%;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  font-size: 62.5%;
-  font-family: 'Overlock', Arial, Helvetica, sans-serif;
-}
-
-
-/*
-=====
-DEMO DEPENDENCIES
-=====
-*/
-
-/* The component will reset button browser styles */
-
-.r-button{
-    --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
-    --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
-    --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
-    --uirButtonBorderStyle: var(--rButtonBorderWidth, solid);
-    --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
-    --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
-    --uirButtonFontSize: var(--rButtonFontSize,  inherit);
-    --uirButtonColor: var(--rButtonColor);
-  
-    background-color: var(--uirButtonBackgroundColor);
-    padding: var(--uirButtonPadding);
-  
-    border-width: var(--uirButtonBorderWidth);
-    border-style: var(--uirButtonBorderStyle);
-    border-color: var(--uirButtonBorderColor);
-  
-    cursor: pointer;
-  
-    font-family: var(--uirButtonFontFamily);
-    font-size: var(--uirButtonFontSize);
-  }
-  
-  .r-button::-moz-focus-inner,
-  .r-button[type="button"]::-moz-focus-inner,
-  .r-button[type="reset"]::-moz-focus-inner,
-  .r-button[type="submit"]::-moz-focus-inner {
-    
-    /* Remove the inner border and padding in Firefox. */
-    
-    border-style: none;
-    padding: 0;
-  }
-  
-  /* The component will reset browser's styles of link */
-  
-  .r-link{
-    --uirLinkDisplay: var(--rLinkDisplay, inline-flex);
-    --uirLinkTextColor: var(--rLinkTextColor);
-    --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
-    display: var(--uirLinkDisplay) !important;
-    color: var(--uirLinkTextColor) !important;
-    text-decoration: var(--uirLinkTextDecoration) !important;
-  }
-  
-  /*
-  =====
-  CORE STYLES
-  =====
-  */
-  
-  .ai-element{
-      --uiaiElementDisplay: var(--aiElementDisplay, inline-flex);	
-      --uiaiElementPadding: var(--aiElementPadding, var(--aiElementPaddingTop, 0) var(--aiElementPaddingRight, 0) var(--aiElementPaddingBottom, 0) var(--aiElementPaddingLeft, 0));
-      --uiaiElementColor: var(--aiElementColor);
-  
-      display: var(--uiaiElementDisplay);
-      position: relative;
-      overflow: hidden;
-  }
-  
-  a.ai-element{
-      padding: var(--uiaiElementPadding);
-  }
-  
-  button.ai-element{
-      --rButtonPadding: var(--uiaiElementPadding);	
-  }
-  
-  .ai-element__label{
-      color: var(--uiaiElementColor);
-  }
-  
-  /* 
-  Styles of elements with the border on all sides
-  */ 
-  
-  .ai-element_type1{
-      --uiaiElementLineWeight: var(--aiElementLineWeight, 2px);
-      --uiaiElementLineColor: var(--aiElementLineColor, #000);	
-  }
-  
-  .ai-element_type1::before, 
-  .ai-element_type1::after{
-      width: 100%;
-      height: var(--uiaiElementLineWeight);
-      left: 0;
-  }
-  
-  .ai-element_type1::before{
-      top: 0;
-  }
-  
-  .ai-element_type1::after{
-      bottom: 0;
-  }
-  
-  .ai-element_type1 .ai-element__label::before,
-  .ai-element_type1 .ai-element__label::after{
-      width: var(--uiaiElementLineWeight);
-      height: 100%;
-      top: 0;
-  }
-  
-  .ai-element_type1 .ai-element__label::before{
-      left: 0;
-  }
-  
-  .ai-element_type1 .ai-element__label::after{
-      right: 0;
-  }
-  
-  .ai-element_type1::before,
-  .ai-element_type1::after,
-  .ai-element_type1 .ai-element__label::before,
-  .ai-element_type1 .ai-element__label::after{
-      content: "";     
-      background-color: var(--uiaiElementLineColor);
-      position: absolute; 
-      opacity: 1;
-  
-      will-change: transform, opacity;
-      transition-property: transform, opacity;
-  }
-  
-  .ai-element_type1:hover::before,
-  .ai-element_type1:hover::after,
-  .ai-element_type1:hover .ai-element__label::before,
-  .ai-element_type1:hover .ai-element__label::after{
-      opacity: 0;
-  }
-  
-  /* 
-  Styles of elements with the bottom border
-  */ 
-  
-  .ai-element_type2{
-      --uiaiElementLineWeight: var(--aiElementLineWeight, 2px);
-      --uiaiElementLineColor: var(--aiElementLineColor, #000);	
-      --aiElementPaddingBottom: var(--uiaiElementLineWeight);	
-      
-      position: relative;
-  }
-  
-  .ai-element_type2::after{
-      content: "";
-      width: 100%;
-      height: var(--uiaiElementLineWeight);
-      background-color: var(--uiaiElementLineColor);
-  
-      position: absolute;
-      left: 0;
-      bottom: 0;
-  }
-  
-  /* 
-  Styles of elements with background
-  */ 
-  
-  .ai-element_type3 {
-      --uiaiElementLineColor: var(--aiElementLineColor, #000);	
-      --uiaiElementPadding: var(--aiElementPadding, 10px);
-      transition: color .3s ease-out;
-      z-index: 1;
-  }
-  
-  .ai-element_type3::before, 
-  .ai-element_type3::after{
-      content: "";
-      background-color: var(--uiaiElementLineColor);	
-      opacity: 1;
-      position: absolute;
-      z-index: -1;
-  
-      transition: transform .35s ease-out, opacity .35s ease-out .03s;
-  }
-  
-  .ai-element_type3:hover::before, 
-  .ai-element_type3:hover::after{
-      opacity: 0;
-      transition-delay: 0s;
-  }
-  
-  .ai-element_text::before{
-      content: attr(data-ai-element-text);
-      color: var(--uiaiElementColorHover);
-      position: absolute;
-  }
-  
-  .ai-element_text::before, 
-  .ai-element_text .ai-element__label{
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(.86, .6, .08, 1.01); 
-      transition-duration: .4s;
-  }
-  
-  .ai-element_text:hover::before,
-  .ai-element_text:hover .ai-element__label{
-      transition-duration: .3s;
-  }
-  
-  /*
-  =====
-  EFFECTS
-  =====
-  */
-  
-  /* effect 1 */
-  
-  .ai-element1::before,
-  .ai-element1::after,
-  .ai-element1 .ai-element__label::before,
-  .ai-element1 .ai-element__label::after{
-      transform: translate3d(0, 0, 0);
-      transition-timing-function: ease-out;
-      transition-duration: .2s, .15s;
-  }
-  
-  .ai-element1:hover::before,
-  .ai-element1:hover::after,
-  .ai-element1:hover .ai-element__label::before,
-  .ai-element1:hover .ai-element__label::after{
-      transition-duration: .25s;
-  }
-  
-  .ai-element1:hover::before{
-      transform: translate3d(-105%, 0, 0);
-  }
-  
-  .ai-element1:hover::after{
-      transform: translate3d(105%, 0, 0);
-  }
-  
-  .ai-element1:hover .ai-element__label::before{
-      transform: translate3d(0%, -100%, 0);
-  }
-  
-  .ai-element1:hover .ai-element__label::after{
-      transform: translate3d(0%, 100%, 0);
-  }
-  
-  /* effect 2 */
-  
-  .ai-element2::after{
-      transform: translate3d(0, 0, 0);
-      transition: transform .2s ease-in;
-  }
-  
-  .ai-element2:hover::after{
-      transform: translate3d(-100%, 0, 0);
-  }
-  
-  /* effect 3 */
-  
-  .ai-element3::after{
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-      transition: transform .3s ease-out, opacity .3s ease-out;
-  }
-  
-  .ai-element3:hover::after{
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-  }
-  
-  /* effect 4 */
-  
-  .ai-element4::before,
-  .ai-element4::after,
-  .ai-element4 .ai-element__label::before,
-  .ai-element4 .ai-element__label::after{
-      transition-timing-function: ease-out;
-      transition-duration: .2s, .2s;
-      transform: translate3d(0, 0, 0);
-  }
-  
-  .ai-element4:hover::before,
-  .ai-element4:hover::after,
-  .ai-element4:hover .ai-element__label::before,
-  .ai-element4:hover .ai-element__label::after{
-      transition-delay: 0s, .05s;	
-  }
-  
-  .ai-element4:hover::before{
-      transform: translate3d(-100%, 0, 0);
-  }
-  
-  .ai-element4:hover::after{
-      transform: translate3d(100%, 0, 0);
-  }
-  
-  .ai-element4:hover .ai-element__label::before{
-      transform: translate3d(0, 100%, 0);
-  }
-  
-  .ai-element4:hover .ai-element__label::after{
-      transform: translate3d(0, -100%, 0);
-  }
-  
-  /* effect 5 */
-  
-  .ai-element5::before,
-  .ai-element5::after, 
-  .ai-element5 .ai-element__label::before,
-  .ai-element5 .ai-element__label::after{
-      transition-duration: .2s;
-      transition-timing-function: ease-out;
-      transform: translate3d(0, 0, 0);
-  }
-  
-  .ai-element5::before, 
-  .ai-element5::after{
-      width: 100%;
-      height: var(--uiaiElementLineWeight);
-      left: 0;
-  }
-  
-  .ai-element5 .ai-element__label::before,
-  .ai-element5 .ai-element__label::after{
-      width: var(--uiaiElementLineWeight);
-      height: 100%;
-      top: 0;
-  }
-  
-  .ai-element5::before{
-      top: 0;
-  }
-  
-  .ai-element5::after{
-      bottom: 0;
-  }
-  
-  .ai-element5 .ai-element__label::before{
-      left: 0;
-  }
-  
-  .ai-element5 .ai-element__label::after{
-      right: 0;
-  }
-  
-  .ai-element5:hover::before,
-  .ai-element5:hover .ai-element__label::before{
-      transition-delay: 0s;
-  }
-  
-  .ai-element5::after,
-  .ai-element5:hover .ai-element__label::after{
-      transition-delay: .25s;
-  }
-  
-  .ai-element5 .ai-element__label::after,
-  .ai-element5:hover::after{
-      transition-delay: .15s;
-  }
-  
-  .ai-element5 .ai-element__label::before,
-  .ai-element5:hover::before{
-      transition-delay: .35s;
-  }
-  
-  .ai-element5:hover::before{
-      transform: translate3d(-105%, 0, 0);
-  }
-  
-  .ai-element5:hover::after{
-      transform: translate3d(105%, 0, 0);
-  }
-  
-  .ai-element5:hover .ai-element__label::before{
-      transform: translate3d(0, 105%, 0);
-  }
-  
-  .ai-element5:hover .ai-element__label::after{
-      transform: translate3d(0, -105%, 0);
-  }
-  
-  /* effect 6 */
-  
-  .ai-element6::before,
-  .ai-element6::after{
-      width: 50%;
-      height: 100%;
-      top: 0;
-      transform: translate3d(0, 0, 0);  
-  }
-  
-  .ai-element6::before{
-      left: 0;
-  }
-  
-  .ai-element6::after{
-      right: 0;
-  }
-  
-  .ai-element6:hover::before{
-      transform: translate3d(-100%, 0, 0);
-  }
-  
-  .ai-element6:hover::after{
-      transform: translate3d(100%, 0, 0);
-  }
-  
-  /* effect 7 */
-  
-  .ai-element7::before,
-  .ai-element7::after{
-      width: 100%;
-      height: 50%;
-      left: 0;
-      transform: translate3d(0, 0, 0);
-  }
-  
-  .ai-element7::before{
-      top: 0;
-  }
-  
-  .ai-element7::after{
-      bottom: 0;
-  }
-  
-  .ai-element7:hover::before{
-      transform: translate3d(0, -50%, 0);
-  }
-  
-  .ai-element7:hover::after{
-      transform: translate3d(0, 50%, 0); 
-  }
-  
-  /* effect 8 */
-  
-  .ai-element8::before,
-  .ai-element8::after{
-      width: 51%;
-      height: 100%;
-      transform: rotate(0);
-      top: 0;
-  }
-  
-  .ai-element8::before{
-      left: 0;
-  }
-  
-  .ai-element8::after{
-      right: 0;
-  }
-  
-  .ai-element8:hover::before,
-  .ai-element8:hover::after{
-      transform: rotate(360deg);
-  }
-  
-  /* effect 9 */
-  
-  .ai-element9::before,
-  .ai-element9::after{
-      width: 51%;
-      height: 100%;
-      top: 0; 
-      transform: translate3d(0, 0, 0);
-  }
-  
-  .ai-element9::before{
-      left: 0;
-  }
-  
-  .ai-element9::after{
-      right: 0;
-  }
-  
-  .ai-element9:hover::before{
-      transform: translate3d(-100%, 0, 0) rotate(-45deg);
-  }
-  
-  .ai-element9:hover::after{
-      transform: translate3d(100%, 0, 0) rotate(-45deg);	
-  }
-  
-  /*
-  =====
-  DEMO STYLES
-  =====
-  */
-  
-  .section{
-    text-align: center;
-    display: flex;
-    text-align: center;
-	
-    font-weight: 700;
-      
-    font-size: 6em;
-    
-  }
-  
-  /* .section:nth-child(2n+1){
-    background-color: #f1f4fa;
-  } */
-  
-  .section__item{
-    margin: auto;
-    position: relative;
-    top: 300px;
-  }
-  
-  .section__box:nth-child(n+2){
-    margin-top: 40px;
-  }
-  
-  .ai-element__label{
-      --uiaiElementColorHover: var(--aiElementColorHover);	
-      font-weight: 700;
-      /* text-transform: uppercase; */
-  }
-  
-  .ai-element:hover .ai-element__label{
-      color: var(--uiaiElementColorHover);
-  }
-  
-  /*
-  =====
-  SETTINGS
-  =====
-  */
-  
-  .ai-element{
-      --aiElementLineWeight: 5px;
-      --aiElementLineColor: #243aab;
-      --aiElementColor: #000000;
-      --aiElementColorHover: #243aab;
-  }
-  
-  .ai-element_type1,
-  .ai-element_type3{
-      --aiElementPadding: 10px 15px;
-  } 
-  
-  .ai-element_type3{
-      --aiElementColor: #fff;
-  }
-
-  #imgteam{
-    margin-top: 10%;
-    margin-left: 9%;
-    display: inline-block;
-  }
-
-  @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
-
-:root {
-  --color: #3c3163;
-  --transition-time: 0.5s;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Open Sans';
-  background: #fafafa;
-}
-
-a {
-  color: inherit;
-}
-
-.cards-wrapper {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 4rem;
-  margin: 0 auto;
-  width: max-content;
-}
-
-.card {
-  font-family: 'Heebo';
-  --bg-filter-opacity: 0.5;
-  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 20em;
-  width: 30em;
-  font-size: 1.5em;
-  color: white;
-  border-radius: 1em;
-  padding: 1em;
-  margin: 1em;
-  display: inline-block;
-  align-items: flex-end;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 5em -1em black;
-  transition: all, var(--transition-time);
-  position: relative;
-  overflow: hidden;
-  border: 10px solid #ccc;
-  text-decoration: none;
-}
-
-.card:hover {
-  transform: rotate(0);
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-.card 4 {
-  font-size: 0.75em;
-  font-family: 'Open Sans';
-  margin-top: 0.5em;
-  line-height: 2em;
-}
-
-.card .tags {
-  display: flex;
-}
-
-.card .tags .tag {
-  font-size: 0.75em;
-  background: rgba(255,255,255,0.5);
-  border-radius: 0.3rem;
-  padding: 0 0.5em;
-  margin-right: 0.5em;
-  line-height: 1.5em;
-  transition: all, var(--transition-time);
-}
-
-.card:hover .tags .tag {
-  background: var(--color);
-  color: white;
-}
-
-.card .date {
+.dialog__button--close {
   position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.75em;
-  padding: 1em;
-  line-height: 1em;
-  opacity: .8;
+  top: 20px;
+  right: 20px;
 }
 
-.card:before, .card:after {
-  content: '';
-  transform: scale(0);
-  transform-origin: top left;
-  border-radius: 50%;
-  position: absolute;
-  left: -50%;
-  top: -50%;
-  z-index: -5;
-  transition: all, var(--transition-time);
-  transition-timing-function: ease-in-out;
-}
-
-.card:before {
-  background: #ddd;
-  width: 250%;
-  height: 250%;
-}
-
-.card:after {
-  background: white;
-  width: 200%;
-  height: 200%;
-}
-
-.card:hover {
-  color: var(--color);
-}
-
-.card:hover:before, .card:hover:after {
-  transform: scale(1);
-}
-
-.card-grid-space .num {
-  font-size: 3em;
-  margin-bottom: 1.2rem;
-  margin-left: 1rem;
-}
-
-.info {
-  font-size: 1.2em;
-  display: flex;
-  padding: 1em 3em;
-  height: 3em;
-}
-
-.info img {
-  height: 3em;
-  margin-right: 0.5em;
-}
-
-.info h1 {
-  font-size: 1em;
-  font-weight: normal;
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr;
+.dialog__button--open {
+  position: fixed;
+  bottom: 0;
+  right: 2%;
+  padding: 10px;
+  background-color: var(--blue);
+  opacity: 0;
+  border-radius: 3px 3px 0 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  &.dialog__button--toggle {
+    transform: translateY(0);
   }
 }
 
-@media screen and (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    /margin-left: 0;
-    /text-align: center;
-  }
+.dialog__button--toggle {
+  opacity: 1;
+  visibility: visible;
 }
 
-@media screen and (max-width: 500px) {
-  .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
-}
-
-.read2:link, .read2:visited {
-  background-color: #ffdb8e;
-  padding: 20px 15px;
-  text-align: center;
-  text-decoration: none;
+.dialog__button-label {
+  margin-right: 10px;
   display: inline-block;
-  position: relative; 
-  left: 100px;
-  bottom: 100px;
-  border-radius: 20px;
-  color: black;
-  font-size: 40px;
+  vertical-align: middle;
 }
-.read2:hover, .read2:active {
-  background-color: rgb(255, 233, 137);
+.dialog__button-icon {
+  display: inline-block;
+  vertical-align: top;
 }
+
 </style>
 
+{{-- STYLE UNTUK SLIDESHOW --}}
+<style>
+  .slider,
+.slider > div {
+    /* Images default to Center Center. Maybe try 'center top'? */
+    background-position: center center;
+    display: block;
+    width: 100%;
+    height: 800px;
+    /* height: 100vh; */ /* If you want fullscreen */
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    -moz-transition: transform 0.4s;
+    -o-transition: transform 0.4s;
+    -webkit-transition: transform 0.4s;
+    transition: transform 0.4s;
+}
+
+.slider > div {
+    position: absolute;
+}
+
+.slider > i {
+    color: #5bbd72;
+    position: absolute;
+    font-size: 60px;
+    margin: 20px;
+    top: 40%;
+    text-shadow: 0 10px 2px #223422;
+    transition: 0.3s;
+    width: 30px;
+    padding: 10px 13px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    line-height: 0;
+    box-sizing: content-box;
+    border-radius: 3px;
+    z-index: 4;
+}
+
+.slider > i svg {
+    margin-top: 3px;
+}
+
+.slider > .left {
+    left: -100px;
+}
+.slider > .right {
+    right: -100px;
+}
+.slider:hover > .left {
+    left: 0;
+}
+.slider:hover > .right {
+    right: 0;
+}
+
+.slider > i:hover {
+    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(-2px);
+}
+
+.slider > i.right:hover {
+    transform: translateX(2px);
+}
+
+.slider > i.right:active,
+.slider > i.left:active {
+    transform: translateY(1px);
+}
+
+.slider:hover > div {
+    transform: scale(1.01);
+}
+
+.hoverZoomOff:hover > div {
+    transform: scale(1);
+}
+
+.slider > ul {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 4;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-50%);
+}
+
+.slider > ul > li {
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+    float: left;
+    margin: 10px 10px 0;
+    cursor: pointer;
+    border: 1px solid #fff;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.slider > ul > .showli {
+    background-color: #7ec03d;
+    -moz-animation: boing 0.5s forwards;
+    -o-animation: boing 0.5s forwards;
+    -webkit-animation: boing 0.5s forwards;
+    animation: boing 0.5s forwards;
+}
+
+.slider > ul > li:hover {
+    background-color: #7ec03d;
+}
+
+.slider > .show {
+    z-index: 1;
+}
+
+.hideDots > ul {
+    display: none;
+}
+
+.showArrows > .left {
+    left: 0;
+}
+
+.showArrows > .right {
+    right: 0;
+}
+
+.titleBar {
+    z-index: 2;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(100%);
+    padding: 20px 30px;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.titleBar * {
+    transform: translate(-20px, 30px);
+    transition: all 700ms cubic-bezier(0.37, 0.31, 0.2, 0.85) 200ms;
+    opacity: 0;
+}
+
+.titleBarTop .titleBar * {
+    transform: translate(-20px, -30px);
+}
+
+.slider:hover .titleBar,
+.slider:hover .titleBar * {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.titleBarTop .titleBar {
+    top: 0;
+    bottom: initial;
+    transform: translateY(-100%);
+}
+
+.slider > div span {
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+}
+
+@keyframes boing {
+    0% {
+        transform: scale(1.2);
+    }
+    40% {
+        transform: scale(0.6);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* -------------------------------------- */
+
+#slider2 {
+    max-width: 30%;
+    margin-right: 20px;
+}
+
+.row2Wrap {
+    display: flex;
+}
+
+.content {
+    padding: 50px;
+    margin-bottom: 100px;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+h1,
+h2,
+h3 {
+    font-family: "Crimson Text", sans-serif;
+    font-weight: 100;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 10px 15vw;
+}
+
+
+</style>
+
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+  }
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 732px) {
+  #logo_message {
+    visibility: hidden;
+    clear: both;
+  }
+}
+@media screen and (max-width: 732px) {
+  #logohome {
+    visibility: hidden;
+    clear: both;
+  }
+}
+  </style>
+
+  <style>
+    /* body {
+  background: #ff5f6d;
+  background: -webkit-linear-gradient(to right, #ff5f6d, #ffc371);
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  min-height: 100vh;
+} */
+
+#button-addon1 {
+  color: #ffc371;
+}
+
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.form-control.shadow-0:focus {
+  box-shadow: none;
+}
+  </style>
+
 <body>
-  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-  	<label for="menu-icon"></label>
-  	<nav class="nav"> 		
-  		<ul class="pt-5">
-        @if (Route::has('login'))
+  <div id="cover"> 
+    <div class="mosaic-loader">
+      <div class="cell d-0"></div>
+      <div class="cell d-1"></div>
+      <div class="cell d-2"></div>
+      <div class="cell d-3"></div>
+      <div class="cell d-1"></div>
+      <div class="cell d-2"></div>
+      <div class="cell d-3"></div>
+      <div class="cell d-4"></div>
+      <div class="cell d-2"></div>
+      <div class="cell d-3"></div>
+      <div class="cell d-4"></div>
+      <div class="cell d-5"></div>
+      <div class="cell d-3"></div>
+      <div class="cell d-4"></div>
+      <div class="cell d-5"></div>
+      <div class="cell d-6"></div>
+    </div>
+    </div>
+
+    <button class="dialog__button dialog__button--open" aria-haspopup="true">
+      <span class="dialog__button-label">open</span>
+      <svg class="dialog__button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <line fill="none" stroke="currentColor" stroke-linecap="round" x1="0.7" y1="0.7" x2="15.3" y2="15.3" />
+        <line fill="none" stroke="currentColor" stroke-linecap="round" x1="15.3" y1="0.7" x2="0.7" y2="15.3" />
+      </svg>
+    </button>
+    <div class="dialog" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc" aria-hidden="false">
+      <div class="dialog__wrapper">
+        <button class="dialog__button dialog__button--close">
+          <span class="dialog__button-label">close</span>
+          <svg class="dialog__button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <line fill="none" stroke="currentColor" stroke-linecap="round" x1="0.7" y1="0.7" x2="15.3" y2="15.3" />
+            <line fill="none" stroke="currentColor" stroke-linecap="round" x1="15.3" y1="0.7" x2="0.7" y2="15.3" />
+          </svg>
+        </button>
+        <div class="dialog__content">
+          <h2 id="dialog1Title">Nice animated modal with Vanilla JS</h2>
+          <div id="dialog1Desc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nihil? Eius dolore illo corporis cupiditate, veritatis tempora velit cumque accusantium excepturi nostrum sunt consequatur ex, quidem fuga quo perferendis repellendus? Repudiandae enim dolore iste asperiores labore quod nobis consequuntur quisquam, necessitatibus quibusdam eaque explicabo alias quae earum! Possimus minus nihil dolorem ipsum sapiente, quod quas?</p><a href="#" class="button">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="site">
+	
+      <div id="navbar">
+        <div class="topnav" id="myTopnav">
+        <img src="../img/ptlogo.png" alt="logo" style="width: 100px; height: 80px;" id="logo">
+        <div id="navbar-right">
+          <a class="active" href="/">Home</a>
+          <a href="/product">Product</a>
+          <a href="/reviews">ACNE STORY</a>
+          <a href="/article">Article</a>
+
+          @if (Route::has('login'))
         @auth
-  			<li><a href="{{ url('/dashboard') }}"><i class="fa-solid fa-house-user"></i> Dashboard</a></li>
+  			<a href="{{ url('/toko') }}"><i class="fa-solid fa-house-user"></i> Dashboard</a>
         @else
-  			<li><a href="{{ route('login') }}"><i class="fa-solid fa-user-ninja"></i> Login</a></li>
+  			<a href="{{ route('login') }}"><i class="fa-solid fa-image-portrait"></i> Login</a>
         @if (Route::has('register'))
-        <li><a href="{{ route('register') }}"><i class="fa-solid fa-user-ninja"></i> Register</a></li>
+        <a href="{{ route('register') }}"><i class="fa-solid fa-image-portrait"></i> Register</a>
         @endif
           @endauth
         @endif
-  		</ul>
-  	</nav>
-
-    
-<header>
-  <h1>Welcome to website community Asteriks</h1>
-</header>
-
-<section class="section1">
-  <div class="section">
-    <div class="section__item">
-      <div class="section__box">
-        <a href="/form" class="r-link ai-element ai-element_type1 ai-element1">
-          <span class="ai-element__label">Ask us anything here !</span>
-        </a>
+        
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+          {{-- <a href="{{ route('register') }}"><i class="fa-solid fa-user"></i> </a> --}}
+        </div>
       </div>
-</section>
-  
-  
+      </div>
 
-<section class="section2">
-  <h1>About Us</h1>
-</section>
+        {{-- <div style="height: 140px; text-align: center; margin-top: 170px;">
 
-<section class="section3">
-  <p>"We created this website for our community to communicate through the website,
-    build our community more solid with chat system, and give us some updates
-    for events or news with articles."</p>
-  </section>
+          <div data-aos="zoom-in" data-aos-duration="1500" id="home">
+          <img src="../img/ptlogo.png" alt="logo" style="width: 100px; height: 80px;">
+        </div>
 
-  <section class="section4">
-    <h1>Our Mission</h1>
-  </section>
+        </div> --}}
+        
+        {{-- SLIDESHOW PERTAMA --}}
 
-  <section class="section3">
-    <p style="text-align: left; margin-left: auto; margin-right: auto;">'To make this community more solid'<br>
-      'To make this community more bigger'<br>
-      'To make this website more popular'<br>
-      'To make the people have fun in our community'<br>
-    </p>
+        <!-- Slider 1 -->
+        
+        <p style="position: absolute; z-index: 1000; font-size: 40px; color: white; top: 300px; left: 4%; font-family: Georgia, serif;">FEEL ALIVE</p>
+        <p style="position: absolute; z-index: 1000; font-size: 20px; color: white; top: 350px; left: 4%; font-family: Georgia, serif;">2% <b> PHA + BHA </b> <br> <i> Gentle Exfoliating Toner</i> </p>
+        <p style="position: absolute; z-index: 1000; font-size: 20px; color: white; top: 410px; left: 4%; font-family: Georgia, serif;">Dengan mengkombinasikan Acid dan Papain enzyme to boost <br>
+        its performance. Simple Ingredients yet effective, sensitive skin will fall in love deeply.</p>
+<div class="slider" id="slider1">
+  <!-- Slides -->
+  <div style="background-image:url(../img/DORY0833.jpg)"></div>
+  <div style="background-image:url(../img/DORY0224.jpg)"></div>
+  <div style="background-image:url(../img/DORY1423.jpg)"></div>
+  <div style="background-image:url(../img/DORY0768.jpg)"></div>
+  <!-- The Arrows -->
+  <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
+          <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+      </svg></i>
+  <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
+          <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path>
+      </svg></i>
+
+</div>
+
+
+</div>
+
+<div>
+<br>
+
+<!--SECTION1-->
+<div class="section1">
+    <div class="slider" style="height: 100px;">
+      <div class="slide-track" style="height: 100px;">
+        <div class="slide" style="height: 100px;">
+          <img src="../img/logo1.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo2.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo3.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo4.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo1.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo2.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo3.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo4.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo1.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo2.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo3.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo4.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo1.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="../img/logo2.png" height="100" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!--SECTION2-->
+   <div class="section2">
+    <section>
+      <em data-aos="fade-right">Category</em>
+      <h1 class="title" data-aos="fade-right">Our Categories</h1>
     </section>
-
-    <section class="section5">
-      <h1>Our Team</h1>
+    <section>
+      <span>
+        <img src="../img/ceramon10ml.png" alt="" loading="lazy" data-aos="fade-up">
+        <p>Moisturizer</p>
+      </span>
+      <span>
+        <img src="../img/img4.jpg" alt="" loading="lazy" data-aos="fade-up">
+        <p>Face Oil</p>
+      </span>
+      <span>
+        <img src="../img/feelalive 1.png" alt="" loading="lazy" data-aos="fade-up">
+        <p>Toner</p>
+      </span>
     </section>
+  </div>
 
-    <section class="section6">
-      <img src="../images/team1.png" alt="team1" id="imgteam">
-      <img src="../images/team2.png" alt="team2" id="imgteam">
-      <img src="../images/team3.png" alt="team3" id="imgteam">
+  <!--SECTION3-->
+  <div class="section3">
+    <section>
+      <figure><img src="../img/DORY0944.jpg" alt="" loading="lazy" data-aos="zoom-in" data-aos-duration="3000"></figure>
+    </section>
+    <section>
+      <span>
+        <em data-aos="fade-up">About Us</em>
+        <h1 class="title" data-aos="fade-up" data-aos-duration="500">You deserve skincare that works #Prettywell</h1>
+        <p data-aos="fade-up" data-aos-duration="1000">"Prettywell" a local beauty brand yang punya komitmen menciptakan produk yg touchable & accessible. Sesuai dengan tagline Prettywell “you deserve skincare that works #prettywell” </p>
+        <p data-aos="fade-up" data-aos-duration="1500">mendorong kita untuk selalu mengedepankan kualitas formulasi produknya, <br> a very up-to-date formulation yet AFFORDABLE.</p>
+        <a href="/contactus" class="btn1" data-aos="fade-up" data-aos-duration="1800">Contact Us</a>
+      </span>
+    </section>
+  </div>
+
+  <!--SECTION4-->
+  <div class="section4">
+    <section>
+      <span>
+        <em data-aos="fade-right">Our Goals</em>
+        <h1 class="title" data-aos="fade-right">Our Goal To Achieve More</h1>
+        <p data-aos="fade-right" data-aos-duration="1000">We build a very strong belief system within brand and customer. We treat our customer as a human, not simply data.Kita punya yang namanya after sales experience dengan melayani dan membantu customer achieve their skin goals with our expert beauty consultant. Quality, efficacy, and maintaining customer trust must always be OUR priority.</p>
+      </span>
+    </section>
+    <section>
+      <figure><img src="../img/DORY0893.jpg" alt="" loading="lazy" data-aos="zoom-in-left"></figure>
+    </section>
+  </div>
+
+  <!--SECTION5-->
+  {{-- <div class="section5">
+    <section>
+      <figure><img src="../img/DORY0667.jpg" alt="" loading="lazy" data-aos="zoom-in" data-aos-duration="1000"></figure>
+    </section>
+    <section data-aos="fade-up" data-aos-duration="1000">
+      <span data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="title" data-aos="fade-up" data-aos-duration="1500">You deserve skincare that works #Prettywell</h1>
+      </span>
+    </section>
+  </div> --}}
+
+  <!--SECTION6-->
+  <div class="section6">
+    <section>
+      {{-- <span>
+        <img src="https://i.postimg.cc/tJ05FCJY/icon-4.png" alt="" data-aos="fade-right" data-aos-duration="1000">
+        <p data-aos="fade-up" data-aos-duration="1000">(+x) xxxx xxxxx</p>
+      </span> --}}
+      <span>
+        <img src="https://i.postimg.cc/bvBLNRj0/icon-5.png" alt="" data-aos="fade-right" data-aos-duration="1500">
+        <p data-aos="fade-up" data-aos-duration="1000">prettywell03@gmail.com</p>
+      </span>
+      <span>
+        <img src="https://i.postimg.cc/B6Pp81qr/icon-6.png" alt="" data-aos="fade-right" data-aos-duration="2000">
+        <p data-aos="fade-up" data-aos-duration="1000">Perum griya intan asri DB17, Dermo, Kec. Mojoroto<br> Kota Kediri - Jawa Timur - Indonesia</p>
+      </span>
+    </section>
+  </div>
+        {{-- SLIDESHOW KEDUA --}}
+
+        <!-- Latest compiled and minified CSS -->
+<!-- https://xstore.8theme.com/demos/hosting/-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+
+
+{{-- <div class="container" id="product">
+  <div class="row" id="slider-text">
+    <div class="col-md-6">
+      <h2>NEW COLLECTION</h2>
+    </div>
+  </div>
+</div> --}}
+
+<!-- Item slider-->
+{{-- <div class="container-fluid">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail2"><img src="../img/ceramon10 2.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">CeraMON Barrier Moistfull Gel 10mL</h4>
+              <h5 class="text-center">Rp 34.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail"><img src="../img/Ceramon 1.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">CeraMON Barrier Moistfull Gel 50mL</h4>
+              <h5 class="text-center">Rp 58.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail3"><img src="../img/Fancy 1.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Clay Mask Fancy</h4>
+              <h5 class="text-center">Rp 15.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail3"><img src="../img/Confident 1.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Clay Mask Confident</h4>
+              <h5 class="text-center">Rp 15.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail3"><img src="../img/Rare 1.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Clay Mask Rare</h4>
+              <h5 class="text-center">Rp 15.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail4"><img src="../img/Piss-off 1.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Piss-Off Blemish Spot Cream</h4>
+              <h5 class="text-center">Rp 39.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail5"><img src="../img/feelalive.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">Feel Alive 2% PHA + BHA Gentle Exfoliating Toner</h4>
+              <h5 class="text-center">Rp 56.000</h5>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <a href="/detail6"><img src="../img/Reset & Restart - 1.png" class="img-responsive center-block"></a>
+              <h4 class="text-center">RESET & RESTART Versatile Oil Serum</h4>
+              <h5 class="text-center">Rp 38.000</h5>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="slider-control">
+          <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png" alt="Left" class="img-responsive"></a>
+          <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right" class="img-responsive"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}
+<!-- Item slider end-->
+<br /><br />
+
+  <!--FOOTER-->
+  <footer>
+    <div class="top_header">
+      <section>
+        <br>
+        <img src="https://i.postimg.cc/FFJCzwzY/icon-3.png" alt="" data-aos="fade-up" data-aos-duration="500">
+        <br>
+        <h1 class="title" data-aos="fade-up" data-aos-duration="500">Newsletter</h1>
+        <br><br>
+        <form action="https://formspree.io/f/xpznadew" method="POST" data-aos="fade-up" data-aos-duration="1000">
+          <fieldset>
+            <input type="email" name="email" placeholder="email address*" requried=""><button class="btn2">subscribe</button>
+          </fieldset>
+        </form>
       </section>
+    </div>
+    <span class="border-shape" data-aos="zoom-in" data-aos-duration="2500"></span>
+    <div class="bottom_content">
+      <section>
+        <a href="https://www.tiktok.com/@prettywell.co" data-aos="fade-right" data-aos-duration="500"><i class="fa fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/prettywell.co/" data-aos="fade-right" data-aos-duration="1000"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/prettywell_co" data-aos="fade-right" data-aos-duration="1500"><i class="fa fa-twitter"></i></a>
+      </section>
+      <section>
+        <a href="/product">Products</a>
+        <a href="/shipping">Shipping</a>
+        <a href="/ourstore">Our Stores</a>
+        <a href="/article">Our Article</a>
+        <a href="/contactus">Contact Us</a>
+      </section>
+    </div>
+    <br>
+    <div class="copyright">
+      Copyright © 2022 prettywell - All rights reserved
+    </div>
+  </footer>
 
+  <!-- End -->
 
-      <section class="section7">
-      <h2 style="font-size: 6em; margin-left: auto; margin-right: auto; text-align: center; margin-top: 4%; box-shadow: 0 0 20px #333; background-color: white; width: 90%; padding: 1rem;" id="#article">Our Article</h2>
-                  @foreach ($posts as $post)
-                    <div class="card-grid-space" style="display: inline-block;">
-                      <a class="card" href="/detail/{{ $post->id }}" style="--bg-img: url({{ URL($post->image_path) }})">
-                        <div>
-                          <h3>{{ $post->title }}</h3>
-                          <h4>{{ Str::limit($post->body, 50) }}</h4>
-                          <div class="tags">
-                            <div class="tag">Read More</div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    @endforeach
-                    <a href="/article" class="read2">More Article..</a>
-                    {{-- <div class="section" style="position: relative; bottom: 410px;">
-                      <div class="section__item">
-                        <div class="section__box">
-                          <a href="/article" class="r-link ai-element ai-element_type3 ai-element6">
-                            <span class="ai-element__label" style="font-size: 0.8em;">Read More..</span>
-                          </a>
-                        </div>
-                  </section> --}}
+  <!--ADDITIONAL-->
+  <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
 
-                  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // Set close and open variable
+  var btn_close = document.querySelector(".dialog__button--close");
+  var btn_open = document.querySelector(".dialog__button--open");
+
+  if (typeof btn_close != "undefined" && btn_close != null) {
+    // Click event to close dialog
+    btn_close.addEventListener("click", function (event) {
+      // btn.parentNode.parentNode.classList.add('dialog--close');
+      btn_close.parentNode.parentNode.setAttribute("aria-hidden", "true");
+      if (typeof btn_open != "undefined" && btn_open != null) {
+        btn_open.classList.add("dialog__button--toggle");
+      }
+    });
+  }
+
+  if (typeof btn_open != "undefined" && btn_open != null) {
+    // Click event to open dialog
+    btn_open.addEventListener("click", function (event) {
+      // btn.parentNode.parentNode.classList.add('dialog--close');
+      btn_close.parentNode.parentNode.setAttribute("aria-hidden", "false");
+      if (typeof btn_open != "undefined" && btn_open != null) {
+        btn_open.classList.remove("dialog__button--toggle");
+      }
+    });
+  }
+});
+
+  </script>
+
+  <script>
+  $(window).on('load', function () {
+$("#cover").fadeOut(1750);
+});
+    </script>
+    
+    <script>
+
+// JS UNTUK SLIDE PERTAMA
+
+(function ($) {
+    "use strict";
+    $.fn.sliderResponsive = function (settings) {
+        var set = $.extend(
+            {
+                slidePause: 5000,
+                fadeSpeed: 800,
+                autoPlay: "on",
+                showArrows: "off",
+                hideDots: "off",
+                hoverZoom: "on",
+                titleBarTop: "off"
+            },
+            settings
+        );
+
+        var $slider = $(this);
+        var size = $slider.find("> div").length; //number of slides
+        var position = 0; // current position of carousal
+        var sliderIntervalID; // used to clear autoplay
+
+        // Add a Dot for each slide
+        $slider.append("<ul></ul>");
+        $slider.find("> div").each(function () {
+            $slider.find("> ul").append("<li></li>");
+        });
+
+        // Put .show on the first Slide
+        $slider.find("div:first-of-type").addClass("show");
+
+        // Put .showLi on the first dot
+        $slider.find("li:first-of-type").addClass("showli");
+
+        //fadeout all items except .show
+        $slider.find("> div").not(".show").fadeOut();
+
+        // If Autoplay is set to 'on' than start it
+        if (set.autoPlay === "on") {
+            startSlider();
+        }
+
+        // If showarrows is set to 'on' then don't hide them
+        if (set.showArrows === "on") {
+            $slider.addClass("showArrows");
+        }
+
+        // If hideDots is set to 'on' then hide them
+        if (set.hideDots === "on") {
+            $slider.addClass("hideDots");
+        }
+
+        // If hoverZoom is set to 'off' then stop it
+        if (set.hoverZoom === "off") {
+            $slider.addClass("hoverZoomOff");
+        }
+
+        // If titleBarTop is set to 'on' then move it up
+        if (set.titleBarTop === "on") {
+            $slider.addClass("titleBarTop");
+        }
+
+        // function to start auto play
+        function startSlider() {
+            sliderIntervalID = setInterval(function () {
+                nextSlide();
+            }, set.slidePause);
+        }
+
+        // on mouseover stop the autoplay
+        $slider.mouseover(function () {
+            if (set.autoPlay === "on") {
+                clearInterval(sliderIntervalID);
+            }
+        });
+
+        // on mouseout starts the autoplay
+        $slider.mouseout(function () {
+            if (set.autoPlay === "on") {
+                startSlider();
+            }
+        });
+
+        //on right arrow click
+        $slider.find("> .right").click(nextSlide);
+
+        //on left arrow click
+        $slider.find("> .left").click(prevSlide);
+
+        // Go to next slide
+        function nextSlide() {
+            position = $slider.find(".show").index() + 1;
+            if (position > size - 1) position = 0;
+            changeCarousel(position);
+        }
+
+        // Go to previous slide
+        function prevSlide() {
+            position = $slider.find(".show").index() - 1;
+            if (position < 0) position = size - 1;
+            changeCarousel(position);
+        }
+
+        //when user clicks slider button
+        $slider.find(" > ul > li").click(function () {
+            position = $(this).index();
+            changeCarousel($(this).index());
+        });
+
+        //this changes the image and button selection
+        function changeCarousel() {
+            $slider.find(".show").removeClass("show").fadeOut();
+            $slider
+                .find("> div")
+                .eq(position)
+                .fadeIn(set.fadeSpeed)
+                .addClass("show");
+            // The Dots
+            $slider.find("> ul").find(".showli").removeClass("showli");
+            $slider.find("> ul > li").eq(position).addClass("showli");
+        }
+
+        return $slider;
+    };
+})(jQuery);
+
+//////////////////////////////////////////////
+// Activate each slider - change options
+//////////////////////////////////////////////
+$(document).ready(function () {
+    $("#slider1").sliderResponsive({
+        // Using default everything
+        // slidePause: 5000,
+        // fadeSpeed: 800,
+        // autoPlay: "on",
+        // showArrows: "off",
+        // hideDots: "off",
+        // hoverZoom: "on",
+        // titleBarTop: "off"
+    });
+
+    $("#slider2").sliderResponsive({
+        fadeSpeed: 300,
+        autoPlay: "off",
+        showArrows: "on",
+        hideDots: "on"
+    });
+
+    $("#slider3").sliderResponsive({
+        hoverZoom: "off",
+        hideDots: "on"
+    });
+});
+
+      
+      </script>
+
+<script>
+  // JS UNTUK SLIDE KEDUA
+
+  $(document).ready(function () {
+  $("#itemslider").carousel({ interval: 3000 });
+
+  $(".carousel-showmanymoveone .item").each(function () {
+    var itemToClone = $(this);
+
+    for (var i = 1; i < 6; i++) {
+      itemToClone = itemToClone.next();
+
+      if (!itemToClone.length) {
+        itemToClone = $(this).siblings(":first");
+      }
+
+      itemToClone
+        .children(":first-child")
+        .clone()
+        .addClass("cloneditem-" + i)
+        .appendTo($(this));
+    }
+  });
+});
+
+</script>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+
+<script>
+  // JS UNTUK NAVBAR
+  window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+document.getElementById("navbar").style.padding = "15px 10px";
+document.getElementById("logo").style.fontSize = "15px";
+document.getElementById("navbar").style.background = "#FFFFFF";
+document.getElementById("roll_back").style.display = "flex";
+} else {
+document.getElementById("navbar").style.padding = "20px 10px";
+document.getElementById("logo").style.fontSize = "25px";
+document.getElementById("navbar").style.background = "none";
+document.getElementById("roll_back").style.display = "none";
+}
+}
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
           AOS.init();
         </script>
